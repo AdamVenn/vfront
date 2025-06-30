@@ -24,17 +24,13 @@ get_header(); ?>
 					<?php
 					echo '<section aria-label="' . esc_html__( 'Search', 'storefront' ) . '">';
 
-					if ( storefront_is_woocommerce_activated() ) {
-						the_widget( 'WC_Widget_Product_Search' );
-					} else {
-						get_search_form();
-					}
+					get_search_form();
 
 					echo '</section>';
 
 					if ( storefront_is_woocommerce_activated() ) {
 
-						echo '<div class="fourohfour-columns-2">';
+						echo '<div class="storefront-fourohfour">';
 
 							echo '<section class="col-1" aria-label="' . esc_html__( 'Promoted Products', 'storefront' ) . '">';
 
@@ -43,8 +39,6 @@ get_header(); ?>
 							echo '</section>';
 
 							echo '<nav class="col-2" aria-label="' . esc_html__( 'Product Categories', 'storefront' ) . '">';
-
-								echo '<h2>' . esc_html__( 'Product Categories', 'storefront' ) . '</h2>';
 
 								the_widget(
 									'WC_Widget_Product_Categories',
