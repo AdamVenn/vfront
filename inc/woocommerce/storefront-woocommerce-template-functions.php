@@ -967,3 +967,63 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
+	/**
+	 * Callback for vfront gallery tab on single product page.
+	 *
+	 * @return void
+	 */
+	function vfront_woocommerce_gallery_tab_content() {
+		global $product;
+		$attachment_ids = $product->get_gallery_image_ids();
+		$num_ids = count( $attachment_ids );
+		?>
+		<div class="v-gal-thumbnails" id="v-gallery">
+		<?php
+
+		foreach ( $attachment_ids as $id ) {
+			$thumbnail_url = wp_get_attachment_image_src( $id, 'thumbnail' )[0];
+			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
+			?>
+			<a class="v-gal-thumbnail" href="#<?php echo esc_attr( $id ); ?>">
+				<img src="<?php echo esc_url( $thumbnail_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>">
+			</a> <!-- v-gal-thumbnail -->
+			<?php
+		}
+
+		?>
+		</div> <!-- v-gallery -->
+		
+		<?php
+
+		// Hidden overlays.
+		$index = 0;
+		foreach ( $attachment_ids as $id ) {
+			$url = wp_get_attachment_url( $id );
+			$caption = get_post_field( 'post_excerpt', $id );
+			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
+			$prev = ( $index - 1 + $num_ids ) % $num_ids;
+			$next = ( $index + 1 ) % $num_ids;
+			?>
+			<div class="v-gal-overlay" id="<?php echo esc_attr( $id ); ?>">
+				<div class="v-gal-overlay-content">
+					<a class="v-gal-next button" href="#<?php echo esc_attr( $attachment_ids[ $prev ] ); ?>">
+						<svg width="11" height="30" viewBox="0 0 11 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10.875 0L0.875 15L10.875 30L10.875 0Z"/>
+						</svg>
+					</a>
+					<div><img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>"></div>
+					<a class="v-gal-prev button" href="#<?php echo esc_attr( $attachment_ids[ $next ] ); ?>">
+						<svg width="11" height="30" viewBox="0 0 11 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0.875 0L10.875 15L0.875 30L0.875 0Z"/>
+						</svg>
+					</a>
+				</div> <!-- v-gal-overlay-content -->
+				<a class="v-gal-close" href="#!"></a>
+			</div> <!-- v-gal-overlay -->
+			<?php
+			++$index;
+		}
+	}
+}
