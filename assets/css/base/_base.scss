@@ -71,7 +71,7 @@ h6 {
 
 h1,
 .alpha {
-	font-size: ms(5);
+	font-size: var(--font-size-title);
 	line-height: 1.214;
 	letter-spacing: -1px;
 }
@@ -89,12 +89,12 @@ h2,
 
 h3,
 .gamma {
-	font-size: ms(3);
+	font-size: var(--font-size-subtitle);
 }
 
 h4,
 .delta {
-	font-size: ms(2);
+	font-size: var(--font-size-subtitle);
 }
 
 .alpha,
@@ -350,7 +350,7 @@ body {
 	.widget {
 		margin: 0;
 		padding: 1em 0;
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 	}
 }
 
@@ -370,7 +370,7 @@ body {
 	}
 
 	.site-description {
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 		display: none;
 	}
 
@@ -408,7 +408,7 @@ body {
 			position: absolute;
 			top: 1em;
 			right: 1em;
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 		}
 	}
 
@@ -423,7 +423,7 @@ body {
 	.entry-header {
 
 		h1 {
-			font-size: ms(6);
+			font-size: var(--font-size-title);
 			margin-bottom: ms(-6);
 		}
 	}
@@ -713,7 +713,7 @@ table {
 			}
 
 			a.comment-date {
-				font-size: ms(-1);
+				font-size: var(--font-size-small);
 			}
 
 			cite {
@@ -779,7 +779,7 @@ table {
 		width: 1em;
 		overflow: hidden;
 		line-height: 1;
-		font-size: ms(2);
+		font-size: var(--font-size-subtitle);
 		text-align: center;
 		transition: transform, ease, 0.3s;
 
@@ -809,7 +809,7 @@ table {
 		.post-author,
 		.post-comments,
 		.byline {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 
 			a {
 
@@ -935,7 +935,7 @@ input[type="submit"],
 
 	&.small {
 		padding: ms(-3) ms(-1);
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 	}
 
 	&.disabled,
@@ -1215,7 +1215,7 @@ button.menu-toggle {
 	border-radius: 2px;
 	background-image: none;
 	padding: ms(-2) ms(-1) ms(-2) ms(5);
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	max-width: 120px;
 
 	&:hover {
@@ -1495,7 +1495,7 @@ button.menu-toggle {
 
 	.widget-title,
 	.widgettitle {
-		font-size: ms(2);
+		font-size: var(--font-size-subtitle);
 		letter-spacing: 0;
 		border-bottom: 1px solid $color_border;
 		padding: 0 0 1em;
@@ -1516,11 +1516,11 @@ button.menu-toggle {
 .widget-area {
 
 	.widget {
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 		font-weight: 400;
 
 		h1.widget-title {
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 		}
 
 		a {

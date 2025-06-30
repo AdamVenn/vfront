@@ -6,6 +6,7 @@
  * Imports
  */
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/utils/mixins";
 @import "susy";
 @import "../../sass/vendors/modular-scale";
@@ -33,7 +34,7 @@
 		padding: 1em;
 		line-height: inherit;
 		border-radius: 0;
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 
 		dl {
 			margin-top: 0;

@@ -6,6 +6,7 @@
  * Imports
  */
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/utils/mixins";
 @import "susy";
 @import "../../sass/vendors/modular-scale";
@@ -66,7 +67,7 @@
 						float: right;
 
 						&.checkbox::before {
-							font-size: ms(-1);
+							font-size: var(--font-size-small);
 						}
 					}
 
@@ -214,7 +215,7 @@
 
 #tiptip_content,
 .chart-tooltip {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	padding: ms(-2) 1em;
 	background-color: rgba(0, 0, 0, 0.8);
 }

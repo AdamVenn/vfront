@@ -6,6 +6,7 @@
  * Imports
  */
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/vendors/modular-scale";
 
 .wapl-flash,
@@ -25,7 +26,7 @@
 	padding: ms(-2) ms(-1);
 	display: inline-block;
 	margin: 0 auto;
-	font-size: ms(0);
+	font-size: var(--font-size-small);
 
 	&:empty {
 		display: none;
