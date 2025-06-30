@@ -27,15 +27,3 @@ $container-width:   1920px;
 // fontawesome
 $fa-font-path:      "../../../assets/fonts";
 
-// susy
-$susy: (
-	columns: 12,
-	gutters: 1,
-	math: fluid,
-	output: float,
-	gutter-position: after,
-
-	use-custom: (
-		box-sizing: false
-	)
-);
