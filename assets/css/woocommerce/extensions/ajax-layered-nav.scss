@@ -24,8 +24,8 @@
 				display: inline-block;
 				box-sizing: border-box;
 				border-radius: 0.202em;
-				height: ms(3);
-				width: ms(3);
+				height: 6em;
+				width: 6em;
 			}
 
 			&.chosen {
@@ -61,8 +61,8 @@
 
 			.size-filter {
 				font-size: 1em;
-				height: ms(3);
-				min-width: ms(3);
+				height: 6em;
+				min-width: 6em;
 				text-align: center;
 				line-height: 1.618;
 				background-color: #fff;
