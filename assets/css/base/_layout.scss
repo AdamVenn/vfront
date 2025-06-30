@@ -2,20 +2,6 @@
  * Strictly Layout Styles
  */
 
-table.shop_table_responsive {
-
-	tbody {
-
-		tr {
-
-			td,
-			th {
-				text-align: left;
-			}
-		}
-	}
-}
-
 .site-header {
 	@include flex-row-header-footer;
 
