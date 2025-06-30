@@ -13,15 +13,19 @@
     --font-size-title: 3rem;
 
     /* Components */
-    --min-button-width: 80px;
+    --min-button-width: 120px;
     --border-thin: 2px;
     --border-thick: 3px;
     --rounded-corner-large: 5px;
+    --rounded-corner-small: 4px;
+    --padding-small: 5px;
+    --padding-large: 10px;
     
     /* Effects */
     --drop-shadow-color: #00000040;
     --drop-shadow: 0px 3px 5px 2px var(--drop-shadow-color);
     --focus-inner-shadow: 0px 0px 0px 2px var(--accent_color) inset;
+    --brightness-on-hover: 1.2;
 }
 
 /***
