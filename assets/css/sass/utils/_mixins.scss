@@ -100,6 +100,13 @@
 	gap: var(--space-between-inner);
 }
 
+@mixin flex-col {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: var(--space-between-inner);
+}
+
 @mixin flex-row-header-footer {
 	display: flex;
 	flex-direction: row;
