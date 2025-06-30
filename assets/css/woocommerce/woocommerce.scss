@@ -479,12 +479,22 @@ ul.products,
 		}
 
 		.product_meta {
+			@include flex-col;
+
 			font-size: var(--font-size-small);
 
 			.sku_wrapper,
 			.posted_in,
 			.tagged_as {
-				display: block;
+				display: inline-grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--space-between-outer);
+				justify-items: end;
+				text-transform: capitalize;
+
+				* {
+					justify-self: start;
+				}
 
 				&:last-child {
 					border-bottom: 0;
