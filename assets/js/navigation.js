@@ -157,7 +157,7 @@
 		) {
 			[].forEach.call(
 				document.querySelectorAll(
-					'.site-header ul ul, .site-header-cart .widget_shopping_cart'
+					'.site-header ul ul, .site-header-cart'
 				),
 				function ( element ) {
 					element.classList.add( 'sub-menu--is-touch-device' );
