@@ -728,10 +728,6 @@ a.reset_variations {
 
 	a {
 		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-		}
 	}
 
 	.breadcrumb-separator {
@@ -1539,10 +1535,6 @@ ul.order_details {
 		color: #fff;
 		font-weight: 400;
 		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-		}
 
 		&.woocommerce-store-notice__dismiss-link {
 			display: block;
