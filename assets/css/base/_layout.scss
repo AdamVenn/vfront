@@ -89,6 +89,12 @@ table.shop_table_responsive {
 	margin-bottom: var(--space-separation);
 }
 
+.widget-area {
+	max-width: var(--content-width-narrow);
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /**
 * Footer widgets
 */
