@@ -11,6 +11,7 @@
 @mixin sf-fa-icon {
 
 	@include fa-icon;
+	display: unset;
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 	line-height: inherit;
@@ -134,27 +135,6 @@ input[type="submit"],
 			margin-left: -10px;
 			margin-top: -10px;
 			display: block;
-		}
-	}
-}
-
-.handheld-navigation {
-
-	ul {
-
-		&.menu {
-
-			li {
-
-				button {
-
-					&::after {
-
-						@include sf-fa-icon;
-						content: fa-content($fa-var-angle-down);
-					}
-				}
-			}
 		}
 	}
 }

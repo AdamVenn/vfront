@@ -94,7 +94,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 					array(
 						'primary'   => __( 'Primary Menu', 'storefront' ),
 						'secondary' => __( 'Secondary Menu', 'storefront' ),
-						'handheld'  => __( 'Handheld Menu', 'storefront' ),
 					)
 				)
 			);
@@ -228,17 +227,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			 */
 			add_theme_support( 'appearance-tools' );
 
-			add_theme_support(
-				'amp',
-				array(
-					'nav_menu_toggle' => array(
-						'nav_container_id'           => 'site-navigation',
-						'nav_container_toggle_class' => 'toggled',
-						'menu_button_id'             => 'site-navigation-menu-toggle',
-						'menu_button_toggle_class'   => 'toggled',
-					),
-				)
-			);
 		}
 
 		/**
@@ -344,15 +332,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_script( 'wc-cart-fragments' );
 
 			wp_enqueue_script( 'storefront-navigation', get_template_directory_uri() . '/assets/js/navigation' . $suffix . '.js', array(), $storefront_version, true );
-
-			if ( has_nav_menu( 'handheld' ) ) {
-				$storefront_l10n = array(
-					'expand'   => __( 'Expand child menu', 'storefront' ),
-					'collapse' => __( 'Collapse child menu', 'storefront' ),
-				);
-
-				wp_localize_script( 'storefront-navigation', 'storefrontScreenReaderText', $storefront_l10n );
-			}
 
 			if ( is_page_template( 'template-homepage.php' ) && has_post_thumbnail() ) {
 				wp_enqueue_script( 'storefront-homepage', get_template_directory_uri() . '/assets/js/homepage' . $suffix . '.js', array(), $storefront_version, true );

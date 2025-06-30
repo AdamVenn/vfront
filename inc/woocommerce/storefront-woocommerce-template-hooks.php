@@ -78,11 +78,15 @@ add_action( 'storefront_after_footer', 'storefront_sticky_single_add_to_cart', 9
 /**
  * Header
  *
+ * @see storefront_primary_navigation_wc_wrapper()
  * @see storefront_product_search()
  * @see storefront_header_cart()
+ * @see storefront_primary_navigation_wc_wrapper_close()
  */
-add_action( 'storefront_header', 'storefront_product_search', 40 );
-add_action( 'storefront_header', 'storefront_header_cart', 60 );
+add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper', 60 );
+add_action( 'storefront_header', 'storefront_header_cart', 61 );
+add_action( 'storefront_header', 'storefront_product_search', 62 );
+add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper_close', 67 );
 
 /**
  * Cart fragment
