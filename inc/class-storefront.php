@@ -435,7 +435,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			global $storefront_version;
 
 			wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
-			$accent_color     = get_theme_mod( 'storefront_accent_color' );
+			$accent_color     = get_theme_mod( 'v_accent_color' );
 			$background_color = storefront_get_content_background_color();
 			?>
 			<style type="text/css">
