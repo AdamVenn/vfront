@@ -115,44 +115,13 @@ table.shop_table_responsive {
 * Footer widgets
 */
 .footer-widgets {
-
-	@include clearfix;
+	@include flex-row-header-footer;
 	padding-top: var(--space-separation);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-	&.col-2 {
-
-		.block {
-
-			width: 50%;
-
-		}
-	}
-
-	&.col-3 {
-
-		.block {
-
-			width: 33%;
-
-		}
-	}
-
-	&.col-4 {
-
-		.block {
-
-			width: 25%;
-
-		}
-	}
 }
 
 /**
 * Comments
 */
-
-
 .comment-list {
 
 	@include clearfix;
