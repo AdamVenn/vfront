@@ -25,9 +25,11 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'customize_register' ), 10 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 130 );
+			add_action( 'admin_enqueue_scripts', array( $this, 'add_customizer_js' ) );
 			add_action( 'customize_controls_print_styles', array( $this, 'customizer_custom_control_css' ) );
 			add_action( 'customize_register', array( $this, 'edit_default_customizer_settings' ), 99 );
 			add_action( 'init', array( $this, 'default_theme_mod_values' ), 10 );
+			add_action( 'customize_controls_print_footer_scripts', array( $this, 'add_gradient_factor_label' ) );
 		}
 
 		/**
@@ -60,6 +62,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_button_background_color' => '#eeeeee',
 					'v_button_text_color'       => '#333333',
 					'v_background_color'        => '#ffffff',
+					'v_gradient_factor'         => 0,
 				)
 			);
 		}
@@ -645,6 +648,42 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Gradients
+			 */
+			$wp_customize->add_setting(
+				'v_gradient_factor',
+				array(
+					/**
+					 * Filters for modifying the amount of gradient in the color schemes.
+					 *
+					 * @param int -255 to 255 gradient factor value.
+					 */
+					'default'           => apply_filters( 'storefront_default_gradient_factor', 0 ),
+					'sanitize_callback' => 'sanitize_gradient_factor',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'v_gradient_factor',
+					array(
+						'label'    => __( 'Gradient Factor', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_gradient_factor',
+						'priority' => 2,
+						'type'     => 'range',
+						'input_attrs' => array(
+							'min'   => -64,
+							'max'   => 64,
+							'step'  => 1,
+							'value' => 0,
+						),
+						'custom_class' => 'gradient-lightness-control',
+					)
+				)
+			);
 		}
 
 		/**
@@ -668,6 +707,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				'box_color'                   => get_theme_mod( 'v_box_color' ),
 				'button_background_color'     => get_theme_mod( 'v_button_background_color' ),
 				'button_text_color'           => get_theme_mod( 'v_button_text_color' ),
+				'gradient_factor'             => get_theme_mod( 'v_gradient_factor' ),
 			);
 
 			/**
@@ -688,6 +728,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function get_css() {
 			$mods = $this->get_storefront_theme_mods();
+			$gradient_factor = $mods['gradient_factor'];
 			$mods = array_filter(
 				$mods,
 				function( $value, $key ) {
@@ -704,6 +745,8 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			foreach ( $mods as $key => $value ) {
 				// Create a CSS variable for each entry.
 				$css .= "    --{$key}: {$value};\n";
+				$dark = storefront_adjust_color_brightness( $value, $gradient_factor );
+				$css .= "    --{$key}_dark: {$dark};\n";
 			}
 
 			$css .= "}\n";
@@ -726,6 +769,33 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function add_customizer_css() {
 			wp_add_inline_style( 'storefront-style', $this->get_css() );
+		}
+
+		/**
+		 * Add JS used by the theme customizer
+		 *
+		 * @return void
+		 */
+		public function add_customizer_js() {
+			global $storefront_version;
+
+			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+			wp_enqueue_script( 'customizer-js', get_template_directory_uri() . '/assets/js/admin/customizer' . $suffix . '.js', array( 'jquery', 'customize-preview' ), $storefront_version, true );
+		}
+
+		/**
+		 * Add JS to label the gradient factor slider
+		 *
+		 * @return void
+		 */
+		public function add_gradient_factor_label() {
+			?>
+			<script>
+			wp.customize.control('v_gradient_factor', function(control) {
+				control.container.append('<span class="range-value">' + control.setting() + '</span>');
+			});
+			</script>
+			<?php
 		}
 
 		/**

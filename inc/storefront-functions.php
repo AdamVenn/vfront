@@ -195,3 +195,15 @@ function storefront_sanitize_choices( $input, $setting ) {
 function storefront_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
+
+/**
+ * Gradient factor sanitization callback.
+ *
+ * Allows values between -64 and 64
+ *
+ * @param int $gradient_factor value to be sanitized.
+ * @return int Clamped value
+ */
+function sanitize_gradient_factor( $gradient_factor ) {
+	return max( -64, min( 64, intval( $gradient_factor ) ) );
+}
