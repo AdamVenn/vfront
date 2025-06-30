@@ -570,23 +570,6 @@ if ( ! function_exists( 'storefront_homepage_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_social_icons' ) ) {
-	/**
-	 * Display social icons
-	 * If the subscribe and connect plugin is active, display the icons.
-	 *
-	 * @link http://wordpress.org/plugins/subscribe-and-connect/
-	 * @since 1.0.0
-	 */
-	function storefront_social_icons() {
-		if ( class_exists( 'Subscribe_And_Connect' ) ) {
-			echo '<div class="subscribe-and-connect-connect">';
-			subscribe_and_connect_connect();
-			echo '</div>';
-		}
-	}
-}
-
 if ( ! function_exists( 'storefront_get_sidebar' ) ) {
 	/**
 	 * Display storefront sidebar
