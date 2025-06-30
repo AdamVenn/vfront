@@ -35,7 +35,7 @@ body,
 button,
 input,
 textarea {
-	color: $color_body;
+	color: var(--text_color);
 	font-family: $base-font;
 	line-height: 1.618;
 	text-rendering: optimizeLegibility;
@@ -62,7 +62,7 @@ h6 {
 	clear: both;
 	font-weight: 300;
 	margin: 0 0 ms(-3);
-	color: darken($color_body, 20%);
+	color: var(--text_color);
 
 	a {
 		font-weight: 300;
@@ -275,7 +275,7 @@ button {
 }
 
 body {
-	background-color: $body-background;
+	background-color: var(--background_color);
 	overflow-x: hidden;
 }
 
@@ -292,10 +292,10 @@ body {
  * Header
  */
 .site-header {
-	background-color: #2c2d33;
+	background-color: var(--header_background_color);
 	padding-top: ms(3);
 	padding-bottom: ms(3);
-	color: #9aa0a7;
+	color: var(--header_text_color);
 	background-position: center center;
 	position: relative;
 	z-index: 999;
@@ -461,8 +461,8 @@ body {
  * Footer
  */
 .site-footer {
-	background-color: #f3f3f3;
-	color: mix($color_body, #333);
+	background-color: var(--footer_background_color);
+	color: var(--footer_text_color);
 	padding: ms(3) 0 ms(6);
 
 	h1,
@@ -900,9 +900,9 @@ input[type="submit"],
 	border: 0;
 	border-radius: 0;
 	background: none;
-	background-color: $color_body;
+	background-color: var(--button_background_color);
 	border-color: $color_body;
-	color: #fff;
+	color: var(--button_text_color);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	padding: ms(-2) ms(2);
 	text-decoration: none;
