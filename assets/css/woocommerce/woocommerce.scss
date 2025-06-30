@@ -725,8 +725,10 @@ a.reset_variations {
 
 .woocommerce-breadcrumb {
 	font-size: var(--font-size-small);
+	color: var(--accent_color);
 
 	a {
+		color: var(--accent_color);
 		text-decoration: underline;
 	}
 
