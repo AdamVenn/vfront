@@ -222,32 +222,3 @@ table.shop_table_responsive tr.component_table_item {
 	}
 }
 
-.right-sidebar .widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-
-	.widget_composite_summary_details_wrapper {
-
-		width: 75%;
-	}
-
-	.widget_composite_summary_ui_wrapper {
-
-		float: right; width: 25%;
-	}
-}
-
-.left-sidebar .widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-
-	.widget_composite_summary_details_wrapper {
-
-		width: calc(9 / 12 * 100%); float: right;
-	}
-
-	.widget_composite_summary_ui_wrapper {
-
-		width: 25%;
-	}
-
-	.composite_button {
-		float: left;
-	}
-}

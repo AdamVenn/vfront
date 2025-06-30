@@ -24,7 +24,6 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'customize_register' ), 10 );
-			add_filter( 'body_class', array( $this, 'layout_class' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 130 );
 			add_action( 'customize_controls_print_styles', array( $this, 'customizer_custom_control_css' ) );
 			add_action( 'customize_register', array( $this, 'edit_default_customizer_settings' ), 99 );
@@ -55,8 +54,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_footer_text_color'       => '#6d6d6d',
 					'v_button_background_color' => '#eeeeee',
 					'v_button_text_color'       => '#333333',
-					'storefront_layout'                  => 'right',
-					'background_color'                   => 'ffffff',
+					'background_color'          => 'ffffff',
 				)
 			);
 		}
@@ -457,48 +455,6 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				)
 			);
 
-			/**
-			 * Layout
-			 */
-			$wp_customize->add_section(
-				'storefront_layout',
-				array(
-					'title'    => __( 'Layout', 'storefront' ),
-					'priority' => 50,
-				)
-			);
-
-			$wp_customize->add_setting(
-				'storefront_layout',
-				array(
-					/**
-					 * Filters for modifying the default layout.
-					 *
-					 * @param string left/right based on RTL.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_layout', $layout = is_rtl() ? 'left' : 'right' ),
-					'sanitize_callback' => 'storefront_sanitize_choices',
-				)
-			);
-
-			$wp_customize->add_control(
-				new Storefront_Custom_Radio_Image_Control(
-					$wp_customize,
-					'storefront_layout',
-					array(
-						'settings' => 'storefront_layout',
-						'section'  => 'storefront_layout',
-						'label'    => __( 'General Layout', 'storefront' ),
-						'priority' => 1,
-						'choices'  => array(
-							'right' => get_template_directory_uri() . '/assets/images/customizer/controls/2cr.png',
-							'left'  => get_template_directory_uri() . '/assets/images/customizer/controls/2cl.png',
-						),
-					)
-				)
-			);
 		}
 
 		/**
@@ -575,22 +531,6 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function add_customizer_css() {
 			wp_add_inline_style( 'storefront-style', $this->get_css() );
-		}
-
-		/**
-		 * Layout classes
-		 * Adds 'right-sidebar' and 'left-sidebar' classes to the body tag
-		 *
-		 * @param  array $classes current body classes.
-		 * @return string[]          modified body classes
-		 * @since  1.0.0
-		 */
-		public function layout_class( $classes ) {
-			$left_or_right = get_theme_mod( 'storefront_layout' );
-
-			$classes[] = $left_or_right . '-sidebar';
-
-			return $classes;
 		}
 
 		/**

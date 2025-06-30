@@ -85,42 +85,6 @@ table.shop_table_responsive {
 	@include clearfix;
 }
 
-.content-area {
-
-	width: 75%;
-}
-
-.widget-area {
-
-	float: right; width: 25%;
-}
-
-.right-sidebar {
-
-	.content-area {
-
-		width: 75%;
-	}
-
-	.widget-area {
-
-		float: right; width: 25%;
-	}
-}
-
-.left-sidebar {
-
-	.content-area {
-
-		width: calc(9 / 12 * 100%); float: right;
-	}
-
-	.widget-area {
-
-		width: 25%;
-	}
-}
-
 .storefront-full-width-content {
 
 	.content-area {
