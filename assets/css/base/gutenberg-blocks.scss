@@ -179,33 +179,6 @@
 			}
 		}
 
-		@media (min-width: 600px) {
-
-			@for $i from 2 through 6 {
-				&.columns-#{$i} li {
-					margin-right: gutter(12);
-					width: span(math.div(12, $i));
-
-					&:nth-of-type( #{$i}n ) {
-						margin-right: 0;
-					}
-				}
-			}
-
-			body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
-
-				@for $i from 2 through 6 {
-					&.columns-#{$i} li {
-						margin-right: gutter(9);
-						width: span(math.div(9, $i));
-
-						&:nth-of-type( #{$i}n ) {
-							margin-right: 0;
-						}
-					}
-				}
-			}
-		}
 	}
 
 	// Paragraphs
@@ -394,17 +367,6 @@
 				}
 			}
 
-			@media ( min-width: $handheld ) {
-				width: calc(8 * (100vw / 12 ));
-				max-width: calc(8 * (100vw / 12 ));
-			}
-
-			@media ( min-width: $desktop ) {
-				width: calc(6 * (100vw / 12 ));
-				max-width: calc(6 * (100vw / 12 ));
-				padding-top: var(--space-around);
-				padding-bottom: var(--space-around);
-			}
 		}
 
 	}
@@ -416,7 +378,10 @@
 		.blocks-gallery-image,
 		.blocks-gallery-item {
 			width: span(6);
-			margin: 0 gutter(12) gutter(12) 0;
+			margin-top: 0;
+			margin-right: var(--space-around);
+			margin-bottom: 0;
+			margin-left: var(--space-around);
 			flex-grow: 0;
 
 			&:nth-of-type(even) {
@@ -426,47 +391,6 @@
 			figcaption {
 				font-size: var(--font-size-base);
 				padding: var(--space-around) var(--space-around) var(--space-around);
-			}
-		}
-
-		@media (min-width: 600px) {
-
-			.blocks-gallery-image,
-			.blocks-gallery-item {
-				margin: 0 gutter(12) gutter(12) 0;
-			}
-
-			@for $i from 2 through 8 {
-				&.columns-#{$i} .blocks-gallery-image,
-				&.columns-#{$i} .blocks-gallery-item {
-					margin-right: gutter(12);
-					width: math.div(100% - ( gutter(12) * ( $i - 1 ) ), $i);
-
-					&:nth-of-type( #{$i}n ) {
-						margin-right: 0;
-					}
-				}
-			}
-
-			body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
-
-				.blocks-gallery-image,
-				.blocks-gallery-item {
-					margin-bottom: gutter(9);
-					margin-right: gutter(9);
-				}
-
-				@for $i from 2 through 8 {
-					&.columns-#{$i} .blocks-gallery-image,
-					&.columns-#{$i} .blocks-gallery-item {
-						margin-right: gutter(9);
-						width: math.div(100% - ( gutter(9) * ( $i - 1 ) ), $i);
-
-						&:nth-of-type( #{$i}n ) {
-							margin-right: 0;
-						}
-					}
-				}
 			}
 		}
 	}
@@ -547,7 +471,7 @@
 
 			@media (min-width: 600px) {
 				padding-left: 0;
-				padding-right: gutter(12);
+				padding-right: var(--space-around);
 				margin-left: 0;
 
 				&:not(:last-child) {
@@ -559,7 +483,7 @@
 				}
 
 				body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
-					padding-right: gutter(9);
+					padding-right: var(--space-around);
 
 					&:nth-of-type(even) {
 						padding-right: 0;
@@ -590,14 +514,14 @@
 
 				&:not(:last-child) {
 					padding-right: 0;
-					margin-right: gutter(12);
+					margin-right: var(--space-around);
 				}
 
 				body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
 					padding-right: 0;
 
 					&:not(:last-child) {
-						margin-right: gutter(9);
+						margin-right: var(--space-around);
 					}
 				}
 			}

@@ -57,7 +57,7 @@
 .sc_info_box {
 
 	width: calc(4 / 9 * 100%); float: right;
-	@include gutters(inside);
+	margin: var(--space-around);
 }
 
 .page-template-template-fullwidth-php {
