@@ -431,6 +431,10 @@ body {
 
 .site-content {
 	outline: none;
+
+	&:focus-visible {
+		box-shadow: none;
+	}
 }
 
 .content-area {

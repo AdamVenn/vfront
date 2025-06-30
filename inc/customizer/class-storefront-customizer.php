@@ -63,6 +63,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_button_text_color'       => '#333333',
 					'v_background_color'        => '#ffffff',
 					'v_gradient_factor'         => 0,
+					'v_links_nav_to_content'       => false,
 				)
 			);
 		}
@@ -154,6 +155,36 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			 */
 			require_once dirname( __FILE__ ) . '/class-storefront-customizer-control-radio-image.php';
 			require_once dirname( __FILE__ ) . '/class-storefront-customizer-control-arbitrary.php';
+
+			/**
+			 * Settings section
+			 */
+			$wp_customize->add_section(
+				'v_settings',
+				array(
+					'title'    => __( 'Theme settings', 'storefront' ),
+					'priority' => 40,
+				)
+			);
+
+			$wp_customize->add_setting(
+				'v_links_nav_to_content',
+				array(
+					'default'           => apply_filters( 'v_links_nav_to_content', true ),
+					'sanitize_callback' => 'wp_validate_boolean',
+				)
+			);
+
+			$wp_customize->add_control(
+				'v_links_nav_to_content',
+				array(
+					'type'        => 'checkbox',
+					'section'     => 'v_settings',
+					'label'       => __( 'Navigate past header', 'storefront' ),
+					'description' => __( 'When the user clicks on a link in the menu bar, the page loads scrolled to the content, saving them scrolling past the header', 'storefront' ),
+					'priority'    => 10,
+				)
+			);
 
 			/**
 			 * Add the color scheme section
@@ -700,6 +731,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				'button_background_color'     => get_theme_mod( 'v_button_background_color' ),
 				'button_text_color'           => get_theme_mod( 'v_button_text_color' ),
 				'gradient_factor'             => get_theme_mod( 'v_gradient_factor' ),
+				'links_nav_to_main'           => get_theme_mod( 'v_links_nav_to_content' ),
 			);
 
 			/**
