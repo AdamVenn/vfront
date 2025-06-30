@@ -76,10 +76,6 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
 		storefront_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
 
-		ob_start();
-		storefront_handheld_footer_bar_cart_link();
-		$fragments['a.footer-cart-contents'] = ob_get_clean();
-
 		return $fragments;
 	}
 }
@@ -686,100 +682,6 @@ if ( ! function_exists( 'storefront_promoted_products' ) ) {
 				// phpcs:enable
 			}
 		}
-	}
-}
-
-if ( ! function_exists( 'storefront_handheld_footer_bar' ) ) {
-	/**
-	 * Display a menu intended for use on handheld devices
-	 *
-	 * @since 2.0.0
-	 */
-	function storefront_handheld_footer_bar() {
-		$links = array(
-			'my-account' => array(
-				'priority' => 10,
-				'callback' => 'storefront_handheld_footer_bar_account_link',
-			),
-			'search'     => array(
-				'priority' => 20,
-				'callback' => 'storefront_handheld_footer_bar_search',
-			),
-			'cart'       => array(
-				'priority' => 30,
-				'callback' => 'storefront_handheld_footer_bar_cart_link',
-			),
-		);
-
-		if ( did_action( 'woocommerce_blocks_enqueue_cart_block_scripts_after' ) || did_action( 'woocommerce_blocks_enqueue_checkout_block_scripts_after' ) ) {
-			return;
-		}
-
-		if ( wc_get_page_id( 'myaccount' ) === -1 ) {
-			unset( $links['my-account'] );
-		}
-
-		if ( wc_get_page_id( 'cart' ) === -1 ) {
-			unset( $links['cart'] );
-		}
-
-		$links = apply_filters( 'storefront_handheld_footer_bar_links', $links );
-		?>
-		<div class="storefront-handheld-footer-bar">
-			<ul class="columns-<?php echo count( $links ); ?>">
-				<?php foreach ( $links as $key => $link ) : ?>
-					<li class="<?php echo esc_attr( $key ); ?>">
-						<?php
-						if ( $link['callback'] ) {
-							call_user_func( $link['callback'], $key, $link );
-						}
-						?>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		</div>
-		<?php
-	}
-}
-
-if ( ! function_exists( 'storefront_handheld_footer_bar_search' ) ) {
-	/**
-	 * The search callback function for the handheld footer bar
-	 *
-	 * @since 2.0.0
-	 */
-	function storefront_handheld_footer_bar_search() {
-		echo '<a href="">' . esc_attr__( 'Search', 'storefront' ) . '</a>';
-		storefront_product_search();
-	}
-}
-
-if ( ! function_exists( 'storefront_handheld_footer_bar_cart_link' ) ) {
-	/**
-	 * The cart callback function for the handheld footer bar
-	 *
-	 * @since 2.0.0
-	 */
-	function storefront_handheld_footer_bar_cart_link() {
-		if ( ! storefront_woo_cart_available() ) {
-			return;
-		}
-		?>
-			<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php esc_html_e( 'Cart', 'storefront' ); ?>
-				<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
-			</a>
-		<?php
-	}
-}
-
-if ( ! function_exists( 'storefront_handheld_footer_bar_account_link' ) ) {
-	/**
-	 * The account callback function for the handheld footer bar
-	 *
-	 * @since 2.0.0
-	 */
-	function storefront_handheld_footer_bar_account_link() {
-		echo '<a href="' . esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) . '">' . esc_attr__( 'My Account', 'storefront' ) . '</a>';
 	}
 }
 

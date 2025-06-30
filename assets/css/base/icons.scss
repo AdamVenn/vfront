@@ -193,55 +193,6 @@ input[type="submit"],
 	}
 }
 
-.storefront-handheld-footer-bar {
-
-	ul {
-
-		li {
-
-			> a {
-
-				&::before {
-
-					@include sf-fa-icon;
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					text-align: center;
-					line-height: 2.618046972; // 4.236/1.618
-					font-size: var(--font-size-subtitle);
-					text-indent: 0;
-					display: block;
-					cursor: pointer;
-				}
-			}
-
-			&.search {
-
-				> a::before {
-					content: fa-content($fa-var-search);
-				}
-			}
-
-			&.my-account {
-
-				> a::before {
-					content: fa-content($fa-var-user);
-				}
-			}
-
-			&.cart {
-
-				> a::before {
-					content: fa-content($fa-var-shopping-basket);
-				}
-			}
-		}
-	}
-}
-
 .storefront-product-pagination {
 
 	a {
