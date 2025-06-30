@@ -591,7 +591,6 @@ body {
  * Tables
  */
 table {
-	width: 100%;
 	border-collapse: collapse;
 
 	caption {
@@ -601,7 +600,6 @@ table {
 
 	td,
 	th {
-		padding: var(--padding-small) var(--padding-large);
 		text-align: left;
 		vertical-align: top;
 
@@ -1086,17 +1084,18 @@ label.inline {
 }
 
 fieldset {
-	padding: var(--space-separation);
+	padding-left: var(--space-separation) !important; // Override normalize
+	padding-right: var(--space-separation) !important; // Override normalize
 	padding-top: var(--space-around);
-	border: 0;
+	border: var(--border-thin) dashed var(--text_color);
 	margin: 0;
-	margin-bottom: var(--space-around);
-	margin-top: var(--space-around);
+	margin-bottom: var(--space-separation);
+	margin-top: var(--space-separation);
 
 	legend {
 		font-weight: 600;
-		padding: var(--space-around) var(--space-around);
 		margin-left: - var(--space-around);
+		padding: 0 var(--space-around);
 	}
 }
 

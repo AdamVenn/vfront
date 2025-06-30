@@ -687,10 +687,7 @@ a.remove {
 					@include sf-fa-icon;
 					content: fa-content($fa-var-file-alt);
 					line-height: 1.618;
-					margin-left: var(--space-around);
-					width: 3em;
-					text-align: right;
-					float: right;
+					margin-right: var(--space-between-inner);
 					opacity: 0.25;
 				}
 
