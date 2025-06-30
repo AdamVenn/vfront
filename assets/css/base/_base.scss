@@ -857,7 +857,6 @@ table {
 	.entry-taxonomy {
 		margin: var(--space-around) 0 0;
 		padding-top: 1em;
-		border-top: 1px solid rgba(0, 0, 0, 0.05);
 	}
 
 	&.type-page {
@@ -1198,6 +1197,8 @@ video {
  */
 
 .site-main nav.navigation {
+
+	@include clearfix;
 
 	.nav-previous,
 	.nav-next {
