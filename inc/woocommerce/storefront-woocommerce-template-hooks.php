@@ -76,6 +76,8 @@ if ( ! get_theme_mod( 'vfront_use_original_gallery', false ) ) {
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5 );
 
+add_action( 'woocommerce_before_single_product_summary', 'vfront_show_product_video', 20 );
+
 // Move short description.
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
@@ -137,3 +139,74 @@ if ( class_exists( 'WC_Brands' ) ) {
 	add_action( 'woocommerce_single_product_summary', 'storefront_woocommerce_brands_single', 4 );
 	add_action( 'homepage', 'storefront_woocommerce_brands_homepage_section', 80 );
 }
+
+/**
+ * Admin
+ *
+ * @see vfront_save_video_url_field()
+ */
+
+// Allow adding a product video.
+add_filter(
+	'woocommerce_product_data_tabs',
+	function( $tabs ) {
+		$tabs['Video'] = array(
+			'label'     => __( 'Video', 'storefront' ),
+			'target'    => 'video_data_tab_options',
+			'class'     => array( 'show_if_simple', 'show_if_variable' ),
+			'priority'  => 15,
+		);
+		return $tabs;
+	}
+);
+
+// Save the chosen video URL to the database.
+add_action( 'woocommerce_process_product_meta', 'vfront_save_video_url_field' );
+
+// Content for the video tab in product admin page.
+add_filter(
+	'woocommerce_product_data_panels',
+	function() {
+
+		global $post;
+
+		// The 'id' attribute needs to match the 'target' parameter set above.
+		?>
+		<div id='video_data_tab_options' class='panel woocommerce_options_panel'>
+			<div class='options_group'>
+			<?php
+			woocommerce_wp_text_input(
+				array(
+					'label' => __( 'Video URL', 'storefront' ), // Text in the label in the editor.
+					'style' => 'width: 100%;',
+					'value' => get_post_meta( $post->ID, 'vid_url', true ),
+					'id' => 'vid_url', // required, will be used as meta_key.
+					'desc_tip' => 'false',
+				)
+			);
+			wp_nonce_field( 'update-vid-url-' . get_the_ID(), 'update-vid-url-' . get_the_ID() );
+			?>
+			</div>
+		</div>
+		<?php
+	}
+);
+
+// Remove unwanted tabs.
+add_filter(
+	'woocommerce_product_data_tabs',
+	function( $tabs ) {
+		unset( $tabs['marketplace-suggestions'] );
+
+		global $post;
+		$product = wc_get_product( $post->ID );
+		if ( ! $product ) {
+			return;
+		}
+		if ( $product->is_virtual() ) {
+			unset( $tabs['inventory'] );
+		}
+		return $tabs;
+	},
+	98
+);

@@ -925,7 +925,7 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 
 		?>
 		</div> <!-- v-gallery -->
-		
+
 		<?php
 
 		// Hidden overlays.
@@ -985,7 +985,7 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 
 		?>
 		</div> <!-- v-gallery -->
-		
+
 		<?php
 
 		// Hidden overlays.
@@ -1015,6 +1015,47 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 			</div> <!-- v-gal-overlay -->
 			<?php
 			++$index;
+		}
+	}
+}
+
+
+if ( ! function_exists( 'vfront_save_video_url_field' ) ) {
+	/**
+	 * Save the video URL into the database
+	 *
+	 * @param integer $post_id The post ID.
+	 * @return void
+	 */
+	function vfront_save_video_url_field( $post_id ) {
+		$nonce_name = 'update-vid-url-' . $post_id;
+
+		if ( isset( $_POST[ $nonce_name ] ) ) {
+			if ( wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ $nonce_name ] ) ), $nonce_name ) ) {
+				if ( isset( $_POST['vid_url'] ) ) {
+					$vid_url = esc_url_raw( wp_unslash( $_POST['vid_url'] ) );
+					update_post_meta( $post_id, 'vid_url', $vid_url );
+				}
+			}
+		}
+	}
+}
+
+if ( ! function_exists( 'vfront_show_product_video' ) ) {
+	/**
+	 * Show the product video on the single product page
+	 *
+	 * @return void
+	 */
+	function vfront_show_product_video() {
+		global $post;
+		$vid_url = get_post_meta( $post->ID, 'vid_url', true );
+		if ( isset( $vid_url ) && '' != $vid_url ) {
+			?>
+			<div class="v-product-video">
+				<iframe src="<?php echo esc_url( $vid_url ); ?>" width="768" height="432" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+			</div>
+			<?php
 		}
 	}
 }
