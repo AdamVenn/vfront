@@ -67,6 +67,7 @@ table.shop_table_responsive {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	align-items: center;
 	gap: var(--space-between-outer);
 
 	flex: 1 1 auto;
