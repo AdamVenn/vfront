@@ -2272,6 +2272,8 @@ table.my_account_orders {
 		bottom: 10%;
 		box-shadow: var(--drop-shadow);
 		align-items: center;
+
+		@include semitransparent-background($z-index);
 		
 		.storefront-product-pagination__title {
 			width: $product-name-width;
