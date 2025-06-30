@@ -603,7 +603,12 @@ a.reset_variations {
  * Reviews
  */
 #reviews {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-between-outer);
+
 	outline: none;
+	padding: var(--space-around);
 
 	#comments {
 		padding-top: 0;
@@ -614,20 +619,16 @@ a.reset_variations {
 	}
 
 	.commentlist {
+		@include flex-col;
+
 		list-style: none;
 		margin-left: 0;
 
 		li {
-			margin-bottom: var(--space-separation);
 			list-style: none;
-			clear: both;
-
-			@include clearfix;
 
 			.comment_container {
-				border-radius: 3px;
-
-				@include clearfix;
+				margin-top: var(--space-between-outer);
 
 				.comment-text {
 
@@ -648,13 +649,14 @@ a.reset_variations {
 			}
 
 			time {
-				opacity: 0.5;
+				opacity: 0.8;
 				font-size: var(--font-size-small);
 			}
 
 			.avatar {
 
-				width: calc(1 / 6 * 100%);
+				width: 15%;
+				float: left;
 				height: auto;
 			}
 
@@ -692,7 +694,8 @@ a.reset_variations {
 
 				.comment-text {
 
-					width: calc(4 / 5 * 100%); float: right;
+					width: 70%;
+					float: right;
 				}
 
 				li {
@@ -711,6 +714,21 @@ a.reset_variations {
 
 		label {
 			display: block;
+		}
+	}
+
+	.comment-form-author,
+	.comment-form-email {
+		width: 47%;
+	}
+
+	.comment-form-email {
+		margin-right: 0;
+	}
+
+	.comment-respond {
+		& p {
+			text-align: left;
 		}
 	}
 }
@@ -1730,30 +1748,13 @@ p.stars {
 .woocommerce-noreviews,
 p.no-comments {
 
-	@include clearfix;
-	margin-bottom: var(--space-separation);
-	background-color: $success;
-	margin-left: 0;
+	margin: var(--space-separation);
 	border-radius: 2px;
-	color: #fff;
-	clear: both;
-	border-left: 0.4em solid rgba(0, 0, 0, 0.15);
+	color: var(--text_color);
 	padding: 1em 2em 1em 3.5em;
 	position: relative;
 	list-style: none outside;
-
-	a {
-		color: #fff;
-
-		&:hover {
-			color: #fff;
-			opacity: 0.7;
-		}
-
-		&.button:hover {
-			opacity: 1;
-		}
-	}
+	box-shadow: var(--drop-shadow);
 
 	&::before {
 		font-family: "Font Awesome 5 Free";
@@ -1762,7 +1763,7 @@ p.no-comments {
 		position: absolute;
 		top: 1.05em;
 		left: 1.5em;
-		color: #fff;
+		color: var(--accent_color);
 	}
 
 	.button {
@@ -1805,12 +1806,6 @@ p.no-comments {
 
 .woocommerce-error {
 	list-style: none;
-}
-
-.woocommerce-info,
-.woocommerce-noreviews,
-p.no-comments {
-	background-color: $info;
 }
 
 .woocommerce-info.woocommerce-no-products-found {

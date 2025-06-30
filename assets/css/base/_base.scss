@@ -79,6 +79,7 @@ h6 {
 	font-weight: 300;
 	margin: 0 0 var(--space-around);
 	color: var(--heading_color);
+	text-align: center;
 
 	a {
 		font-weight: 300;
@@ -329,7 +330,7 @@ body {
 	color: var(--header_text_color);
 	background-position: center center;
 	position: relative;
-	z-index: 999;
+	z-index: 800;
 	box-shadow: var(--drop-shadow);
 
 	.site-logo-anchor,
@@ -746,10 +747,19 @@ table {
 }
 
 #respond {
-	clear: both;
-	padding: var(--space-separation);
-	background-color: rgba(0, 0, 0, 0.0125);
-	position: relative;
+	margin-left: var(--space-separation);
+	margin-right: var(--space-separation);
+	padding: var(--space-around);
+	border: var(--border-thin) solid var(--border_color);
+	box-shadow: var(--drop-shadow);
+
+	label {
+		display: block;
+	}
+
+	textarea {
+		display: block;
+	}
 
 	.comment-form-author,
 	.comment-form-email,
@@ -951,7 +961,7 @@ input[type="password"],
 input[type="search"],
 textarea,
 .input-text {
-	padding: var(--space-around);
+	padding: var(--padding-small) var(--padding-large);
 	background-color: var(--box_color);
 	color: var(--text_color);
 	border: 0;
@@ -970,13 +980,14 @@ textarea,
 
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: var(--space-around);
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
+	resize: vertical
 }
 
 label {
 	font-weight: 400;
+	text-align: left;
 }
 
 label.inline {
@@ -1155,10 +1166,6 @@ video {
 
 .site-main nav.navigation {
 
-	@include clearfix;
-	clear: both;
-	padding: var(--space-around) 0;
-
 	.nav-previous,
 	.nav-next {
 
@@ -1180,26 +1187,16 @@ video {
 
 }
 
-/**
- * Pagination
- */
 .pagination,
 .woocommerce-pagination {
-	padding: 1em 0;
-	border: 1px solid var(--border_color);
-	border-width: 1px 0;
+	padding: var(--space-around) 0;
 	text-align: center;
-	clear: both;
-
-	ul.page-numbers {
-
-		@include clearfix;
-	}
 
 	.page-numbers {
 		list-style: none;
 		margin: 0;
 		vertical-align: middle;
+		line-height: 0.8;
 
 		li {
 			display: inline-block;
@@ -1207,13 +1204,13 @@ video {
 			.page-numbers {
 				border-left-width: 0;
 				display: inline-block;
-				padding: var(--space-around) var(--space-around);
+				padding: var(--padding-small) var(--padding-large);
 				background-color: var(--box_color);
 				color: var(--text_color);
 
 				&.current {
 					background-color: var(--box_color);
-					border-color: var(--border_color);
+					border: var(--border-thin) solid var(--text_color);
 				}
 
 				&.dots {
@@ -1222,15 +1219,11 @@ video {
 
 				&.prev,
 				&.next {
-					padding-left: 1em;
-					padding-right: 1em;
+					padding-left: 2em;
+					padding-right: 2em;
 				}
-			}
-
-			a.page-numbers {
-
 				&:hover {
-					background-color: rgba(#000, 0.05);
+					filter: brightness(var(--brightness-on-hover));
 				}
 			}
 		}
@@ -1400,4 +1393,10 @@ form.customize-unpreviewable button,
 a.customize-unpreviewable,
 area.customize-unpreviewable {
 	text-shadow: unset !important;
+}
+
+.logged-in-as {
+	a {
+		@include underlined-link;
+	}
 }
