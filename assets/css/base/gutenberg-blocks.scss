@@ -22,60 +22,6 @@
 		width: auto;
 	}
 
-	// Global
-	@media ( min-width: $container-width ) {
-
-		.storefront-align-wide.page-template-template-fullwidth-php &,
-		.storefront-align-wide.storefront-full-width-content & {
-
-			.alignwide {
-				width: auto;
-				max-width: 1000%;
-				padding-left: var(--space-around);
-				padding-right: var(--space-around);
-				clear: both;
-			}
-
-			.alignwide {
-				margin-left: calc(25% - 25vw);
-				margin-right: calc(25% - 25vw);
-			}
-		}
-	}
-
-	// Image
-	.wp-block-image {
-
-		@media ( min-width: $container-width ) {
-
-			.storefront-align-wide.page-template-template-fullwidth-php &,
-			.storefront-align-wide.storefront-full-width-content & {
-
-				&.alignfull,
-				&.alignwide {
-					padding-left: 0;
-					padding-right: 0;
-				}
-			}
-		}
-	}
-
-	.wp-block-cover-image,
-	.wp-block-cover {
-
-		@media ( min-width: $container-width ) {
-
-			.storefront-align-wide.page-template-template-fullwidth-php &,
-			.storefront-align-wide.storefront-full-width-content & {
-
-				&.alignfull,
-				&.alignwide {
-					padding-left: 0;
-					padding-right: 0;
-				}
-			}
-		}
-	}
 }
 
 // Homepage
@@ -461,18 +407,6 @@
 			}
 		}
 
-		@media ( min-width: $container-width ) {
-
-			.storefront-align-wide.page-template-template-fullwidth-php &,
-			.storefront-align-wide.storefront-full-width-content & {
-
-				&.alignfull,
-				&.alignwide {
-					padding-left: 0;
-					padding-right: 0;
-				}
-			}
-		}
 	}
 
 	// Galleries

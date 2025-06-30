@@ -138,7 +138,8 @@ table.shop_table_responsive {
 .col-full {
 
 	@include clearfix;
-	@include container($container-width);
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0 var(--space-around);
 	box-sizing: content-box;
 }
