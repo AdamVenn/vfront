@@ -5,7 +5,6 @@
 /**
  * Imports
  */
-@import "bourbon";
 @import "../sass/utils/variables";
 @import "../sass/utils/mixins";
 @import "susy";
@@ -1048,8 +1047,7 @@ a.reset_variations {
 		width: 1em;
 		height: 1em;
 
-		@include border-top-radius(1em);
-		@include border-bottom-radius(1em);
+		border-radius: 1em;
 		cursor: ew-resize;
 		background: $color_links;
 		box-sizing: border-box;
@@ -1075,15 +1073,11 @@ a.reset_variations {
 		display: block;
 		border: 0;
 		background: $color_links;
-
-		@include border-top-radius(1em);
-		@include border-bottom-radius(1em);
+		border-radius: 1em;
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-
-		@include border-top-radius(1em);
-		@include border-bottom-radius(1em);
+		border-radius: 1em;
 		background: rgba(0, 0, 0, 0.1);
 		border: 0;
 	}

@@ -5,7 +5,6 @@
 /**
  * Imports
  */
-@import "bourbon";
 @import "../../sass/utils/variables";
 @import "../../sass/utils/mixins";
 @import "susy";
@@ -33,7 +32,8 @@
 				border: 0 !important;
 				margin: 0 !important;
 
-				@include border-top-radius(0);
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
 				background-color: transparent !important;
 			}
 
