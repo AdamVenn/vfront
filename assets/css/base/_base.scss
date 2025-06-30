@@ -963,7 +963,7 @@ input[type="search"],
 textarea,
 .input-text {
 	padding: var(--space-around);
-	background-color: var(--container_color);
+	background-color: var(--box_color);
 	color: var(--text_color);
 	border: 0;
 	-webkit-appearance: none;
@@ -1215,11 +1215,11 @@ video {
 				border-left-width: 0;
 				display: inline-block;
 				padding: var(--space-around) var(--space-around);
-				background-color: var(--container_color);
+				background-color: var(--box_color);
 				color: var(--text_color);
 
 				&.current {
-					background-color: var(--container_color);
+					background-color: var(--box_color);
 					border-color: var(--border_color);
 				}
 
