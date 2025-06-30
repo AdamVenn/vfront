@@ -208,3 +208,22 @@ add_filter(
 	},
 	98
 );
+
+/**
+ * Navigation
+ *
+ * @see woocommerce_get_endpoint_url
+ */
+
+if ( get_theme_mod( 'v_links_nav_to_content', false ) ) {
+	// Jump straight to main to save the user scrolling past the header.
+	add_filter(
+		'woocommerce_get_endpoint_url',
+		function( $url ) {
+			if ( ! strstr( $url, '#' ) && ! empty( $url ) ) {
+				$url = $url . '#content';
+			}
+			return $url;
+		}
+	);
+}

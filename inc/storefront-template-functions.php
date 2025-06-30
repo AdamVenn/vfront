@@ -648,3 +648,19 @@ if ( ! function_exists( 'storefront_header_container_close' ) ) {
 		echo '</div>';
 	}
 }
+
+if ( get_theme_mod( 'v_links_nav_to_content', false ) ) {
+	// Jump straight to main to save the user scrolling past the header.
+	add_filter(
+		'wp_nav_menu_objects',
+		function ( $items ) {
+			foreach ( $items as &$item ) {
+				if ( ! strstr( $item->url, '#' ) && ! empty( $item->url ) ) {
+					$item->url = $item->url . '#content';
+				}
+			}
+			return $items;
+		}
+	);
+}
+
