@@ -40,11 +40,11 @@
 		 * @hooked storefront_header_container_close                 - 41
 		 * @hooked storefront_primary_navigation_wrapper             - 42
 		 * @hooked storefront_primary_navigation                     - 50
-		 * @hooked storefront_primary_navigation_wc_wrapper          - 60
-		 * @hooked storefront_header_cart                            - 61
-		 * @hooked storefront_product_search                         - 62
-		 * @hooked storefront_primary_navigation_wc_wrapper_close    - 67
-		 * @hooked storefront_primary_navigation_wrapper_close       - 68
+		 * @hooked storefront_primary_navigation_wrapper_close       - 60
+		 * @hooked storefront_primary_navigation_wc_wrapper          - 64
+		 * @hooked storefront_header_cart                            - 66
+		 * @hooked storefront_product_search                         - 68
+		 * @hooked storefront_primary_navigation_wc_wrapper_close    - 70
 		 */
 		do_action( 'storefront_header' );
 		?>

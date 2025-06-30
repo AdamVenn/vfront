@@ -27,7 +27,6 @@ table.shop_table_responsive {
 		@include flex-row;
 		margin-left: 0;
 		margin-right: 0;
-		margin-bottom: var(--space-between-outer);
 	}
 
 	.site-branding {
