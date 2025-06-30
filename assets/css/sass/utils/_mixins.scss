@@ -72,3 +72,48 @@
 	// We also need word-wrap and for IE.
 	-ms-word-break: break-all;
 }
+
+// Flexboxes
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: var(--space-between-inner);
+}
+
+// Standardize scrollbar appearance
+@mixin scrollbar-on-hover-x {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-track {
+        width: 0;
+        height: 0;
+    }
+
+    &::-webkit-scrollbar:hover {
+        width: unset;
+        height: unset;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        width: unset;
+        height: unset;
+    }
+    &::-webkit-scrollbar-track:hover {
+        width: unset;
+        height: unset;
+    }
+
+    scrollbar-width: none;
+
+    &:hover {
+		scrollbar-width: thin;
+    }
+}

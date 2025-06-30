@@ -202,19 +202,11 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 	function storefront_primary_navigation() {
 		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'storefront' ); ?>">
-		<button id="site-navigation-menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span><?php echo esc_html( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
 					'container_class' => 'primary-navigation',
-				)
-			);
-
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'handheld',
-					'container_class' => 'handheld-navigation',
 				)
 			);
 			?>
@@ -639,6 +631,24 @@ if ( ! function_exists( 'storefront_primary_navigation_wrapper_close' ) ) {
 	 */
 	function storefront_primary_navigation_wrapper_close() {
 		echo '</div></div>';
+	}
+}
+
+if ( ! function_exists( 'storefront_primary_navigation_wc_wrapper' ) ) {
+	/**
+	 * The primary navigation wrapper for WooCommerce widgets
+	 */
+	function storefront_primary_navigation_wc_wrapper() {
+		echo '<div class="storefront-wc-header-widgets">';
+	}
+}
+
+if ( ! function_exists( 'storefront_primary_navigation_wc_wrapper_close' ) ) {
+	/**
+	 * The primary navigation wrapper for WooCommerce widgets close
+	 */
+	function storefront_primary_navigation_wc_wrapper_close() {
+		echo '</div>';
 	}
 }
 

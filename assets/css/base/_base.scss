@@ -318,29 +318,6 @@ body {
 	}
 }
 
-.home.blog,
-.home.page:not(.page-template-template-homepage),
-.home.post-type-archive-product {
-
-	.site-header {
-		margin-bottom: var(--space-separation);
-	}
-}
-
-.no-wc-breadcrumb {
-
-	.site-header {
-		margin-bottom: var(--space-separation);
-	}
-
-	&.page-template-template-homepage {
-
-		.site-header {
-			margin-bottom: 0;
-		}
-	}
-}
-
 .header-widget-region {
 
 	@include clearfix;
@@ -355,9 +332,7 @@ body {
 }
 
 .site-branding {
-	float: left;
 	margin-bottom: 0;
-	width: calc(100% - 120px);
 
 	.site-title {
 		font-size: 2em;
@@ -551,18 +526,6 @@ body {
 	clip-path: none;
 }
 
-/**
- * Clearing
- */
-.clear,
-.entry-content,
-.comment-content,
-.site-header,
-.site-content,
-.site-footer {
-
-	@include clearfix;
-}
 
 /**
  * Tables
@@ -1194,189 +1157,6 @@ iframe,
 object,
 video {
 	max-width: 100%;
-}
-
-/**
- * Main Naivgation
- */
-
-/**
- * General Menu Styles
- */
-.secondary-navigation {
-	display: none;
-}
-
-button.menu-toggle {
-	cursor: pointer;
-	text-align: left;
-	float: right;
-	position: relative;
-	border: 2px solid transparent;
-	box-shadow: none;
-	border-radius: 2px;
-	background-image: none;
-	padding: var(--space-around);
-	font-size: var(--font-size-small);
-	max-width: 120px;
-
-	&:hover {
-		background-image: none;
-	}
-
-	span::before {
-		transition: all, ease, 0.2s;
-	}
-
-	&::before,
-	&::after,
-	span::before {
-		content: "";
-		display: block;
-		height: 2px;
-		width: 14px;
-		position: absolute;
-		top: 50%;
-		left: 1em;
-		margin-top: -1px;
-		transition: all, ease, 0.2s;
-		border-radius: 3px;
-	}
-
-	&::before {
-		transform: translateY(-4px);
-	}
-
-	&::after {
-		transform: translateY(4px);
-	}
-}
-
-.toggled {
-
-	button.menu-toggle {
-
-		&::before,
-		&::after {
-			transform: rotate(45deg);
-		}
-
-		&::after {
-			transform: rotate(-45deg);
-		}
-
-		span::before {
-			opacity: 0;
-		}
-	}
-}
-
-.primary-navigation {
-	display: none;
-}
-
-.main-navigation {
-
-	@include clearfix;
-
-	div.menu {
-		display: none; // Hide the default menu to stop both it and the handheld menu displaying, when no primary menu has been set...
-	}
-
-	div.menu:last-child {
-		display: block; // ... but display it if a handheld menu hasn't been set either.
-	}
-
-	.menu {
-		clear: both;
-	}
-}
-
-.handheld-navigation,
-.nav-menu,
-.main-navigation div.menu > ul:not(.nav-menu) {
-	overflow: hidden;
-	max-height: 0; /* We have to use max-height because `height` isn't animatable */
-	transition: all, ease, 0.8s;
-}
-
-.handheld-navigation {
-	clear: both;
-
-	ul {
-		margin: 0;
-
-		&.menu {
-
-			li {
-				position: relative;
-
-				button {
-
-					&::after {
-						transition: all, ease, 0.9s;
-					}
-
-					&.toggled-on::after {
-						transform: rotate(180deg);
-					}
-				}
-			}
-
-			.sub-menu {
-				visibility: hidden;
-				opacity: 0;
-				max-height: 0;
-				transition: all, ease, 0.9s;
-
-				&.toggled-on {
-					visibility: visible;
-					max-height: 9999px;
-					opacity: 1;
-				}
-			}
-		}
-	}
-
-	.dropdown-toggle {
-		background: transparent;
-		position: absolute;
-		top: 0;
-		right: 0;
-		display: block;
-	}
-}
-
-.main-navigation.toggled {
-
-	.handheld-navigation,
-	.menu > ul:not(.nav-menu),
-	ul[aria-expanded="true"] {
-		max-height: 9999px;
-	}
-}
-
-.main-navigation ul {
-	margin-left: 0;
-	list-style: none;
-	margin-bottom: 0;
-
-	ul {
-		display: block;
-		margin-left: var(--space-around);
-	}
-
-	li {
-
-		a {
-			padding: var(--space-around) 0;
-			display: block;
-
-			&:hover {
-				color: #e6e6e6;
-			}
-		}
-	}
 }
 
 /**
