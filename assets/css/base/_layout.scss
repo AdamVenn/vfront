@@ -17,10 +17,8 @@ table.shop_table_responsive {
 }
 
 .site-header {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	@include flex-row-header-footer;
+
 	padding-top: var(--space-separation);
 	padding-bottom: 0;
 	margin-bottom: var(--space-separation);
@@ -63,12 +61,8 @@ table.shop_table_responsive {
 
 // WooCommerce widget container
 .storefront-wc-header-widgets {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	@include flex-row-header-footer;
 	align-items: center;
-	gap: var(--space-between-outer);
 
 	flex: 1 1 auto;
 }
@@ -279,11 +273,7 @@ table.shop_table_responsive {
 }
 
 .storefront-primary-navigation > .col-full {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	gap: var(--space-between-outer);
+	@include flex-row-header-footer;
 }
 
 .main-navigation,
