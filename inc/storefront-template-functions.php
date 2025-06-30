@@ -609,7 +609,7 @@ if ( ! function_exists( 'storefront_primary_navigation_wrapper_close' ) ) {
 	 * The primary navigation wrapper close
 	 */
 	function storefront_primary_navigation_wrapper_close() {
-		echo '</div></div>';
+		echo '</div><!-- col-full --></div><!-- storefront-primary-navigation -->';
 	}
 }
 
@@ -627,7 +627,7 @@ if ( ! function_exists( 'storefront_primary_navigation_wc_wrapper_close' ) ) {
 	 * The primary navigation wrapper for WooCommerce widgets close
 	 */
 	function storefront_primary_navigation_wc_wrapper_close() {
-		echo '</div>';
+		echo '</div><!-- storefront-wc-header-widgets -->';
 	}
 }
 
