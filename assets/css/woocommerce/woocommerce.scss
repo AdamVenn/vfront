@@ -115,6 +115,7 @@ $product-image-width: 120px;
  * Shop tables
  */
 table.shop_table_responsive {
+	@include narrow-center;
 
 	thead {
 		display: none;
@@ -128,22 +129,13 @@ table.shop_table_responsive {
 	}
 
 	tr {
-
+	
 		td {
-
-			@include clearfix;
-
 			display: block;
-			text-align: right;
-			clear: both;
+			text-align: center;
 
-			&[data-title] {
-
-				&::before {
-					content: attr(data-title) ": ";
-					font-weight: 600;
-					float: left;
-				}
+			&:last-of-type {
+				margin-bottom: var(--space-between-outer);
 			}
 
 			&.product-remove {
