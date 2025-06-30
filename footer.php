@@ -22,7 +22,6 @@
 			 * Functions hooked in to storefront_footer action
 			 *
 			 * @hooked storefront_footer_widgets - 10
-			 * @hooked storefront_credit         - 20
 			 */
 			do_action( 'storefront_footer' );
 			?>
