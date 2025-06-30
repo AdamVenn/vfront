@@ -310,7 +310,7 @@ body {
 	background-position: center center;
 	position: relative;
 	z-index: 999;
-	border-bottom: 1px solid transparent;
+	box-shadow: var(--drop-shadow);
 
 	.site-logo-anchor,
 	.site-logo-link,
@@ -373,6 +373,15 @@ body {
 
 .site-content {
 	outline: none;
+}
+
+.content-area,
+.widget-area {
+
+	background-color: var(--container_color);
+	box-shadow: var(--drop-shadow);
+	border-radius: var(--rounded-corner-large);
+
 }
 
 .page-template-template-homepage:not(.has-post-thumbnail) {
