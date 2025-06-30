@@ -99,7 +99,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 * Set Customizer setting defaults.
 		 * These defaults need to be applied separately as child themes can filter storefront_setting_default_values
 		 *
-		 * @param  array $wp_customize the Customizer object.
+		 * @param  WP_Customize_Manager $wp_customize the Customizer object.
 		 * @uses   get_storefront_default_setting_values()
 		 */
 		public function edit_default_customizer_settings( $wp_customize ) {
