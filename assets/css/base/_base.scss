@@ -975,6 +975,7 @@ input[type="search"] {
 
 	&::placeholder {
 		color: var(--text_color);
+		opacity: 0.6;
 	}
 }
 
@@ -992,7 +993,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea,
-.input-text {
+.input-text,
+.select2 {
 	padding: var(--padding-small) var(--padding-large);
 	background-color: var(--box_color);
 	color: var(--text_color);
@@ -1007,6 +1009,57 @@ textarea,
 	// Maintain the box shadow used for focus and add drop shadow
 	&:focus-visible {
 		box-shadow: var(--drop-shadow), var(--focus-inner-shadow);
+	}
+
+	&::placeholder {
+		color: var(--text_color);
+		opacity: 0.6;
+	}
+}
+
+// Select2 - jquery dropdown menu
+
+// The select2 form field
+.select2 {
+	.selection {
+		.select2-selection {
+			background: none; // The container, .select2, has this.
+			border: none; // The container, .select2, has this.
+			padding: 0; // The container, .select2, has this.
+
+			color: var(--text_color);
+			
+			span {
+				color: var(--text_color);
+				padding: 0;
+			}
+
+			span.select2-selection__placeholder {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+// The select2 dropdown menu which appears on click
+.select2-container {
+	
+	.select2-selection {
+		display: unset;
+	}
+
+	// List of choices
+	.select2-results {
+		ul {
+			background-color: var(--box_color);
+			color: var(--text_color);
+
+			// The currently hovered option
+			.select2-results__option--highlighted {
+				background-color: var(--container_color);
+				color: var(--accent_color);
+			}
+		}
 	}
 }
 
