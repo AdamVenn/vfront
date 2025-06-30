@@ -337,11 +337,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_style_add_data( 'storefront-icons', 'rtl', 'replace' );
 
 			/**
-			 * Fonts
-			 */
-			wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), $storefront_version );
-
-			/**
 			 * Scripts
 			 */
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
