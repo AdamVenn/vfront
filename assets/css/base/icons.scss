@@ -210,7 +210,6 @@ input[type="submit"],
 
 			&::after {
 				content: fa-content($fa-var-angle-left);
-				padding-right: var(--space-around);
 			}
 		}
 
@@ -218,7 +217,6 @@ input[type="submit"],
 
 			&::after {
 				content: fa-content($fa-var-angle-right);
-				padding-left: var(--space-around);
 			}
 		}
 	}

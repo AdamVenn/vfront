@@ -151,3 +151,26 @@
 		scrollbar-width: thin;
     }
 }
+
+// Add semitransparent background to floating element
+@mixin semitransparent-background($z-index: 20000) {
+	z-index: $z-index;
+
+	&::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		background-color: var(--container_color);
+		opacity: 0.9;
+	}
+
+	* {
+		z-index: calc($z-index + 1);
+	}
+
+	&::after {
+		z-index: calc($z-index + 1);
+	}
+}
