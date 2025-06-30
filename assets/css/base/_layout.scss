@@ -225,10 +225,6 @@ table.shop_table_responsive {
 
 			width: 50%;
 
-			&.footer-widget-2 {
-
-				@include last;
-			}
 		}
 	}
 
@@ -238,10 +234,6 @@ table.shop_table_responsive {
 
 			width: 33%;
 
-			&.footer-widget-3 {
-
-				@include last;
-			}
 		}
 	}
 
@@ -251,10 +243,6 @@ table.shop_table_responsive {
 
 			width: 25%;
 
-			&.footer-widget-4 {
-
-				@include last;
-			}
 		}
 	}
 }
@@ -392,11 +380,6 @@ table.shop_table_responsive {
 	.comment-form-url {
 
 		width: calc(3 / 9 * 100%);
-	}
-
-	.comment-form-url {
-
-		@include last;
 	}
 
 	.comment-form-comment {
