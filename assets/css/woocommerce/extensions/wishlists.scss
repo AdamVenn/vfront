@@ -64,7 +64,7 @@
 
 	.wl-meta-share,
 	.wl-share-url {
-		border-bottom-color: $color_border;
+		border-bottom-color: var(--border_color);
 	}
 }
 

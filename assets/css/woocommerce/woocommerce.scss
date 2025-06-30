@@ -343,7 +343,7 @@ ul.products,
 
 		.price {
 			display: block;
-			color: $color_body;
+			color: var(--text_color);
 			font-weight: 400;
 			margin-bottom: 1rem;
 
@@ -685,7 +685,7 @@ ul.products,
 		.product_meta {
 			font-size: var(--font-size-small);
 			padding-top: 1em;
-			border-top: 1px solid $color_border;
+			border-top: 1px solid var(--border_color);
 
 			.sku_wrapper,
 			.posted_in,
@@ -880,7 +880,7 @@ a.reset_variations {
 
 	li {
 		padding: 1em 0;
-		border-bottom: 1px solid $color_border;
+		border-bottom: 1px solid var(--border_color);
 
 		@include clearfix;
 
@@ -948,7 +948,7 @@ a.reset_variations {
 	}
 
 	p.total {
-		border-bottom: 1px solid $color_border;
+		border-bottom: 1px solid var(--border_color);
 	}
 
 	.buttons {
@@ -1177,7 +1177,7 @@ table.cart {
 		.coupon {
 			padding-bottom: 1em;
 			margin-bottom: 1em;
-			border-bottom: 1px solid $color_border;
+			border-bottom: 1px solid var(--border_color);
 
 			.coupon-error-notice {
 				color: $error;
@@ -1434,7 +1434,7 @@ form.checkout {
 		padding: var(--space-around);
 		box-shadow: inset 0 1px 3px rgba(#000, 0.2);
 		margin-bottom: 16px;
-		background-color: rgba(#000, 0.05);
+		background-color: var(--container_color);
 	}
 
 	.place-order {
@@ -1511,11 +1511,11 @@ label.inline {
 
 		ul {
 			margin-left: 0;
-			border-top: 1px solid $color_border;
+			border-top: 1px solid var(--border_color);
 
 			li {
 				list-style: none;
-				border-bottom: 1px solid $color_border;
+				border-bottom: 1px solid var(--border_color);
 				position: relative;
 
 				&.woocommerce-MyAccount-navigation-link {
@@ -1800,7 +1800,7 @@ p.stars {
 			font-family: "Font Awesome 5 Free";
 			content: "\f005";
 			font-size: 0.95em; // Font-awesome glyph is rectangular.
-			color: $color_body;
+			color: var(--text_color);
 			text-indent: 0;
 			opacity: 0.25;
 		}
@@ -1808,7 +1808,7 @@ p.stars {
 		&:hover {
 
 			~ a::before {
-				color: $color_body;
+				color: var(--text_color);
 				opacity: 0.25;
 			}
 		}
@@ -1835,7 +1835,7 @@ p.stars {
 			}
 
 			~ a::before {
-				color: $color_body;
+				color: var(--text_color);
 				opacity: 0.25;
 			}
 		}
@@ -1853,8 +1853,8 @@ p.stars {
 .wc-block-grid__product-onsale,
 .onsale {
 	border: 1px solid;
-	border-color: $color_body;
-	color: $color_body;
+	border-color: var(--border-color);
+	color: var(--text_color);
 	padding: 0.202em var(--space-around);
 	font-size: var(--font-size-small);
 	text-transform: uppercase;
@@ -1888,12 +1888,12 @@ p.stars {
 		list-style: none;
 		margin-left: 0;
 		text-align: left;
-		border-top: 1px solid $color_border;
+		border-top: 1px solid var(--border_color);
 
 		li {
 			display: block;
 			margin: 0;
-			border-bottom: 1px solid $color_border;
+			border-bottom: 1px solid var(--border_color);
 			position: relative;
 
 			a {
