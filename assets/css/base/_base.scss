@@ -53,6 +53,23 @@ summary {
 	display: list-item;
 }
 
+// Remove focus styles for non-keyboard focus
+:focus:not(:focus-visible),
+:focus-visible {
+  	outline: 0;
+  	box-shadow: none;
+}
+
+// Add back focus for tab navigation
+:focus,
+.focus-visible:focus:not(:focus-visible) {
+	// Outline can be cut off
+	outline: 0;
+	// So use inset box shadow instead
+	box-shadow: 0px 0px 0px 2px var(--accent_color) inset;
+}
+
+
 h1,
 h2,
 h3,
@@ -250,16 +267,6 @@ img {
 a {
 	color: var(--link_color);
 	text-decoration: none;
-}
-
-a,
-input,
-textarea,
-button {
-
-	&:focus {
-		outline: 2px solid $color_woocommerce;
-	}
 }
 
 // Wait, what..?
