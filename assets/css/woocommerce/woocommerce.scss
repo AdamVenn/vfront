@@ -504,7 +504,7 @@ ul.products,
 
 					li {
 
-						@include span( 2 of 4 );
+						width: 50%;
 
 						&:nth-child(2n) {
 							margin-right: 0;
@@ -523,7 +523,7 @@ ul.products,
 
 					li {
 
-						@include span( 1.333333333 of 4 );
+						width: calc(1.33 / 4 * 100%);
 
 						&:nth-child(3n) {
 							margin-right: 0;
@@ -542,7 +542,7 @@ ul.products,
 
 					li {
 
-						@include span( 1 of 4 );
+						width: 25%;
 
 						&:nth-child(4n) {
 							margin-right: 0;
@@ -561,7 +561,7 @@ ul.products,
 
 					li {
 
-						@include span( 0.8 of 4 );
+						width: calc(0.8 / 4 * 100%);
 
 						&:nth-child(5n) {
 							margin-right: 0;
@@ -769,7 +769,7 @@ a.reset_variations {
 
 				.comment-text {
 
-					@include span(last 5 of 6);
+					width: calc(5 / 6 * 100%); float: right;
 
 					.star-rating {
 						float: right;
@@ -792,7 +792,7 @@ a.reset_variations {
 
 			.avatar {
 
-				@include span(1 of 6);
+				width: calc(1 / 6 * 100%);
 				height: auto;
 			}
 
@@ -820,17 +820,17 @@ a.reset_variations {
 			ul.children {
 				margin: 0;
 
-				@include span(last 5 of 6);
+				width: calc(5 / 6 * 100%); float: right;
 				padding-top: var(--space-separation);
 
 				.avatar {
 
-					@include span(1 of 5);
+					width: 20%;
 				}
 
 				.comment-text {
 
-					@include span(last 4 of 5);
+					width: calc(4 / 5 * 100%); float: right;
 				}
 
 				li {
@@ -2319,7 +2319,7 @@ ul.products,
 
 				li.product {
 
-					@include span(6 of 12);
+					width: 50%;
 				}
 			}
 
@@ -2327,7 +2327,7 @@ ul.products,
 
 				li.product {
 
-					@include span(4 of 12);
+					width: calc(4 / 12 * 100%);
 				}
 			}
 
@@ -2335,7 +2335,7 @@ ul.products,
 
 				li.product {
 
-					@include span(3 of 12);
+					width: 25%;
 				}
 			}
 
@@ -2352,7 +2352,7 @@ ul.products,
 
 				li.product {
 
-					@include span(2 of 12);
+					width: calc(2 / 12 * 100%);
 				}
 			}
 		}
@@ -2368,7 +2368,7 @@ ul.products,
 
 		li.product {
 
-			@include span(3 of 9);
+			width: calc(3 / 9 * 100%);
 		}
 
 		&.columns-1 {
@@ -2393,7 +2393,7 @@ ul.products,
 
 			li.product {
 
-				@include span(3 of 9);
+				width: calc(3 / 9 * 100%);
 			}
 		}
 
@@ -2419,7 +2419,7 @@ ul.products,
 
 			li.product {
 
-				@include span(1.5 of 9);
+				width: calc(1.5 / 9 * 100%);
 			}
 		}
 	}
@@ -2434,7 +2434,7 @@ ul.products,
 
 		.images {
 
-			@include span(4 of 9);
+			width: calc(4 / 9 * 100%);
 			margin-bottom: var(--space-separation);
 
 			.thumbnails {
@@ -2443,7 +2443,7 @@ ul.products,
 
 				a.zoom {
 
-					@include span(1 of 4);
+					width: 25%;
 
 					&.last {
 
@@ -2455,13 +2455,13 @@ ul.products,
 
 		.woocommerce-product-gallery {
 
-			@include span(4 of 9);
+			width: calc(4 / 9 * 100%);
 			margin-bottom: var(--space-separation);
 		}
 
 		.summary {
 
-			@include span(last 5 of 9);
+			width: calc(5 / 9 * 100%); float: right;
 		}
 
 		.woocommerce-tabs {
@@ -2489,14 +2489,14 @@ ul.products,
 
 		.images {
 
-			@include span(5 of 12);
+			width: calc(5 / 12 * 100%);
 			margin-bottom: var(--space-separation);
 
 			.thumbnails {
 
 				a.zoom {
 
-					@include span(1 of 5);
+					width: 20%;
 
 					&.last {
 						margin-right: 0;
@@ -2507,7 +2507,7 @@ ul.products,
 
 		.woocommerce-product-gallery {
 
-			@include span(5 of 12);
+			width: calc(5 / 12 * 100%);
 			margin-bottom: var(--space-separation);
 
 			&.woocommerce-product-gallery--columns-2 {
@@ -2516,7 +2516,7 @@ ul.products,
 
 					li {
 
-						@include span( 2.5 of 5 );
+						width: 50%;
 
 						&:nth-child(2n) {
 							margin-right: 0;
@@ -2531,7 +2531,7 @@ ul.products,
 
 					li {
 
-						@include span( 1.666666667 of 5 );
+						width: calc(1.67 / 5 * 100%);
 
 						&:nth-child(3n) {
 							margin-right: 0;
@@ -2546,7 +2546,7 @@ ul.products,
 
 					li {
 
-						@include span( 1.25 of 5 );
+						width: calc(1.25 / 5 * 100%);
 
 						&:nth-child(4n) {
 							margin-right: 0;
@@ -2561,7 +2561,7 @@ ul.products,
 
 					li {
 
-						@include span( 1 of 5 );
+						width: 20%;
 
 						&:nth-child(5n) {
 							margin-right: 0;
@@ -2573,7 +2573,7 @@ ul.products,
 
 		.summary {
 
-			@include span(last 7 of 12);
+			width: calc(7 / 12 * 100%); float: right;
 			margin-bottom: var(--space-separation);
 		}
 
@@ -2590,30 +2590,30 @@ ul.products,
 
 				.avatar {
 
-					@include span(1 of 8);
+					width: calc(1 / 8 * 100%);
 				}
 
 				.comment_container {
 
 					.comment-text {
 
-						@include span(last 7 of 8);
+						width: calc(7 / 8 * 100%); float: right;
 					}
 				}
 			}
 
 			ul.children {
 
-				@include span(last 7 of 8);
+				width: calc(7 / 8 * 100%); float: right;
 
 				.avatar {
 
-					@include span(1 of 7);
+					width: calc(1 / 7 * 100%);
 				}
 
 				.comment-text {
 
-					@include span(last 6 of 7);
+					width: calc(6 / 7 * 100%); float: right;
 				}
 			}
 		}
@@ -2780,13 +2780,13 @@ table.cart {
 
 	.cross-sells {
 
-		@include span(4 of 9);
+		width: calc(4 / 9 * 100%);
 	}
 
 	.cart_totals,
 	.shipping_calculator {
 
-		@include span(last 5 of 9);
+		width: calc(5 / 9 * 100%); float: right;
 		margin: 0;
 		clear: right;
 	}
@@ -2809,13 +2809,13 @@ table.cart {
 
 		.cross-sells {
 
-			@include span(6 of 12);
+			width: 50%;
 		}
 
 		.cart_totals,
 		.shipping_calculator {
 
-			@include span(last 6 of 12);
+			width: calc(6 / 12 * 100%); float: right;
 		}
 	}
 }
@@ -2841,16 +2841,16 @@ table.cart {
 
 .col2-set {
 
-	@include span(5 of 9);
+	width: calc(5 / 9 * 100%);
 
 	.form-row-first {
 
-		@include span(2.5 of 5);
+		width: 50%;
 	}
 
 	.form-row-last {
 
-		@include span(last 2.5 of 5);
+		width: 50%; float: right;
 	}
 
 	.col-1,
@@ -2869,23 +2869,23 @@ table.cart {
 
 	&.addresses {
 
-		@include span(full);
+		width: 100%;
 
 		.col-1 {
 
-			@include span(4.5 of 9);
+			width: calc(4.5 / 9 * 100%);
 		}
 
 		.col-2 {
 
-			@include span(last 4.5 of 9);
+			width: calc(4.5 / 9 * 100%); float: right;
 		}
 	}
 }
 
 #customer_details + #wc_checkout_add_ons {
 
-	@include span( last 4 of 9 );
+	width: calc(4 / 9 * 100%); float: right;
 }
 
 #wc_checkout_add_ons {
@@ -2901,7 +2901,7 @@ table.cart {
 #order_review_heading,
 #order_review {
 
-	@include span(last 4 of 9);
+	width: calc(4 / 9 * 100%); float: right;
 	clear: right;
 }
 
@@ -2950,28 +2950,28 @@ table.cart {
 
 	.col2-set {
 
-		@include span(6 of 12);
+		width: 50%;
 
 		.form-row-first {
 
-			@include span(3 of 6);
+			width: 50%;
 		}
 
 		.form-row-last {
 
-			@include span(last 3 of 6);
+			width: calc(3 / 6 * 100%); float: right;
 		}
 
 		&.addresses {
 
 			.col-1 {
 
-				@include span(6 of 12);
+				width: 50%;
 			}
 
 			.col-2 {
 
-				@include span(last 6 of 12);
+				width: calc(6 / 12 * 100%); float: right;
 			}
 		}
 	}
@@ -2979,12 +2979,12 @@ table.cart {
 	#order_review_heading,
 	#order_review {
 
-		@include span(last 6 of 12);
+		width: calc(6 / 12 * 100%); float: right;
 	}
 
 	#customer_details + #wc_checkout_add_ons {
 
-		@include span( last 6 of 12 );
+		width: calc(6 / 12 * 100%); float: right;
 	}
 }
 
@@ -3005,37 +3005,37 @@ table + .addresses {
 .col2-set#customer_login,
 .col2-set.addresses {
 
-	@include span( full );
+	width: 100%;
 
 	.col-1 {
 
-		@include span( 4 of 9 );
+		width: calc(4 / 9 * 100%);
 	}
 
 	.col-2 {
 
-		@include span( 5 of 9 last );
+		width: calc(5 / 9 * 100%); float: right;
 	}
 }
 
 
 .woocommerce-MyAccount-navigation {
 
-	@include span( 2 of 9 );
+	width: calc(2 / 9 * 100%);
 }
 
 .woocommerce-MyAccount-content {
 
-	@include span( last 7 of 9 );
+	width: calc(7 / 9 * 100%); float: right;
 
 	.form-row-first {
 
-		@include span( 3 of 7 );
+		width: calc(3 / 7 * 100%);
 	}
 
 	.form-row-last {
 
-		@include span( last 4 of 7 );
+		width: calc(4 / 7 * 100%); float: right;
 	}
 }
 
@@ -3043,12 +3043,12 @@ table + .addresses {
 
 	.woocommerce-MyAccount-content {
 
-		@include span( 7 of 9 );
+		width: calc(7 / 9 * 100%);
 	}
 
 	.woocommerce-MyAccount-navigation {
 
-		@include span( last 2 of 9 );
+		width: calc(2 / 9 * 100%); float: right;
 	}
 }
 
@@ -3063,27 +3063,27 @@ table.my_account_orders {
 
 		.col-1 {
 
-			@include span( 6 of 12 );
+			width: 50%;
 		}
 
 		.col-2 {
 
-			@include span( 6 of 12 last );
+			width: calc(6 / 12 * 100%); float: right;
 		}
 	}
 
 	.woocommerce-MyAccount-content {
 
-		@include span( 9 of 12 );
+		width: calc(9 / 12 * 100%);
 
 		.form-row-first {
 
-			@include span( 4 of 8 );
+			width: 50%;
 		}
 
 		.form-row-last {
 
-			@include span( last 4 of 8 );
+			width: calc(4 / 8 * 100%); float: right;
 		}
 
 		.col2-set {
@@ -3091,19 +3091,19 @@ table.my_account_orders {
 
 			.col-1 {
 
-				@include span( 4 of 8 );
+				width: 50%;
 			}
 
 			.col-2 {
 
-				@include span( last 4 of 8 );
+				width: calc(4 / 8 * 100%); float: right;
 			}
 		}
 	}
 
 	.woocommerce-MyAccount-navigation {
 
-		@include span( last 3 of 12 );
+		width: calc(3 / 12 * 100%); float: right;
 	}
 }
 
@@ -3129,25 +3129,25 @@ table.my_account_orders {
 */
 .form-row-first {
 
-	@include span(4.5 of 9);
+	width: 50%;
 	clear: both;
 }
 
 .form-row-last {
 
-	@include span(last 4.5 of 9);
+	width: calc(4.5 / 9 * 100%); float: right;
 }
 
 .page-template-template-fullwidth-php {
 
 	.form-row-first {
 
-		@include span(6 of 12);
+		width: 50%;
 	}
 
 	.form-row-last {
 
-		@include span(last 6 of 12);
+		width: calc(6 / 12 * 100%); float: right;
 	}
 }
 
@@ -3157,12 +3157,12 @@ table.my_account_orders {
 
 		ul.tabs {
 
-			@include span(4 of 12);
+			width: calc(4 / 12 * 100%);
 		}
 
 		.panel {
 
-			@include span(last 8 of 12);
+			width: calc(8 / 12 * 100%); float: right;
 			margin-bottom: var(--space-separation);
 		}
 	}
@@ -3174,7 +3174,7 @@ table.my_account_orders {
 
 	ul.tabs {
 
-		@include span(3 of 9);
+		width: calc(3 / 9 * 100%);
 
 		li {
 
@@ -3186,7 +3186,7 @@ table.my_account_orders {
 
 	.panel {
 
-		@include span(last 6 of 9);
+		width: calc(6 / 9 * 100%); float: right;
 		margin-top: 0;
 	}
 }

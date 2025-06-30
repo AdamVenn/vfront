@@ -654,7 +654,7 @@ table {
 
 				li.product {
 
-					@include span( 3 of 6 );
+					width: 50%;
 
 					&:last-child {
 						margin-right: 0;

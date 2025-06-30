@@ -23,7 +23,7 @@ table.shop_table_responsive {
 	.site-branding {
 		display: block;
 
-		@include span(12 of 12);
+		width: 100%;
 		clear: both;
 
 		img {
@@ -40,24 +40,24 @@ table.shop_table_responsive {
 
 		.site-branding {
 
-			@include span(9 of 12);
+			width: 75%;
 		}
 
 		.site-search {
 
-			@include span(last 3 of 12);
+			float: right; width: 25%;
 			clear: none;
 		}
 
 		.main-navigation {
 
-			@include span(9 of 12);
+			width: 75%;
 			clear: both;
 		}
 
 		.site-header-cart {
 
-			@include span(last 3 of 12);
+			float: right; width: 25%;
 			margin-bottom: 0;
 		}
 	}
@@ -69,12 +69,12 @@ table.shop_table_responsive {
 
 		.site-branding {
 
-			@include span(5 of 12);
+			width: calc(5 / 12 * 100%);
 		}
 
 		.secondary-navigation {
 
-			@include span(last 7 of 12);
+			width: calc(7 / 12 * 100%); float: right;
 		}
 	}
 
@@ -84,13 +84,13 @@ table.shop_table_responsive {
 
 			.site-branding {
 
-				@include span(3 of 12);
+				width: 25%;
 
 			}
 
 			.secondary-navigation {
 
-				@include span(6 of 12);
+				width: 50%;
 			}
 		}
 	}
@@ -150,24 +150,24 @@ table.shop_table_responsive {
 
 .content-area {
 
-	@include span(9 of 12);
+	width: 75%;
 }
 
 .widget-area {
 
-	@include span(last 3 of 12);
+	float: right; width: 25%;
 }
 
 .right-sidebar {
 
 	.content-area {
 
-		@include span(9 of 12);
+		width: 75%;
 	}
 
 	.widget-area {
 
-		@include span(last 3 of 12);
+		float: right; width: 25%;
 	}
 }
 
@@ -175,12 +175,12 @@ table.shop_table_responsive {
 
 	.content-area {
 
-		@include span(last 9 of 12);
+		width: calc(9 / 12 * 100%); float: right;
 	}
 
 	.widget-area {
 
-		@include span(3 of 12);
+		width: 25%;
 	}
 }
 
@@ -188,7 +188,7 @@ table.shop_table_responsive {
 
 	.content-area {
 
-		@include span(full);
+		width: 100%;
 	}
 }
 
@@ -205,7 +205,7 @@ table.shop_table_responsive {
 
 	.content-area {
 
-		@include span(full);
+		width: 100%;
 	}
 }
 
@@ -222,7 +222,7 @@ table.shop_table_responsive {
 
 		.block {
 
-			@include span(6 of 12);
+			width: 50%;
 
 			&.footer-widget-2 {
 
@@ -235,7 +235,7 @@ table.shop_table_responsive {
 
 		.block {
 
-			@include span(4 of 12);
+			width: 33%;
 
 			&.footer-widget-3 {
 
@@ -248,7 +248,7 @@ table.shop_table_responsive {
 
 		.block {
 
-			@include span(3 of 12);
+			width: 25%;
 
 			&.footer-widget-4 {
 
@@ -273,7 +273,7 @@ table.shop_table_responsive {
 
 	.comment-meta {
 
-		@include span(2 of 9);
+		width: calc(2 / 9 * 100%);
 		text-align: right;
 
 		.avatar {
@@ -289,7 +289,7 @@ table.shop_table_responsive {
 	.comment-content,
 	#respond {
 
-		@include span(last 7 of 9);
+		width: calc(7 / 9 * 100%); float: right;
 	}
 
 	#respond {
@@ -319,63 +319,63 @@ table.shop_table_responsive {
 
 	ol.children {
 
-		@include span(last 8 of 9);
+		width: calc(8 / 9 * 100%); float: right;
 		list-style: none;
 
 		.comment-meta {
 
-			@include span(2 of 8);
+			width: 25%;
 		}
 
 		.comment-content,
 		#respond {
 
-			@include span(last 6 of 8);
+			width: calc(6 / 8 * 100%); float: right;
 		}
 
 		ol.children {
 
-			@include span(last 7 of 8);
+			width: calc(7 / 8 * 100%); float: right;
 
 			.comment-meta {
 
-				@include span(2 of 7);
+				width: calc(2 / 7 * 100%);
 			}
 
 			.comment-content,
 			#respond {
 
-				@include span(last 5 of 7);
+				width: calc(5 / 7 * 100%); float: right;
 			}
 
 			ol.children {
 
-				@include span(last 6 of 7);
+				width: calc(6 / 7 * 100%); float: right;
 
 				.comment-meta {
 
-					@include span(2 of 6);
+					width: calc(2 / 6 * 100%);
 				}
 
 				.comment-content,
 				#respond {
 
-					@include span(last 4 of 6);
+					width: calc(4 / 6 * 100%); float: right;
 				}
 
 				ol.children {
 
-					@include span(last 5 of 6);
+					width: calc(5 / 6 * 100%); float: right;
 
 					.comment-meta {
 
-						@include span(2 of 5);
+						width: 40%;
 					}
 
 					.comment-content,
 					#respond {
 
-						@include span(last 3 of 5);
+						width: calc(3 / 5 * 100%); float: right;
 					}
 				}
 			}
@@ -390,7 +390,7 @@ table.shop_table_responsive {
 	.comment-form-email,
 	.comment-form-url {
 
-		@include span(3 of 9);
+		width: calc(3 / 9 * 100%);
 	}
 
 	.comment-form-url {
@@ -661,7 +661,7 @@ ul.menu {
 
 		.col-1 {
 
-			@include span( 6 of 12 );
+			width: 50%;
 
 			ul.products {
 				margin-bottom: 0;
@@ -670,7 +670,7 @@ ul.menu {
 
 		.col-2 {
 
-			@include span( last 6 of 12 );
+			width: calc(6 / 12 * 100%); float: right;
 		}
 	}
 }
