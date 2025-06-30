@@ -52,6 +52,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_accent_color'            => '#7f54b3',
 					'v_link_color'              => '#7f54b3',
 					'v_container_color'         => '#f0f0f0',
+					'v_box_color'               => '#9b9b9b',
 					'v_header_background_color' => '#ffffff',
 					'v_header_text_color'       => '#404040',
 					'v_footer_background_color' => '#f0f0f0',
@@ -232,6 +233,37 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 						'section'  => 'v_color_scheme',
 						'settings' => 'v_container_color',
 						'priority' => 23,
+					)
+				)
+			);
+
+			/**
+			 * Box Color
+			 */
+			$wp_customize->add_setting(
+				'v_box_color',
+				array(
+					/**
+					 * Filters for modifying the default box color.
+					 *
+					 * @param string Hex color value.
+					 * @package  storefront
+					 * @since    2.0.0
+					 */
+					'default'           => apply_filters( 'storefront_default_box_color', '#9b9b9b' ),
+					'sanitize_callback' => 'sanitize_hex_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'v_box_color',
+					array(
+						'label'    => __( 'Box color (forms fields, etc.)', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_box_color',
+						'priority' => 24,
 					)
 				)
 			);
@@ -606,6 +638,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				'heading_color'               => get_theme_mod( 'v_heading_color' ),
 				'border_color'                => get_theme_mod( 'v_border_color' ),
 				'container_color'             => get_theme_mod( 'v_container_color' ),
+				'box_color'                   => get_theme_mod( 'v_box_color' ),
 				'button_background_color'     => get_theme_mod( 'v_button_background_color' ),
 				'button_text_color'           => get_theme_mod( 'v_button_text_color' ),
 			);
