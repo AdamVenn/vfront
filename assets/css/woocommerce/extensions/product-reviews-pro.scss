@@ -120,7 +120,7 @@
 					.contribution-actions {
 
 						a {
-							color: $color_links;
+							color: var(--link_color);
 
 							&.done {
 								opacity: 0.5;
