@@ -766,7 +766,18 @@ if ( ! function_exists( 'storefront_sticky_single_add_to_cart' ) ) {
 			<section class="storefront-sticky-add-to-cart">
 				<div class="col-full">
 					<div class="storefront-sticky-add-to-cart__content">
-						<?php echo wp_kses_post( woocommerce_get_product_thumbnail() ); ?>
+						<?php
+						// Temporarily add filter in order to remove inline height and width.
+						$vfront_remove_width_height = function( $image ) {
+							unset( $image[1] );
+							unset( $image[2] );
+							return $image;
+						};
+						add_filter( 'wp_get_attachment_image_src', $vfront_remove_width_height, 100 );
+						echo wp_kses_post( woocommerce_get_product_thumbnail() );
+						remove_filter( 'wp_get_attachment_image_src', $vfront_remove_width_height, 100 );
+						// phpcs:ignore
+						?>
 						<div class="storefront-sticky-add-to-cart__content-product-info">
 							<span class="storefront-sticky-add-to-cart__content-title"><?php esc_html_e( 'You\'re viewing:', 'storefront' ); ?> <strong><?php the_title(); ?></strong></span>
 							<span class="storefront-sticky-add-to-cart__content-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
