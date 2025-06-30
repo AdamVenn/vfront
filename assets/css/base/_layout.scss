@@ -220,21 +220,6 @@ table.shop_table_responsive {
 	}
 }
 
-#respond {
-	padding: var(--space-separation);
-
-	.comment-form-author,
-	.comment-form-email,
-	.comment-form-url {
-
-		width: calc(3 / 9 * 100%);
-	}
-
-	.comment-form-comment {
-		clear: both;
-	}
-}
-
 /**
 * Content
 */
