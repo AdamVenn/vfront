@@ -174,3 +174,8 @@
 		z-index: calc($z-index + 1);
 	}
 }
+
+@mixin narrow-center {
+	max-width: var(--content-width-narrow);
+	margin: auto;
+}
