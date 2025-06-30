@@ -56,7 +56,7 @@
 
 .sc_info_box {
 
-	@include span(last 4 of 9);
+	width: calc(4 / 9 * 100%); float: right;
 	@include gutters(inside);
 }
 
@@ -64,7 +64,7 @@
 
 	.sc_info_box {
 
-		@include span(last 5 of 12);
+		width: calc(5 / 12 * 100%); float: right;
 		margin-left: 0;
 	}
 }

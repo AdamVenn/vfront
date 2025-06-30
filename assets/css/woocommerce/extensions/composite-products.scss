@@ -118,7 +118,7 @@
 
 		.component .composited_product_images {
 
-			@include span( 2 of 10 );
+			width: 20%;
 		}
 	}
 }
@@ -131,7 +131,7 @@
 
 			.composited_product_details_wrapper > .details {
 
-				@include span( last 8 of 10 );
+				width: calc(8 / 10 * 100%); float: right;
 			}
 		}
 	}
@@ -165,7 +165,7 @@ table.shop_table_responsive tr.component_table_item {
 
 		.component .composited_product_images {
 
-			@include span( 2 of 8 );
+			width: 25%;
 		}
 	}
 
@@ -177,7 +177,7 @@ table.shop_table_responsive tr.component_table_item {
 
 				.composited_product_details_wrapper > .details {
 
-					@include span( last 6 of 8 );
+					width: calc(6 / 8 * 100%); float: right;
 				}
 			}
 		}
@@ -214,12 +214,12 @@ table.shop_table_responsive tr.component_table_item {
 
 	.widget_composite_summary_details_wrapper {
 
-		@include span(9 of 12);
+		width: 75%;
 	}
 
 	.widget_composite_summary_ui_wrapper {
 
-		@include span(last 3 of 12);
+		float: right; width: 25%;
 	}
 }
 
@@ -227,12 +227,12 @@ table.shop_table_responsive tr.component_table_item {
 
 	.widget_composite_summary_details_wrapper {
 
-		@include span(9 of 12);
+		width: 75%;
 	}
 
 	.widget_composite_summary_ui_wrapper {
 
-		@include span(last 3 of 12);
+		float: right; width: 25%;
 	}
 }
 
@@ -240,12 +240,12 @@ table.shop_table_responsive tr.component_table_item {
 
 	.widget_composite_summary_details_wrapper {
 
-		@include span(last 9 of 12);
+		width: calc(9 / 12 * 100%); float: right;
 	}
 
 	.widget_composite_summary_ui_wrapper {
 
-		@include span(3 of 12);
+		width: 25%;
 	}
 
 	.composite_button {

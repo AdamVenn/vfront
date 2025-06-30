@@ -140,7 +140,7 @@
 
 			.form-contribution_comment {
 
-				@include span(last 5 of 6);
+				width: calc(5 / 6 * 100%); float: right;
 				margin-bottom: var(--space-separation);
 				padding-top: var(--space-separation);
 			}
