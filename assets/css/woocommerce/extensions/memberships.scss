@@ -49,15 +49,12 @@
 	}
 }
 
-@include susy-media (max-width $desktop) {
+.woocommerce-account {
 
-	.woocommerce-account {
+	table {
 
-		table {
-
-			&.my_account_memberships {
-				table-layout: auto;
-			}
+		&.my_account_memberships {
+			table-layout: auto;
 		}
 	}
 }
