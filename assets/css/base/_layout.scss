@@ -61,28 +61,6 @@ table.shop_table_responsive {
 	}
 }
 
-.site-header {
-
-	.subscribe-and-connect-connect {
-		float: right;
-		margin-bottom: 1em;
-
-		.icons {
-			list-style: none;
-			margin: 0;
-
-			a {
-				font-size: 1em !important;
-			}
-
-			li {
-				margin: 0 0 0 var(--space-around) !important;
-				display: inline-block;
-			}
-		}
-	}
-}
-
 // WooCommerce widget container
 .storefront-wc-header-widgets {
 	display: flex;

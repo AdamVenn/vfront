@@ -35,7 +35,6 @@
 		 *
 		 * @hooked storefront_header_container                       - 0
 		 * @hooked storefront_skip_links                             - 5
-		 * @hooked storefront_social_icons                           - 10
 		 * @hooked storefront_site_branding                          - 20
 		 * @hooked storefront_secondary_navigation                   - 30
 		 * @hooked storefront_header_container_close                 - 41
