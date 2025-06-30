@@ -548,7 +548,7 @@ a.remove {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		color: lighten($color-body, 20%);
+		color: var(--text_color);
 		line-height: 1.618;
 		text-indent: 0;
 		text-align: center;
