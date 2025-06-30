@@ -1719,6 +1719,10 @@ p.stars {
 .woocommerce-noreviews,
 p.no-comments {
 
+	@include flex-row;
+	justify-content: space-between;
+	align-items: center;
+
 	margin: var(--space-around) var(--space-separation);
 	border-radius: 2px;
 	color: var(--text_color);
@@ -1732,17 +1736,8 @@ p.no-comments {
 		content: "\f06a";
 		display: inline-block;
 		position: absolute;
-		top: 1.05em;
 		left: 1.5em;
 		color: var(--accent_color);
-	}
-
-	.button {
-		float: right;
-		margin-left: 1em;
-
-		@include button;
-
 	}
 
 	pre {
