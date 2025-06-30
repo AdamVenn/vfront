@@ -57,7 +57,7 @@
 
 		.bundle_form div.bundled_product_summary .bundled_product_images {
 
-			@include span( 2 of 10 );
+			width: 20%;
 		}
 	}
 }
@@ -68,7 +68,7 @@
 
 		.details {
 
-			@include span( last 8 of 10 );
+			width: calc(8 / 10 * 100%); float: right;
 		}
 	}
 }
@@ -127,7 +127,7 @@ table.shop_table_responsive tr.bundled_table_item {
 
 		.bundle_form div.bundled_product_summary .bundled_product_images {
 
-			@include span( 2 of 8 );
+			width: 25%;
 		}
 	}
 
@@ -137,7 +137,7 @@ table.shop_table_responsive tr.bundled_table_item {
 
 			.details {
 
-				@include span( last 6 of 8 );
+				width: calc(6 / 8 * 100%); float: right;
 			}
 		}
 	}

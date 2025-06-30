@@ -152,13 +152,13 @@ div#brands_a_z {
 
 	ul.brands_index {
 
-		@include span(3 of 12);
+		width: 25%;
 		transition: all 0.5s ease;
 	}
 
 	h3 {
 
-		@include span(last 9 of 12);
+		width: calc(9 / 12 * 100%); float: right;
 		clear: right;
 		text-transform: uppercase;
 
@@ -173,7 +173,7 @@ div#brands_a_z {
 
 	ul.brands {
 
-		@include span(last 9 of 12);
+		width: calc(9 / 12 * 100%); float: right;
 		clear: right;
 	}
 }
