@@ -501,6 +501,13 @@ ul.products,
 			font-size: var(--font-size-small);
 			margin-top: 1em;
 		}
+		
+		table.woocommerce-product-attributes {
+			th, td {
+				border: var(--border-thin) solid var(--accent_color);
+			}
+
+		}
 	}
 }
 
