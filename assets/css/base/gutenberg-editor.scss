@@ -77,7 +77,7 @@ h2,
 	line-height: 1.214;
 
 	& + h3 {
-		border-top: 1px solid $color_border;
+		border-top: 1px solid var(--border_color);
 		padding-top: var(--space-around);
 	}
 }
@@ -185,7 +185,7 @@ kbd,
 tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: var(--container_color);
 	padding: 0.202em var(--space-around);
 }
 
@@ -347,8 +347,8 @@ ul.wp-block-latest-posts {
 
 		.wc-block-grid__product-onsale {
 			border: 1px solid;
-			border-color: $color_body;
-			color: $color_body;
+			border-color: var(--border_color);
+			color: var(--text_color);
 			padding: 0.202em var(--space-around);
 			font-size: var(--font-size-small);
 			text-transform: uppercase;
