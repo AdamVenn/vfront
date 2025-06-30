@@ -1281,9 +1281,11 @@ table.woocommerce-checkout-review-order-table {
  */
 .woocommerce-password-strength {
 	font-weight: 600;
-	padding: var(--space-around) 0;
+	padding: var(--space-around);
 	text-align: right;
 	font-size: var(--font-size-small);
+	background-color: hsla(0, 0%, 0%, 0.4);
+	box-shadow: var(--drop-shadow);
 
 	&.strong {
 		color: $success;
