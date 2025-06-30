@@ -155,34 +155,6 @@ table.shop_table_responsive tr.component_table_item {
 	display: table-row;
 }
 
-.sp-product-gallery-stacked,
-.storefront-full-width-content,
-.page-template-template-fullwidth-php {
-
-	#content div.product,
-	div.product {
-
-		.component .composited_product_images {
-
-			width: 25%;
-		}
-	}
-
-	.composite_form {
-
-		.component {
-
-			&:not(.selection_thumbnail_hidden) .component_summary {
-
-				.composited_product_details_wrapper > .details {
-
-					width: calc(6 / 8 * 100%); float: right;
-				}
-			}
-		}
-	}
-}
-
 /**
  * Widget
  */
