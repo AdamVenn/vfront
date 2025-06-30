@@ -24,7 +24,7 @@
 	}
 
 	.swatch-wrapper {
-		padding: ms(-2);
+		padding: var(--space-around);
 		background-color: transparent;
 		border: 1px solid rgba(#000, 0.1);
 		float: left;
@@ -44,7 +44,7 @@
 
 		&.selected,
 		&:hover {
-			padding: ms(-2);
+			padding: var(--space-around);
 			background-color: #fff;
 
 			img {
@@ -61,5 +61,5 @@
 
 a#variations_clear {
 	display: block;
-	margin: 1em 0 ms(3);
+	margin: 1em 0 var(--space-around);
 }

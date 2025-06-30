@@ -11,7 +11,7 @@
 @import "../../sass/vendors/modular-scale";
 
 #wl-wrapper.wl-button-wrap {
-	padding: ms(3) 0 0 0;
+	padding: var(--space-around) 0 0 0;
 }
 
 .wl-add-link {
@@ -28,7 +28,7 @@
 			float: none !important;
 
 			> a {
-				padding: 1em ms(2);
+				padding: 1em var(--space-around);
 				border: 0 !important;
 				margin: 0 !important;
 
@@ -49,17 +49,17 @@
 	.wl-table {
 
 		td {
-			padding: ms(-1) ms(2) !important;
+			padding: var(--space-around) var(--space-around) !important;
 
 			&:first-child {
-				padding-left: ms(2) !important;
+				padding-left: var(--space-around) !important;
 			}
 		}
 
 		&.manage {
 
 			td {
-				padding: ms(-3) !important;
+				padding: var(--space-around) !important;
 			}
 		}
 	}

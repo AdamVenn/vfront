@@ -61,7 +61,7 @@ h5,
 h6 {
 	clear: both;
 	font-weight: 300;
-	margin: 0 0 ms(-3);
+	margin: 0 0 var(--space-around);
 	color: var(--text_color);
 
 	a {
@@ -83,7 +83,7 @@ h2,
 
 	& + h3 {
 		border-top: 1px solid $color_border;
-		padding-top: ms(-3);
+		padding-top: var(--space-around);
 	}
 }
 
@@ -115,7 +115,7 @@ form {
 	& + header h2,
 	& + h3,
 	& + h4 {
-		margin-top: ms(4);
+		margin-top: var(--space-around);
 	}
 }
 
@@ -123,16 +123,16 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 p {
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 ul,
 ol {
-	margin: 0 0 ms(2) 3em;
+	margin: 0 0 var(--space-around) 3em;
 	padding: 0;
 }
 
@@ -147,7 +147,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: ms(1);
+	margin-left: var(--space-around);
 }
 
 dt {
@@ -155,7 +155,7 @@ dt {
 }
 
 dd {
-	margin: 0 0 ms(3);
+	margin: 0 0 var(--space-around);
 }
 
 b,
@@ -171,20 +171,20 @@ i {
 }
 
 blockquote {
-	padding: 0 ms(1);
+	padding: 0 var(--space-around);
 	border-left: 3px solid rgba(0, 0, 0, 0.05);
 	font-style: italic;
 }
 
 address {
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 pre {
 	background: rgba(#000, 0.1);
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	margin-bottom: ms(3);
-	padding: ms(3);
+	margin-bottom: var(--space-around);
+	padding: var(--space-separation);
 	overflow: auto;
 	max-width: 100%;
 }
@@ -195,7 +195,7 @@ tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	background-color: rgba(0, 0, 0, 0.05);
-	padding: 0.202em ms(-3);
+	padding: 0.202em var(--space-around);
 }
 
 abbr,
@@ -293,8 +293,8 @@ body {
  */
 .site-header {
 	background-color: var(--header_background_color);
-	padding-top: ms(3);
-	padding-bottom: ms(3);
+	padding-top: var(--space-separation);
+	padding-bottom: var(--space-separation);
 	color: var(--header_text_color);
 	background-position: center center;
 	position: relative;
@@ -323,14 +323,14 @@ body {
 .home.post-type-archive-product {
 
 	.site-header {
-		margin-bottom: ms(7);
+		margin-bottom: var(--space-separation);
 	}
 }
 
 .no-wc-breadcrumb {
 
 	.site-header {
-		margin-bottom: ms(7);
+		margin-bottom: var(--space-separation);
 	}
 
 	&.page-template-template-homepage {
@@ -383,7 +383,7 @@ body {
  * Main content area
  */
 .site-main {
-	margin-bottom: ms(5);
+	margin-bottom: var(--space-separation);
 }
 
 .site-content {
@@ -393,15 +393,15 @@ body {
 .page-template-template-homepage:not(.has-post-thumbnail) {
 
 	.site-main {
-		padding-top: ms(7);
+		padding-top: var(--space-separation);
 	}
 }
 
 .page-template-template-homepage {
 
 	.type-page {
-		padding-top: ms(5);
-		padding-bottom: ms(5);
+		padding-top: var(--space-separation);
+		padding-bottom: var(--space-separation);
 		position: relative;
 
 		.storefront-hero__button-edit {
@@ -424,7 +424,7 @@ body {
 
 		h1 {
 			font-size: var(--font-size-title);
-			margin-bottom: ms(-6);
+			margin-bottom: var(--space-around);
 		}
 	}
 
@@ -442,8 +442,8 @@ body {
 	.type-page.has-post-thumbnail {
 		background-size: cover;
 		background-position: center center;
-		padding-top: ms(9);
-		padding-bottom: ms(9);
+		padding-top: var(--space-around);
+		padding-bottom: var(--space-around);
 
 		.entry-content,
 		.entry-title {
@@ -463,7 +463,10 @@ body {
 .site-footer {
 	background-color: var(--footer_background_color);
 	color: var(--footer_text_color);
-	padding: ms(3) 0 ms(6);
+	padding-left: var(--space-around);
+	padding-right: var(--space-around);
+	padding-bottom: var(--space-around);
+	padding-top: var(--space-separation);
 
 	h1,
 	h2,
@@ -487,10 +490,10 @@ body {
 }
 
 .site-info {
-	padding: ms(5) 0;
+	padding: var(--space-around) 0;
 
 	span[role="separator"] {
-		padding: 0 ms(-6) 0 ms(-5);
+		padding: 0 var(--space-around) 0 var(--space-around);
 
 		&::before {
 			content: "\007c";
@@ -504,13 +507,13 @@ body {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: ms(1);
+	margin-right: var(--space-around);
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: ms(1);
+	margin-left: var(--space-around);
 }
 
 .aligncenter {
@@ -537,7 +540,7 @@ body {
 	height: auto;
 	left: 0;
 	line-height: normal;
-	padding: 1em ms(3);
+	padding: 1em var(--space-around);
 	text-decoration: none;
 	top: 0;
 	width: auto;
@@ -568,7 +571,7 @@ body {
 table {
 	border-spacing: 0;
 	width: 100%;
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 	border-collapse: separate;
 
 	caption {
@@ -578,7 +581,7 @@ table {
 
 	td,
 	th {
-		padding: 1em ms(2);
+		padding: 1em var(--space-around);
 		text-align: left;
 		vertical-align: top;
 
@@ -594,7 +597,7 @@ table {
 	thead {
 
 		th {
-			padding: ms(2);
+			padding: var(--space-around);
 			vertical-align: middle;
 		}
 	}
@@ -619,7 +622,7 @@ table {
 .error404 {
 
 	.site-content .widget_product_search {
-		padding: ms(3);
+		padding: var(--space-separation);
 		background-color: rgba(#000, 0.025);
 
 		form {
@@ -635,10 +638,10 @@ table {
 	.fourohfour-columns-2 {
 
 		@include clearfix;
-		padding: ms(5) 0;
+		padding: var(--space-around) 0;
 		border: 1px solid $color_border;
 		border-width: 1px 0;
-		margin-bottom: ms(5);
+		margin-bottom: var(--space-separation);
 
 		ul.products li.product,
 		.widget {
@@ -648,7 +651,7 @@ table {
 		.col-1 {
 
 			ul.products {
-				margin-bottom: ms(4);
+				margin-bottom: var(--space-around);
 
 				li.product {
 
@@ -662,7 +665,7 @@ table {
 		}
 
 		.col-2 {
-			padding: ms(3);
+			padding: var(--space-separation);
 			background-color: rgba(#000, 0.025);
 		}
 	}
@@ -672,12 +675,12 @@ table {
  * Comments
  */
 #comments {
-	padding-top: ms(5);
+	padding-top: var(--space-separation);
 
 	.comments-title {
 		border-bottom: 1px solid $color_border;
-		padding-bottom: ms(-3);
-		margin-bottom: ms(3);
+		padding-bottom: var(--space-around);
+		margin-bottom: var(--space-around);
 	}
 
 	.comment-list {
@@ -690,11 +693,11 @@ table {
 		}
 
 		.comment-content {
-			padding-bottom: ms(3);
-			margin-bottom: ms(3);
+			padding-bottom: var(--space-separation);
+			margin-bottom: var(--space-around);
 
 			.comment-text {
-				padding: ms(3);
+				padding: var(--space-separation);
 				border-radius: 3px;
 
 				p:last-child {
@@ -727,8 +730,8 @@ table {
 		.reply {
 
 			@include clearfix;
-			margin-bottom: ms(3);
-			padding-top: ms(-2);
+			margin-bottom: var(--space-around);
+			padding-top: var(--space-around);
 
 			a {
 				display: inline-block;
@@ -752,7 +755,7 @@ table {
 
 #respond {
 	clear: both;
-	padding: ms(3);
+	padding: var(--space-separation);
 	background-color: rgba(0, 0, 0, 0.0125);
 	position: relative;
 
@@ -793,10 +796,10 @@ table {
  * Content
  */
 .hentry {
-	margin: 0 0 ms(7);
+	margin: 0 0 var(--space-separation);
 
 	.wp-post-image {
-		margin-bottom: ms(3);
+		margin-bottom: var(--space-around);
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -832,7 +835,7 @@ table {
 	}
 
 	.entry-taxonomy {
-		margin: ms(2) 0 0;
+		margin: var(--space-around) 0 0;
 		padding-top: 1em;
 		border-top: 1px solid rgba(0, 0, 0, 0.05);
 	}
@@ -872,14 +875,14 @@ table {
 
 .page-links {
 	clear: both;
-	margin: 0 0 ms(1);
+	margin: 0 0 var(--space-around);
 }
 
 /**
  * Forms
  */
 form {
-	margin-bottom: ms(3);
+	margin-bottom: var(--space-around);
 }
 
 button,
@@ -904,7 +907,7 @@ input[type="submit"],
 	border-color: $color_body;
 	color: var(--button_text_color);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	padding: ms(-2) ms(2);
+	padding: var(--space-around) var(--space-around);
 	text-decoration: none;
 	font-weight: 600;
 	text-shadow: none;
@@ -934,7 +937,7 @@ input[type="submit"],
 	}
 
 	&.small {
-		padding: ms(-3) ms(-1);
+		padding: var(--space-around) var(--space-around);
 		font-size: var(--font-size-small);
 	}
 
@@ -968,7 +971,7 @@ input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 
 	& + label {
-		margin: 0 0 0 ms(-4);
+		margin: 0 0 0 var(--space-around);
 	}
 }
 
@@ -999,7 +1002,7 @@ input[type="password"],
 input[type="search"],
 textarea,
 .input-text {
-	padding: ms(-2);
+	padding: var(--space-around);
 	background-color: darken($body-background, 5%);
 	color: $color_body;
 	border: 0;
@@ -1015,7 +1018,7 @@ textarea,
 
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: ms(-1);
+	padding-left: var(--space-around);
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
@@ -1032,17 +1035,17 @@ label.inline {
 }
 
 fieldset {
-	padding: ms(3);
-	padding-top: ms(1);
+	padding: var(--space-separation);
+	padding-top: var(--space-around);
 	border: 0;
 	margin: 0;
-	margin-bottom: ms(3);
-	margin-top: ms(3);
+	margin-bottom: var(--space-around);
+	margin-top: var(--space-around);
 
 	legend {
 		font-weight: 600;
-		padding: ms(-2) ms(1);
-		margin-left: - ms(1);
+		padding: var(--space-around) var(--space-around);
+		margin-left: - var(--space-around);
 	}
 }
 
@@ -1074,7 +1077,7 @@ fieldset {
  * Captions
  */
 .wp-caption {
-	margin-bottom: ms(1);
+	margin-bottom: var(--space-around);
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -1096,7 +1099,7 @@ fieldset {
 .gallery {
 
 	@include clearfix;
-	margin-bottom: ms(1);
+	margin-bottom: var(--space-around);
 
 	.gallery-item {
 		float: left;
@@ -1214,7 +1217,7 @@ button.menu-toggle {
 	box-shadow: none;
 	border-radius: 2px;
 	background-image: none;
-	padding: ms(-2) ms(-1) ms(-2) ms(5);
+	padding: var(--space-around);
 	font-size: var(--font-size-small);
 	max-width: 120px;
 
@@ -1361,13 +1364,13 @@ button.menu-toggle {
 
 	ul {
 		display: block;
-		margin-left: ms(2);
+		margin-left: var(--space-around);
 	}
 
 	li {
 
 		a {
-			padding: ms(-1) 0;
+			padding: var(--space-around) 0;
 			display: block;
 
 			&:hover {
@@ -1385,7 +1388,7 @@ button.menu-toggle {
 
 	@include clearfix;
 	clear: both;
-	padding: ms(5) 0;
+	padding: var(--space-around) 0;
 
 	.nav-previous,
 	.nav-next {
@@ -1435,7 +1438,7 @@ button.menu-toggle {
 			.page-numbers {
 				border-left-width: 0;
 				display: inline-block;
-				padding: ms(-5) ms(-1);
+				padding: var(--space-around) var(--space-around);
 				background-color: rgba(#000, 0.025);
 				color: $color_body;
 
@@ -1482,7 +1485,7 @@ button.menu-toggle {
  */
 
 .widget {
-	margin: 0 0 ms(6);
+	margin: 0 0 var(--space-separation);
 
 	select {
 		max-width: 100%;
@@ -1508,7 +1511,7 @@ button.menu-toggle {
 		list-style: none;
 
 		ul {
-			margin-left: ms(3);
+			margin-left: var(--space-around);
 		}
 	}
 }
@@ -1572,13 +1575,13 @@ button.menu-toggle {
 
 		li {
 			list-style: none;
-			margin-bottom: ms(1);
+			margin-bottom: var(--space-around);
 			line-height: ms(2);
 		}
 
 		.children {
 			margin-left: 0;
-			margin-top: ms(1);
+			margin-top: var(--space-around);
 		}
 	}
 }
@@ -1599,7 +1602,7 @@ button.menu-toggle {
 	ul {
 
 		ul.children {
-			margin: ms(-2) 0 0 ms(2);
+			margin: var(--space-around) 0 0 var(--space-around);
 		}
 	}
 }
@@ -1607,7 +1610,7 @@ button.menu-toggle {
 .widget_rating_filter {
 
 	.wc-layered-nav-rating {
-		margin-bottom: ms(-2);
+		margin-bottom: var(--space-around);
 
 		a {
 			text-decoration: none !important;

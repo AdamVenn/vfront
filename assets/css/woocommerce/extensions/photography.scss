@@ -50,9 +50,9 @@
 	.photography-products {
 
 		.tools {
-			margin-bottom: ms(5);
+			margin-bottom: var(--space-separation);
 			background-color: rgba(0, 0, 0, 0.025);
-			padding: 1em 1em 1em ms(3);
+			padding: 1em 1em 1em var(--space-around);
 			border: 0;
 		}
 	}

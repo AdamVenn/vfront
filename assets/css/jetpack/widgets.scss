@@ -13,7 +13,7 @@
 	#subscribe-email {
 
 		input {
-			padding: ms(-2) !important;
+			padding: var(--space-around) !important;
 			width: 100% !important;
 		}
 	}
