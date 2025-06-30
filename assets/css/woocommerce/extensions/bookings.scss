@@ -6,6 +6,7 @@
  * Imports
  */
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/utils/mixins";
 @import "susy";
 @import "../../sass/vendors/modular-scale";
@@ -120,6 +121,6 @@
 @include susy-media($desktop) {
 
 	table.my_account_bookings {
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 	}
 }

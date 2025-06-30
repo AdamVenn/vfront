@@ -9,6 +9,7 @@
 // Utilities
 // Sass tools and helpers used across the project.
 @import "../sass/utils/variables";
+@import "../sass/utils/css-variables";
 @import "../sass/utils/mixins";
 
 // Base typography
@@ -40,7 +41,7 @@ body {
 	clear: both;
 	font-family: $base-font;
 	font-weight: 300;
-	font-size: ms(5);
+	font-size: var(--font-size-title);
 	line-height: 1.214;
 	letter-spacing: -1px;
 }
@@ -65,7 +66,7 @@ h6,
 
 h1,
 .wp-block-freeform.block-library-rich-text__tinymce h1 {
-	font-size: ms(5);
+	font-size: var(--font-size-title);
 	line-height: 1.214;
 	letter-spacing: -1px;
 }
@@ -83,12 +84,12 @@ h2,
 
 h3,
 .wp-block-freeform.block-library-rich-text__tinymce h3 {
-	font-size: ms(3);
+	font-size: var(--font-size-subtitle);
 }
 
 h4,
 .wp-block-freeform.block-library-rich-text__tinymce h4 {
-	font-size: ms(2);
+	font-size: var(--font-size-subtitle);
 }
 
 p,
@@ -363,7 +364,7 @@ ul.wp-block-latest-posts {
 			border-color: $color_body;
 			color: $color_body;
 			padding: 0.202em ms(-2);
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			text-transform: uppercase;
 			font-weight: 600;
 			display: inline-block;

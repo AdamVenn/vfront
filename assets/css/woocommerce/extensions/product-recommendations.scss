@@ -7,6 +7,7 @@
  */
 
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/utils/mixins";
 @import "susy";
 @import "../../sass/vendors/modular-scale";
@@ -17,7 +18,7 @@
 .wc-prl-recommendations {
 
 	h2 {
-		font-size: ms(3);
+		font-size: var(--font-size-subtitle);
 	}
 
 	&.wc-prl-page-product_details {

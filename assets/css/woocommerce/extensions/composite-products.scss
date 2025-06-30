@@ -7,6 +7,7 @@
  */
 
 @import "../../sass/utils/variables";
+@import "../../sass/utils/css-variables";
 @import "../../sass/utils/mixins";
 @import "susy";
 @import "../../sass/vendors/modular-scale";
@@ -244,11 +245,11 @@ table.shop_table_responsive tr.component_table_item {
  */
 
 .widget.widget_composite_summary.widget_position_fixed {
-	font-size: ms(1);
+	font-size: var(--font-size-base);
 }
 
 .widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_price {
-	font-size: ms(2);
+	font-size: var(--font-size-subtitle);
 }
 
 .widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_content {

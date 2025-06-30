@@ -6,6 +6,7 @@
  * Imports
  */
 @import "../sass/utils/variables";
+@import "../sass/utils/css-variables";
 @import "../sass/utils/mixins";
 @import "susy";
 @import "../sass/vendors/modular-scale";
@@ -79,7 +80,7 @@
 }
 
 .site-search {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	clear: both;
 	display: none;
 
@@ -376,7 +377,7 @@ ul.products,
 		}
 
 		.star-rating {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 		}
 
 		img {
@@ -632,7 +633,7 @@ ul.products,
 		}
 
 		p.price {
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 			margin: ms(2) 0;
 		}
 
@@ -690,7 +691,7 @@ ul.products,
 		}
 
 		.product_meta {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			padding-top: 1em;
 			border-top: 1px solid $color_border;
 
@@ -711,7 +712,7 @@ ul.products,
 		}
 
 		.edit-link {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			margin-top: 1em;
 		}
 	}
@@ -773,7 +774,7 @@ a.reset_variations {
 
 					.star-rating {
 						float: right;
-						font-size: ms(-1);
+						font-size: var(--font-size-small);
 						line-height: 1;
 						height: 1em;
 					}
@@ -787,7 +788,7 @@ a.reset_variations {
 
 			time {
 				opacity: 0.5;
-				font-size: ms(-1);
+				font-size: var(--font-size-small);
 			}
 
 			.avatar {
@@ -809,7 +810,7 @@ a.reset_variations {
 
 				.verified {
 					font-style: normal;
-					font-size: ms(-1);
+					font-size: var(--font-size-small);
 				}
 
 				.woocommerce-review__dash {
@@ -862,7 +863,7 @@ a.reset_variations {
 }
 
 .woocommerce-breadcrumb {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 
 	a {
 		text-decoration: underline;
@@ -1157,7 +1158,7 @@ table.cart {
 
 		a.remove {
 			position: absolute;
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 			top: - ms(-2);
 			right: - ms(-2);
 		}
@@ -1228,7 +1229,7 @@ table.cart {
 		margin-bottom: 1em;
 
 		&.checkout-button {
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 		}
 	}
 }
@@ -1348,7 +1349,7 @@ form.checkout {
 					border: 0;
 					margin: 0;
 					padding: 1em 0 0;
-					font-size: ms(-1);
+					font-size: var(--font-size-small);
 
 					label {
 						width: auto;
@@ -1393,7 +1394,7 @@ form.checkout {
 				.wc-credit-card-form-card-number,
 				.wc-credit-card-form-card-expiry,
 				.wc-credit-card-form-card-cvc {
-					font-size: ms(2);
+					font-size: var(--font-size-subtitle);
 				}
 
 				.wc-credit-card-form-card-number {
@@ -1465,7 +1466,7 @@ form.checkout {
 		margin-top: ms(5);
 
 		.button {
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 			width: 100%;
 			white-space: pre-wrap;
 		}
@@ -1498,7 +1499,7 @@ table.woocommerce-checkout-review-order-table {
 	font-weight: 600;
 	padding: ms(-3) 0;
 	text-align: right;
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 
 	&.strong {
 		color: $success;
@@ -1593,7 +1594,7 @@ ul.order_details {
 
 		strong {
 			display: block;
-			font-size: ms(2);
+			font-size: var(--font-size-subtitle);
 			text-transform: none;
 		}
 	}
@@ -1604,7 +1605,7 @@ ul.order_details {
 
 	.button {
 		padding: ms(-2) ms(-1);
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 		margin-right: 0.236em;
 	}
 }
@@ -1876,7 +1877,7 @@ p.stars {
 	border-color: $color_body;
 	color: $color_body;
 	padding: 0.202em ms(-2);
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	text-transform: uppercase;
 	font-weight: 600;
 	display: inline-block;
@@ -1894,7 +1895,7 @@ p.stars {
 }
 
 .storefront-sorting {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	margin-bottom: ms(5);
 }
 
@@ -1926,7 +1927,7 @@ p.stars {
 	.panel {
 
 		h2:first-of-type {
-			font-size: ms(3);
+			font-size: var(--font-size-subtitle);
 			margin-bottom: 1em;
 		}
 	}
@@ -1936,7 +1937,7 @@ p.stars {
 .upsells {
 
 	> h2:first-child {
-		font-size: ms(3);
+		font-size: var(--font-size-subtitle);
 		margin-bottom: 1em;
 	}
 }
@@ -2062,7 +2063,7 @@ p.no-comments {
 }
 
 dl.variation {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 
 	dd {
 		margin: 0 0 1em;
@@ -2070,7 +2071,7 @@ dl.variation {
 }
 
 .wc-item-meta {
-	font-size: ms(-1);
+	font-size: var(--font-size-small);
 	margin-left: 0;
 	list-style: none;
 
@@ -2207,7 +2208,7 @@ dl.variation {
 			.count {
 				font-weight: 400;
 				opacity: 0.5;
-				font-size: ms(-1);
+				font-size: var(--font-size-small);
 			}
 
 			span {
@@ -2220,7 +2221,7 @@ dl.variation {
 			top: 100%;
 			width: 100%;
 			z-index: 999999;
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			left: -999em;
 			display: block;
 
@@ -2284,7 +2285,7 @@ dl.variation {
 			clear: none;
 			width: 100%;
 			float: left;
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 
 			&.first {
 				clear: both !important;
@@ -2733,7 +2734,7 @@ dl.variation {
 				position: relative;
 				top: auto;
 				right: auto;
-				font-size: ms(1);
+				font-size: var(--font-size-base);
 			}
 		}
 
@@ -2777,7 +2778,7 @@ dl.variation {
 		@include clearfix;
 
 		h2 {
-			font-size: ms(3);
+			font-size: var(--font-size-subtitle);
 		}
 
 		.cross-sells {
@@ -2943,7 +2944,7 @@ dl.variation {
 			.button#place_order {
 				display: block;
 				width: 100%;
-				font-size: ms(2);
+				font-size: var(--font-size-subtitle);
 			}
 		}
 	}
@@ -3055,7 +3056,7 @@ dl.variation {
 	}
 
 	table.my_account_orders {
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 	}
 
 	.page-template-template-fullwidth-php {

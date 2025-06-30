@@ -11,6 +11,7 @@
 // Utilities
 // Sass tools and helpers used across the project.
 @import "../sass/utils/variables";
+@import "../sass/utils/css-variables";
 @import "../sass/utils/mixins";
 
 /**
@@ -126,19 +127,19 @@
 .editor-styles-wrapper {
 	// Typography
 	.has-small-font-size {
-		font-size: ms(-1);
+		font-size: var(--font-size-small);
 	}
 
 	.has-medium-font-size {
-		font-size: ms(2);
+		font-size: var(--font-size-subtitle);
 	}
 
 	.has-large-font-size {
-		font-size: ms(3);
+		font-size: var(--font-size-subtitle);
 	}
 
 	.has-huge-font-size {
-		font-size: ms(4);
+		font-size: var(--font-size-title);
 	}
 
 	// Audio
@@ -176,7 +177,7 @@
 
 		.wp-block-button__link {
 			border-radius: 0;
-			font-size: ms(1);
+			font-size: var(--font-size-base);
 			line-height: 1.618;
 			border: 0;
 			cursor: pointer;
@@ -208,7 +209,7 @@
 	.wp-block-latest-posts {
 
 		&__post-date {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 		}
 
 		li {
@@ -272,7 +273,7 @@
 
 			&:not(:focus)::first-letter {
 				margin: 0.15em ms(-4) 0 0;
-				font-size: ms(7);
+				font-size: var(--font-size-title);
 				font-weight: 300;
 				line-height: 0.618;
 			}
@@ -290,7 +291,7 @@
 
 		p {
 			margin-bottom: ms(1);
-			font-size: ms(3);
+			font-size: var(--font-size-subtitle);
 			line-height: 1.618;
 		}
 	}
@@ -307,7 +308,7 @@
 			border: 0;
 
 			p {
-				font-size: ms(2);
+				font-size: var(--font-size-subtitle);
 				line-height: 1.618;
 			}
 		}
@@ -315,7 +316,7 @@
 		footer,
 		cite,
 		&__citation {
-			font-size: ms(1);
+			font-size: var(--font-size-base);
 			font-weight: 700;
 		}
 	}
@@ -352,7 +353,7 @@
 		figcaption {
 			margin: 0;
 			padding: ms(-1) 0;
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			font-style: italic;
 		}
 	}
@@ -365,7 +366,7 @@
 	.wp-block-cover {
 		// < 5.2 styling
 		p.wp-block-cover-text {
-			font-size: ms(3);
+			font-size: var(--font-size-subtitle);
 			font-weight: 300;
 			line-height: 1.618;
 			padding: ms(1);
@@ -377,13 +378,13 @@
 
 			@media ( min-width: $handheld ) {
 				padding: ms(1);
-				font-size: ms(4);
+				font-size: var(--font-size-title);
 				width: calc(8 * (100vw / 12 ));
 				max-width: calc(8 * (100vw / 12 ));
 			}
 
 			@media ( min-width: $desktop ) {
-				font-size: ms(4);
+				font-size: var(--font-size-title);
 				width: calc(6 * (100vw / 12 ));
 				max-width: calc(6 * (100vw / 12 ));
 			}
@@ -411,32 +412,32 @@
 			}
 
 			h1 {
-				font-size: ms(6);
+				font-size: var(--font-size-title);
 				margin-bottom: ms(-6);
 			}
 
 			h2 {
-				font-size: ms(5);
+				font-size: var(--font-size-title);
 				margin-bottom: ms(-5);
 			}
 
 			h3 {
-				font-size: ms(4);
+				font-size: var(--font-size-title);
 				margin-bottom: ms(-4);
 			}
 
 			h4 {
-				font-size: ms(3);
+				font-size: var(--font-size-subtitle);
 				margin-bottom: ms(-3);
 			}
 
 			h5 {
-				font-size: ms(2);
+				font-size: var(--font-size-subtitle);
 				margin-bottom: ms(-2);
 			}
 
 			h6 {
-				font-size: ms(2);
+				font-size: var(--font-size-subtitle);
 				margin-bottom: ms(-2);
 			}
 
@@ -493,7 +494,7 @@
 			}
 
 			figcaption {
-				font-size: ms(1);
+				font-size: var(--font-size-base);
 				padding: ms(4) ms(2) ms(-2);
 			}
 		}
@@ -580,7 +581,7 @@
 		margin-bottom: ms(2);
 
 		.wp-block-file__button {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			line-height: 1.618;
 			border: 0;
 			cursor: pointer;
@@ -599,7 +600,7 @@
 	.wp-block-code,
 	.wp-block-preformatted pre {
 		font-family: "Courier 10 Pitch", Courier, monospace;
-		font-size: ms(1);
+		font-size: var(--font-size-base);
 	}
 
 	.wp-block-code {
@@ -682,12 +683,12 @@
 		}
 
 		&__comment {
-			font-size: ms(1);
+			font-size: var(--font-size-base);
 			margin: 0 0 ms(1);
 		}
 
 		&__comment-date {
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 		}
 
 		&__comment-excerpt {

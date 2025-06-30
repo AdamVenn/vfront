@@ -5,6 +5,7 @@
 // Utilities
 // Sass tools and helpers used across the project.
 @import "../sass/utils/variables";
+@import "../sass/utils/css-variables";
 @import "../sass/utils/mixins";
 @import "../sass/vendors/font-awesome/fontawesome";
 @import "../sass/vendors/font-awesome/brands";
@@ -234,7 +235,7 @@ input[type="submit"],
 					bottom: 0;
 					text-align: center;
 					line-height: 2.618046972; // 4.236/1.618
-					font-size: ms(3);
+					font-size: var(--font-size-subtitle);
 					text-indent: 0;
 					display: block;
 					cursor: pointer;
@@ -665,7 +666,7 @@ a.remove {
 			@include sf-fa-icon;
 			content: fa-content($fa-var-angle-right);
 			display: block;
-			font-size: ms(-1);
+			font-size: var(--font-size-small);
 			text-indent: 0;
 			line-height: initial;
 			position: absolute;
