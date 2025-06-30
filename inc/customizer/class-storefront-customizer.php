@@ -59,7 +59,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_footer_text_color'       => '#6d6d6d',
 					'v_button_background_color' => '#eeeeee',
 					'v_button_text_color'       => '#333333',
-					'background_color'          => 'ffffff',
+					'v_background_color'        => '#ffffff',
 				)
 			);
 		}
@@ -115,10 +115,6 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 * @since  1.0.0
 		 */
 		public function customize_register( $wp_customize ) {
-
-			// Move background color setting alongside background image.
-			$wp_customize->get_control( 'background_color' )->section  = 'v_color_scheme';
-			$wp_customize->get_control( 'background_color' )->priority = 5;
 
 			// Change background image section title & priority.
 			$wp_customize->get_section( 'background_image' )->title    = __( 'Background', 'storefront' );
@@ -202,6 +198,37 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 						'section'  => 'v_color_scheme',
 						'settings' => 'v_text_color',
 						'priority' => 15,
+					)
+				)
+			);
+
+			/**
+			 * Background Color
+			 */
+			$wp_customize->add_setting(
+				'v_background_color',
+				array(
+					/**
+					 * Filters for modifying the default background color.
+					 *
+					 * @param string Hex color value.
+					 * @package  storefront
+					 * @since    2.0.0
+					 */
+					'default'           => apply_filters( 'storefront_default_background_color', '#ffffff' ),
+					'sanitize_callback' => 'sanitize_hex_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'v_background_color',
+					array(
+						'label'    => __( 'Background color', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_background_color',
+						'priority' => 20,
 					)
 				)
 			);
@@ -627,7 +654,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function get_storefront_theme_mods() {
 			$storefront_theme_mods = array(
-				'background_color'            => storefront_get_content_background_color(),
+				'background_color'            => get_theme_mod( 'v_background_color' ),
 				'accent_color'                => get_theme_mod( 'v_accent_color' ),
 				'link_color'                  => get_theme_mod( 'v_link_color' ),
 				'header_background_color'     => get_theme_mod( 'v_header_background_color' ),
