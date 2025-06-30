@@ -9,7 +9,7 @@
       "requiredStatusChecks": null
     }
   ],
-  "ignoreDeps": ["susy"],
+  "ignoreDeps": [],
   "reviewers": ["team:woo-fse"],
   "enabled": false
 }
