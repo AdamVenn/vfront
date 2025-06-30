@@ -1245,8 +1245,7 @@ video {
  */
 
 .widget {
-	margin: 0 0 var(--space-separation);
-
+	
 	select {
 		max-width: 100%;
 	}
@@ -1260,10 +1259,8 @@ video {
 	.widgettitle {
 		font-size: var(--font-size-subtitle);
 		letter-spacing: 0;
-		border-bottom: 1px solid var(--border_color);
-		padding: 0 0 1em;
-		margin-bottom: 1em;
 		font-weight: 300;
+		margin-bottom: 0;
 	}
 
 	ul {
