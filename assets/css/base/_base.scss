@@ -913,7 +913,7 @@ textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 }
 
-button,
+button:not(.show-password-input),
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
