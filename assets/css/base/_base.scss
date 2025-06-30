@@ -248,7 +248,7 @@ img {
 }
 
 a {
-	color: $color_links;
+	color: var(--link_color);
 	text-decoration: none;
 }
 
@@ -451,7 +451,7 @@ body {
 	}
 
 	a {
-		color: $color_links;
+		color: var(--link_color);
 		text-decoration: underline;
 
 		&:hover {
@@ -872,16 +872,6 @@ input[type="submit"],
 
 	&::after {
 		display: none;
-	}
-
-	&.cta,
-	&.alt {
-		background-color: $color_links;
-		border-color: $color_links;
-
-		&:hover {
-			background-color: $color_links;
-		}
 	}
 
 	&:hover {

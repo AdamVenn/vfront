@@ -897,7 +897,7 @@ a.reset_variations {
 	a {
 
 		&:hover {
-			color: $color_links;
+			color: var(--link_color);
 		}
 	}
 }
@@ -1029,7 +1029,7 @@ a.reset_variations {
 
 		border-radius: 1em;
 		cursor: ew-resize;
-		background: $color_links;
+		background: var(--accent_color);
 		box-sizing: border-box;
 		margin-top: -0.25em;
 		margin-left: auto;
@@ -1052,7 +1052,7 @@ a.reset_variations {
 		font-size: 0.7em;
 		display: block;
 		border: 0;
-		background: $color_links;
+		background: var(--accent_color);
 		border-radius: 1em;
 	}
 
@@ -1771,7 +1771,7 @@ ul.order_details {
 		left: 0;
 		position: absolute;
 		padding-top: 1.5em;
-		color: $color_links;
+		color: var(--accent_color);
 	}
 }
 
