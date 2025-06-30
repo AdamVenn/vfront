@@ -9,6 +9,17 @@ body {
 	font-family: $base-font;
 }
 
+// List alignment and spacing
+ol, ul {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-between-inner);
+}
+
+.editor-styles-wrapper :where(:not(.is-layout-flex, .is-layout-grid)) > li.wp-block {
+	margin: unset;
+}
+
 // Post title
 .editor-post-title__block {
 	position: relative;
