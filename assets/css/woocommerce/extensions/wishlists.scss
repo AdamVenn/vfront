@@ -89,23 +89,20 @@
 	}
 }
 
-@include susy-media($desktop) {
+#wl-wrapper {
 
-	#wl-wrapper {
+	.wl-tabs {
 
-		.wl-tabs {
+		> li {
 
-			> li {
+			a {
+				padding-left: 0;
+			}
+
+			&.active {
 
 				a {
-					padding-left: 0;
-				}
-
-				&.active {
-
-					a {
-						box-shadow: none;
-					}
+					box-shadow: none;
 				}
 			}
 		}

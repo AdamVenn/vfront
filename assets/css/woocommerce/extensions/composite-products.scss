@@ -149,65 +149,24 @@ table.shop_table_responsive tr.component_table_item {
 	display: none;
 }
 
-/**
- * Desktop
- */
-
-@include susy-media($desktop) {
-
-	.component_container_table_item dl.composite_configuration {
-		display: none;
-	}
-
-	table.shop_table_responsive tr.component_table_item {
-		display: table-row;
-	}
-
-	.sp-product-gallery-stacked,
-	.storefront-full-width-content,
-	.page-template-template-fullwidth-php {
-
-		#content div.product,
-		div.product {
-
-			.component .composited_product_images {
-
-				@include span( 2 of 8 );
-			}
-		}
-
-		.composite_form {
-
-			.component {
-
-				&:not(.selection_thumbnail_hidden) .component_summary {
-
-					.composited_product_details_wrapper > .details {
-
-						@include span( last 6 of 8 );
-					}
-				}
-			}
-		}
-	}
+.component_container_table_item dl.composite_configuration {
+	display: none;
 }
 
-/**
- * Handheld
- */
+table.shop_table_responsive tr.component_table_item {
+	display: table-row;
+}
 
-@include susy-media(max-width $handheld) {
+.sp-product-gallery-stacked,
+.storefront-full-width-content,
+.page-template-template-fullwidth-php {
 
-	.woocommerce,
-	.woocommerce-page {
+	#content div.product,
+	div.product {
 
-		#content div.product,
-		div.product {
+		.component .composited_product_images {
 
-			.component .composited_product_images {
-
-				@include span( 10 of 10 );
-			}
+			@include span( 2 of 8 );
 		}
 	}
 
@@ -219,21 +178,7 @@ table.shop_table_responsive tr.component_table_item {
 
 				.composited_product_details_wrapper > .details {
 
-					@include span( 10 of 10 );
-				}
-			}
-
-			.component_summary {
-
-				.composited_product_details_wrapper {
-
-					.composited_product_images {
-						max-width: 50%;
-
-						img {
-							margin-bottom: 1em;
-						}
-					}
+					@include span( last 6 of 8 );
 				}
 			}
 		}
@@ -260,24 +205,6 @@ table.shop_table_responsive tr.component_table_item {
 	margin-right: auto;
 	padding: 0 var(--space-around);
 	box-sizing: content-box;
-}
-
-@include susy-media (max-width $container-width) {
-
-	.widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-		margin-left: var(--space-separation);
-		margin-right: var(--space-separation);
-		padding: 0;
-	}
-}
-
-@include susy-media (max-width $handheld) {
-
-	.widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-		margin-left: var(--space-around);
-		margin-right: var(--space-around);
-		padding: 0;
-	}
 }
 
 .widget_composite_summary.widget_position_fixed .widget_composite_summary_content .widget_composite_summary_ui_wrapper > div {

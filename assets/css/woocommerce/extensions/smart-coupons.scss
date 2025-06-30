@@ -55,20 +55,17 @@
 	}
 }
 
-@include susy-media($desktop) {
+.sc_info_box {
+
+	@include span(last 4 of 9);
+	@include gutters(inside);
+}
+
+.page-template-template-fullwidth-php {
 
 	.sc_info_box {
 
-		@include span(last 4 of 9);
-		@include gutters(inside);
-	}
-
-	.page-template-template-fullwidth-php {
-
-		.sc_info_box {
-
-			@include span(last 5 of 12);
-			margin-left: 0;
-		}
+		@include span(last 5 of 12);
+		margin-left: 0;
 	}
 }

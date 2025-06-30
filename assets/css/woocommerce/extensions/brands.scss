@@ -149,35 +149,32 @@ div#brands_a_z {
 	}
 }
 
-@include susy-media($desktop) {
+div#brands_a_z {
 
-	div#brands_a_z {
+	ul.brands_index {
 
-		ul.brands_index {
+		@include span(3 of 12);
+		transition: all 0.5s ease;
+	}
 
-			@include span(3 of 12);
-			transition: all 0.5s ease;
+	h3 {
+
+		@include span(last 9 of 12);
+		clear: right;
+		text-transform: uppercase;
+
+		&:first-of-type {
+			margin-top: 0;
 		}
+	}
 
-		h3 {
+	a.top {
+		clear: right;
+	}
 
-			@include span(last 9 of 12);
-			clear: right;
-			text-transform: uppercase;
+	ul.brands {
 
-			&:first-of-type {
-				margin-top: 0;
-			}
-		}
-
-		a.top {
-			clear: right;
-		}
-
-		ul.brands {
-
-			@include span(last 9 of 12);
-			clear: right;
-		}
+		@include span(last 9 of 12);
+		clear: right;
 	}
 }
