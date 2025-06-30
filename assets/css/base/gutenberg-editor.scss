@@ -60,20 +60,21 @@ h5,
 h6,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
 	clear: both;
-	font-weight: 300;
 	margin: 0 0 var(--space-around);
 }
 
 h1,
 .wp-block-freeform.block-library-rich-text__tinymce h1 {
 	font-size: var(--font-size-title);
+	font-weight: bold;
 	line-height: 1.214;
 	letter-spacing: -1px;
 }
 
 h2,
 .wp-block-freeform.block-library-rich-text__tinymce h2 {
-	font-size: 2em;
+	font-size: var(--font-size-title);
+	font-weight: normal;
 	line-height: 1.214;
 
 	& + h3 {
@@ -85,11 +86,25 @@ h2,
 h3,
 .wp-block-freeform.block-library-rich-text__tinymce h3 {
 	font-size: var(--font-size-subtitle);
+	font-weight: bold;
 }
 
 h4,
 .wp-block-freeform.block-library-rich-text__tinymce h4 {
 	font-size: var(--font-size-subtitle);
+	font-weight: normal;
+}
+
+h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5 {
+	font-size: var(--font-size-base);
+	font-weight: bold;
+}
+
+h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
+	font-size: var(--font-size-small);
+	font-weight: bold;
 }
 
 p,
