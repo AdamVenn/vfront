@@ -638,52 +638,17 @@ table {
 }
 
 /**
- * 404 Styles
+ * 404
  */
 .error404 {
 
-	.site-content .widget_product_search {
-		padding: var(--space-separation);
-		background-color: rgba(#000, 0.025);
+	.storefront-fourohfour {
+		@include flex-col;
 
-		form {
-			margin: 0;
-		}
-	}
-
-	.fourohfour-columns-2 {
-
-		@include clearfix;
 		padding: var(--space-around) 0;
-		border: 1px solid var(--border_color);
-		border-width: 1px 0;
+		margin-top: var(--space-separation);
 		margin-bottom: var(--space-separation);
 
-		ul.products li.product,
-		.widget {
-			margin-bottom: 0;
-		}
-
-		.col-1 {
-
-			ul.products {
-				margin-bottom: var(--space-around);
-
-				li.product {
-
-					width: 50%;
-
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-			}
-		}
-
-		.col-2 {
-			padding: var(--space-separation);
-			background-color: rgba(#000, 0.025);
-		}
 	}
 }
 
@@ -1338,6 +1303,11 @@ video {
 /**
  * Widgets
  */
+
+.search-form {
+	@include flex-row-header-footer;
+	justify-content: center;
+}
 
 .widget {
 	
