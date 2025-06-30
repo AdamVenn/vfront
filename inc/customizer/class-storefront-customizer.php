@@ -50,6 +50,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_heading_color'           => '#404040',
 					'v_border_color'            => '#404040',
 					'v_accent_color'            => '#7f54b3',
+					'v_link_color'              => '#7f54b3',
 					'v_container_color'         => '#f0f0f0',
 					'v_header_background_color' => '#ffffff',
 					'v_header_text_color'       => '#404040',
@@ -266,6 +267,40 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Link Color
+			 */
+			$wp_customize->add_setting(
+				'v_link_color',
+				array(
+					/**
+					 * Filters for modifying the default accent color.
+					 *
+					 * @param string Hex color value.
+					 * @package  storefront
+					 * @since    2.0.0
+					 */
+					'default'           => apply_filters( 'storefront_default_link_color', '#7f54b3' ),
+					'sanitize_callback' => 'sanitize_hex_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'v_link_color',
+					array(
+						'label'    => __( 'Link color', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_link_color',
+						'priority' => 31,
+					)
+				)
+			);
+
+			/**
+			 * Header Image
+			 */
 			$wp_customize->add_control(
 				new Arbitrary_Storefront_Control(
 					$wp_customize,
@@ -562,6 +597,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			$storefront_theme_mods = array(
 				'background_color'            => storefront_get_content_background_color(),
 				'accent_color'                => get_theme_mod( 'v_accent_color' ),
+				'link_color'                  => get_theme_mod( 'v_link_color' ),
 				'header_background_color'     => get_theme_mod( 'v_header_background_color' ),
 				'header_text_color'           => get_theme_mod( 'v_header_text_color' ),
 				'footer_background_color'     => get_theme_mod( 'v_footer_background_color' ),
