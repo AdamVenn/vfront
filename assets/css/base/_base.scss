@@ -268,6 +268,25 @@ a {
 	text-decoration: none;
 }
 
+a:not(.button) {
+	&:hover {
+		text-shadow: var(--glow);
+		filter: brightness(var(--brightness-on-hover));
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: 0.5 !important;
+		cursor: not-allowed;
+		filter: saturate(50%);
+
+		&:hover {
+			opacity: 0.5 !important;
+			filter: saturate(50%);
+		}
+	}
+}
+
 // Wait, what..?
 .storefront-cute * {
 	font-family: "Comic Sans MS", sans-serif;
@@ -473,10 +492,6 @@ body {
 	a {
 		color: var(--link_color);
 		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-		}
 
 		@include remove-button-underline();
 	}
@@ -801,10 +816,6 @@ table {
 
 		a {
 			text-decoration: underline;
-
-			&:hover {
-				text-decoration: none;
-			}
 
 			@include remove-button-underline();
 		}
@@ -1379,4 +1390,13 @@ video {
 			line-height: 1;
 		}
 	}
+}
+
+form.customize-unpreviewable,
+form.customize-unpreviewable input,
+form.customize-unpreviewable select,
+form.customize-unpreviewable button,
+a.customize-unpreviewable,
+area.customize-unpreviewable {
+	text-shadow: unset !important;
 }

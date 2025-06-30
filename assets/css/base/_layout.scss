@@ -347,10 +347,6 @@ table.shop_table_responsive {
 		justify-content: flex-start;
 		font-size: var(--font-size-small);
 
-		> li:hover > a {
-			text-decoration: none;
-		}
-
 		ul {
 
 			a {
@@ -374,10 +370,6 @@ table.shop_table_responsive {
 		a {
 			padding: var(--space-around);
 			font-weight: 400;
-
-			&:hover {
-				text-decoration: none;
-			}
 		}
 	}
 }
