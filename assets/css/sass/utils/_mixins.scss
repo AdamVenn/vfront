@@ -81,6 +81,14 @@
 	gap: var(--space-between-inner);
 }
 
+@mixin flex-row-header-footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: var(--space-between-outer);
+}
+
 // Standardize scrollbar appearance
 @mixin scrollbar-on-hover-x {
     overflow-x: auto;
