@@ -39,6 +39,8 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 			$defaults['vfront_show_breadcrumbs']       = true;
 			$defaults['storefront_sticky_add_to_cart'] = true;
 			$defaults['storefront_product_pagination'] = true;
+			$defaults['vfront_use_original_gallery']   = false;
+			$defaults['vfront_show_meta']              = true;
 
 			return $defaults;
 		}
