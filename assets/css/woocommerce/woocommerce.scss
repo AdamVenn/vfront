@@ -164,7 +164,8 @@ table.shop_table_responsive {
 	}
 
 	&.my_account_orders {
-
+		font-size: var(--font-size-small);
+		
 		.order-actions {
 			text-align: right;
 
@@ -1855,34 +1856,6 @@ dl.variation {
 .storefront-breadcrumb {
 	padding: var(--space-around) 0;
 	margin: 0 0 var(--space-separation);
-}
-
-/**
-* Responsive tables
-*/
-table.shop_table_responsive {
-
-	thead {
-		display: table-header-group;
-	}
-
-	tbody {
-
-		th {
-			display: table-cell;
-		}
-	}
-
-	tr {
-
-		td {
-			display: table-cell;
-
-			&::before {
-				display: none;
-			}
-		}
-	}
 }
 
 /**
