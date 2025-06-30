@@ -14,8 +14,13 @@
 
     /* Components */
     --min-button-width: 80px;
-    --border-thin: 1px;
-    --border-thick: 3px; 
+    --border-thin: 2px;
+    --border-thick: 3px;
+    
+    /* Effects */
+    --drop-shadow-color: #00000040;
+    --drop-shadow: 0px 3px 5px 2px var(--drop-shadow-color);
+    --focus-inner-shadow: 0px 0px 0px 2px var(--accent_color) inset;
 }
 
 /***
