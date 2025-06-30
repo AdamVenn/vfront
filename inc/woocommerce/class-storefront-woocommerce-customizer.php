@@ -78,6 +78,22 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 				)
 			);
 
+			$wp_customize->add_setting(
+				'vfront_use_original_gallery',
+				array(
+					'default'           => apply_filters( 'vfront_use_original_gallery', false ),
+					'sanitize_callback' => 'wp_validate_boolean',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'vfront_show_meta',
+				array(
+					'default'           => apply_filters( 'vfront_show_meta', true ),
+					'sanitize_callback' => 'wp_validate_boolean',
+				)
+			);
+
 			$wp_customize->add_control(
 				'storefront_sticky_add_to_cart',
 				array(
@@ -97,6 +113,28 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 					'label'       => __( 'Product Pagination', 'storefront' ),
 					'description' => __( 'Displays next and previous links on product pages. A product thumbnail is displayed with the title revealed on hover.', 'storefront' ),
 					'priority'    => 20,
+				)
+			);
+
+			$wp_customize->add_control(
+				'vfront_use_original_gallery',
+				array(
+					'type'        => 'checkbox',
+					'section'     => 'storefront_single_product_page',
+					'label'       => __( 'Use original Storefront gallery', 'storefront' ),
+					'description' => __( 'Use the product image gallery from the original Storefront theme', 'storefront' ),
+					'priority'    => 30,
+				)
+			);
+
+			$wp_customize->add_control(
+				'vfront_show_meta',
+				array(
+					'type'        => 'checkbox',
+					'section'     => 'storefront_single_product_page',
+					'label'       => __( 'Show meta info', 'storefront' ),
+					'description' => __( 'Show categories, tags, etc. on product page', 'storefront' ),
+					'priority'    => 35,
 				)
 			);
 		}

@@ -19,13 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 global $post;
 
-// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-$heading = apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) );
-
 ?>
-
-<?php if ( $heading ) : ?>
-	<h2><?php echo esc_html( $heading ); ?></h2>
-<?php endif; ?>
-
+<div class="v-description">
 <?php the_content(); ?>
+</div>

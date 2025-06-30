@@ -147,6 +147,9 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 			wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce/woocommerce.css', array( 'storefront-style', 'storefront-icons' ), $storefront_version );
 			wp_style_add_data( 'storefront-woocommerce-style', 'rtl', 'replace' );
 
+			wp_enqueue_style( 'vfront-gallery-style', get_template_directory_uri() . '/assets/css/woocommerce/v-gallery.css', array(), $storefront_version );
+			wp_style_add_data( 'vfront-gallery-style', 'rtl', 'replace' );
+
 			if ( ! class_exists( 'Storefront_Sticky_Add_to_Cart' ) && is_product() ) {
 				wp_register_script( 'storefront-sticky-add-to-cart', get_template_directory_uri() . '/assets/js/sticky-add-to-cart' . $suffix . '.js', array(), $storefront_version, true );
 			}
