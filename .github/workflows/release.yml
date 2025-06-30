@@ -44,5 +44,5 @@ jobs:
             - name: Create Release
               uses: softprops/action-gh-release@v1
               with:
-                  files: storefront.zip
+                  files: vfront.zip
                   tag_name: latest
