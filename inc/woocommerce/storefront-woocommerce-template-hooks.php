@@ -113,10 +113,10 @@ add_filter(
  * @see storefront_header_cart()
  * @see storefront_primary_navigation_wc_wrapper_close()
  */
-add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper', 60 );
-add_action( 'storefront_header', 'storefront_header_cart', 61 );
-add_action( 'storefront_header', 'storefront_product_search', 62 );
-add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper_close', 67 );
+add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper', 64 );
+add_action( 'storefront_header', 'storefront_header_cart', 66 );
+add_action( 'storefront_header', 'storefront_product_search', 68 );
+add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper_close', 70 );
 
 /**
  * Cart fragment

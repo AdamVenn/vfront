@@ -29,7 +29,7 @@ add_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 add_action( 'storefront_header', 'storefront_header_container_close', 41 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper', 42 );
 add_action( 'storefront_header', 'storefront_primary_navigation', 50 );
-add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 68 );
+add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 60 );
 
 /**
  * Footer
