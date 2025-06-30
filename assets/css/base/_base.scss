@@ -567,10 +567,8 @@ body {
  * Tables
  */
 table {
-	border-spacing: 0;
 	width: 100%;
-	margin: 0 0 var(--space-around);
-	border-collapse: separate;
+	border-collapse: collapse;
 
 	caption {
 		padding: 1em 0;
@@ -579,7 +577,7 @@ table {
 
 	td,
 	th {
-		padding: 1em var(--space-around);
+		padding: var(--padding-small) var(--padding-large);
 		text-align: left;
 		vertical-align: top;
 
