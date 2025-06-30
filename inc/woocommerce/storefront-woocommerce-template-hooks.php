@@ -40,7 +40,11 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 add_action( 'woocommerce_before_main_content', 'storefront_before_content', 10 );
 add_action( 'woocommerce_after_main_content', 'storefront_after_content', 10 );
 add_action( 'storefront_content_top', 'storefront_shop_messages', 15 );
-add_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 );
+
+if ( get_theme_mod( 'vfront_show_breadcrumbs', true ) ) {
+	add_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 );
+}
+
 
 add_action( 'woocommerce_after_shop_loop', 'storefront_sorting_wrapper', 9 );
 add_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );

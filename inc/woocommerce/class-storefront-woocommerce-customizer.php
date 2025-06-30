@@ -36,6 +36,7 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 		 * @return array
 		 */
 		public function setting_default_values( $defaults = array() ) {
+			$defaults['vfront_show_breadcrumbs']       = true;
 			$defaults['storefront_sticky_add_to_cart'] = true;
 			$defaults['storefront_product_pagination'] = true;
 
@@ -49,6 +50,37 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 		 * @since 2.4.0
 		 */
 		public function customize_register( $wp_customize ) {
+
+			/**
+			 * WooCommerce General
+			 */
+			$wp_customize->add_section(
+				'storefront_wc_general',
+				array(
+					'title'    => __( 'General', 'storefront' ),
+					'priority' => 5,
+					'panel'    => 'woocommerce',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'vfront_show_breadcrumbs',
+				array(
+					'default'           => apply_filters( 'vfront_show_breadcrumbs', true ),
+					'sanitize_callback' => 'wp_validate_boolean',
+				)
+			);
+
+			$wp_customize->add_control(
+				'vfront_show_breadcrumbs',
+				array(
+					'type'        => 'checkbox',
+					'section'     => 'storefront_wc_general',
+					'label'       => __( 'Show breadcrumbs', 'storefront' ),
+					'description' => __( 'Show breadcrumbs', 'storefront' ),
+					'priority'    => 40,
+				)
+			);
 
 			/**
 			 * Product Page
