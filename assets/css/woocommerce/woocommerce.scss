@@ -96,8 +96,10 @@ $product-image-width: 120px;
 		}
 
 		form {
-
 			margin: 0;
+
+			color: var(--text_color);
+			
 			&::before {
 				top: 1.15em;
 				left: 1.15em;
