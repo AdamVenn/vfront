@@ -167,11 +167,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			add_theme_support( 'wp-block-styles' );
 
 			/**
-			 * Add support for full and wide align images.
-			 */
-			add_theme_support( 'align-wide' );
-
-			/**
 			 * Add support for editor styles.
 			 */
 			add_theme_support( 'editor-styles' );
@@ -408,11 +403,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 				$classes[] = 'storefront-cute';
 			}
 
-			// If our main sidebar doesn't contain widgets, adjust the layout to be full-width.
-			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-				$classes[] = 'storefront-full-width-content';
-			}
-
 			// Add class when using homepage template + featured image.
 			if ( is_page_template( 'template-homepage.php' ) && has_post_thumbnail() ) {
 				$classes[] = 'has-post-thumbnail';
@@ -421,11 +411,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			// Add class when Secondary Navigation is in use.
 			if ( has_nav_menu( 'secondary' ) ) {
 				$classes[] = 'storefront-secondary-navigation';
-			}
-
-			// Add class if align-wide is supported.
-			if ( current_theme_supports( 'align-wide' ) ) {
-				$classes[] = 'storefront-align-wide';
 			}
 
 			return $classes;

@@ -83,30 +83,10 @@ table.shop_table_responsive {
 	
 }
 
-.storefront-full-width-content {
-
-	.content-area {
-
-		width: 100%;
-	}
-}
-
 .content-area,
 .widget-area {
 	padding: var(--space-around);
 	margin-bottom: var(--space-separation);
-}
-
-/**
-* Full width & homepage template
-*/
-.page-template-template-fullwidth-php,
-.page-template-template-homepage-php {
-
-	.content-area {
-
-		width: 100%;
-	}
 }
 
 /**
