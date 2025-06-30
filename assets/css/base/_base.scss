@@ -931,6 +931,11 @@ input[type="submit"],
 		opacity: 0.5;
 	}
 
+	// Maintain the box shadow used for focus and add drop shadow
+	&:focus-visible {
+		box-shadow: var(--drop-shadow), var(--focus-inner-shadow);
+	}
+
 }
 
 .button.woocommerce-MyAccount-downloads-file {
