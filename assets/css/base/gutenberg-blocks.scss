@@ -286,19 +286,6 @@
 			color: #fff;
 			z-index: 1;
 			text-align: center;
-
-			@media ( min-width: $handheld ) {
-				padding: var(--space-around);
-				font-size: var(--font-size-title);
-				width: calc(8 * (100vw / 12 ));
-				max-width: calc(8 * (100vw / 12 ));
-			}
-
-			@media ( min-width: $desktop ) {
-				font-size: var(--font-size-title);
-				width: calc(6 * (100vw / 12 ));
-				max-width: calc(6 * (100vw / 12 ));
-			}
 		}
 
 		// > 5.2 styling
@@ -463,65 +450,9 @@
 	.wp-block-columns {
 
 		.wp-block-column {
-			margin-bottom: var(--space-around);
 
-			@media (min-width: 600px) {
-				padding-left: 0;
-				padding-right: var(--space-around);
-				margin-left: 0;
-
-				&:not(:last-child) {
-					margin-right: 0;
-				}
-
-				&:nth-of-type(even) {
-					padding-right: 0;
-				}
-
-				body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
-					padding-right: var(--space-around);
-
-					&:nth-of-type(even) {
-						padding-right: 0;
-					}
-				}
-			}
 		}
 
-		@media (min-width: 782px) {
-
-			@for $i from 2 through 6 {
-				&.has-#{$i}-columns {
-
-					.wp-block-column {
-						&:nth-of-type( #{$i}n ) {
-							margin-right: 0;
-						}
-					}
-				}
-			}
-
-			.wp-block-column {
-				padding-right: 0;
-
-				&:not(:first-child) {
-					padding-left: 0;
-				}
-
-				&:not(:last-child) {
-					padding-right: 0;
-					margin-right: var(--space-around);
-				}
-
-				body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) & {
-					padding-right: 0;
-
-					&:not(:last-child) {
-						margin-right: var(--space-around);
-					}
-				}
-			}
-		}
 	}
 
 	// Latest Comments
