@@ -1076,6 +1076,9 @@ label {
 }
 
 label.inline {
+	
+	display: inline !important;
+	margin-left: var(--space-around);
 
 	input {
 		width: auto;
