@@ -1704,7 +1704,7 @@ p.stars {
 .woocommerce-noreviews,
 p.no-comments {
 
-	margin: var(--space-separation);
+	margin: var(--space-around) var(--space-separation);
 	border-radius: 2px;
 	color: var(--text_color);
 	padding: 1em 2em 1em 3.5em;
