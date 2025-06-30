@@ -214,7 +214,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			/**
 			 * Enqueue editor styles.
 			 */
-			add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
+			add_editor_style( array( 'assets/css/base/gutenberg-editor.css' ) );
 
 			/**
 			 * Add support for responsive embedded content.
@@ -361,30 +361,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
-		}
-
-		/**
-		 * Register Google fonts.
-		 *
-		 * @since 2.4.0
-		 * @return string Google fonts URL for the theme.
-		 */
-		public function google_fonts() {
-			$google_fonts = apply_filters(
-				'storefront_google_font_families',
-				array(
-					'source-sans-pro' => 'Source+Sans+Pro:400,300,300italic,400italic,600,700,900',
-				)
-			);
-
-			$query_args = array(
-				'family' => implode( '|', $google_fonts ),
-				'subset' => rawurlencode( 'latin,latin-ext' ),
-			);
-
-			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-
-			return $fonts_url;
 		}
 
 		/**
