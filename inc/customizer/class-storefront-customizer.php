@@ -119,14 +119,6 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function customize_register( $wp_customize ) {
 
-			// Change background image section title & priority.
-			$wp_customize->get_section( 'background_image' )->title    = __( 'Background', 'storefront' );
-			$wp_customize->get_section( 'background_image' )->priority = 30;
-
-			// Change header image section title & priority.
-			$wp_customize->get_section( 'header_image' )->title    = __( 'Header', 'storefront' );
-			$wp_customize->get_section( 'header_image' )->priority = 25;
-
 			// Selective refresh.
 			if ( function_exists( 'add_partial' ) ) {
 				$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
