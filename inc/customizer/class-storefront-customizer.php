@@ -194,7 +194,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_text_color', '#43454b' ),
+					'default'           => apply_filters( 'storefront_default_text_color', '#6d6d6d' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
@@ -269,7 +269,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_header_background_color', '#2c2d33' ),
+					'default'           => apply_filters( 'storefront_default_header_background_color', '#ffffff' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
@@ -300,7 +300,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_header_text_color', '#9aa0a7' ),
+					'default'           => apply_filters( 'storefront_default_header_text_color', '#404040' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
@@ -374,7 +374,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_footer_text_color', '#61656b' ),
+					'default'           => apply_filters( 'storefront_default_footer_text_color', '#6d6d6d' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
@@ -417,7 +417,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_button_background_color', '#96588a' ),
+					'default'           => apply_filters( 'storefront_default_button_background_color', '#eeeeee' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
@@ -448,7 +448,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @package  storefront
 					 * @since    2.0.0
 					 */
-					'default'           => apply_filters( 'storefront_default_button_text_color', '#ffffff' ),
+					'default'           => apply_filters( 'storefront_default_button_text_color', '#333333' ),
 					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
