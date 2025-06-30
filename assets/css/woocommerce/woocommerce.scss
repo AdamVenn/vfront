@@ -2341,7 +2341,7 @@ ul.products,
 }
 
 /**
-* Main content area (adjacent to sidebar) product layout
+* Main content area product layout
 */
 .site-main {
 
@@ -3013,19 +3013,6 @@ table + .addresses {
 	.form-row-last {
 
 		width: calc(4 / 7 * 100%); float: right;
-	}
-}
-
-.left-sidebar:not(.page-template-template-fullwidth-php) {
-
-	.woocommerce-MyAccount-content {
-
-		width: calc(7 / 9 * 100%);
-	}
-
-	.woocommerce-MyAccount-navigation {
-
-		width: calc(2 / 9 * 100%); float: right;
 	}
 }
 
