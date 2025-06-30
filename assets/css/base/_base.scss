@@ -372,6 +372,19 @@ body {
 	.widget {
 		margin-bottom: 0;
 	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--header_text_color);
+	}
+
+	a {
+		color: var(--header_text_color);
+	}
 }
 
 .header-widget-region {
@@ -515,11 +528,11 @@ body {
 	h4,
 	h5,
 	h6 {
-		color: var(--heading_color);
+		color: var(--footer_text_color);
 	}
 
 	a {
-		color: var(--link_color);
+		color: var(--footer_text_color);
 		text-decoration: underline;
 
 		@include remove-button-underline();
