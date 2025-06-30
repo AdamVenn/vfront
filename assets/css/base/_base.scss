@@ -430,7 +430,6 @@ body {
 
 	.entry-content,
 	.entry-header {
-		max-width: ms(16);
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
@@ -775,8 +774,8 @@ table {
 
 	#cancel-comment-reply-link {
 		position: absolute;
-		top: ms(-3);
-		right: ms(-3);
+		top: 0.2em;
+		right: 0.2em;
 		display: block;
 		height: 1em;
 		width: 1em;
@@ -1576,7 +1575,7 @@ button.menu-toggle {
 		li {
 			list-style: none;
 			margin-bottom: var(--space-around);
-			line-height: ms(2);
+			line-height: 3em;
 		}
 
 		.children {
