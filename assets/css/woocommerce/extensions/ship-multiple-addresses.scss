@@ -21,14 +21,14 @@
 	}
 
 	#shipping_addresses {
-		padding-top: ms(3);
+		padding-top: var(--space-separation);
 	}
 
 	.ship_address,
 	.no_shipping_address {
 		float: none;
 		width: auto;
-		margin: 0 0 ms(3);
+		margin: 0 0 var(--space-around);
 		background-color: rgba(#000, 0.025);
 		border: 0;
 		padding: 1em;
@@ -49,7 +49,7 @@
 		}
 
 		.note-form {
-			margin-bottom: ms(3);
+			margin-bottom: var(--space-around);
 			padding-top: 1em;
 		}
 
@@ -65,7 +65,7 @@
 		@include clearfix;
 
 		.address-block {
-			margin: 0 0 ms(3);
+			margin: 0 0 var(--space-around);
 
 			@include span(4.5 of 9);
 

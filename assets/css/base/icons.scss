@@ -38,7 +38,7 @@
 
 			input[type="search"],
 			input[type="text"] {
-				padding-left: ms(5);
+				padding-left: var(--space-separation);
 			}
 		}
 	}
@@ -56,7 +56,7 @@
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-file-alt);
-					margin-left: ms(-3);
+					margin-left: var(--space-around);
 				}
 			}
 		}
@@ -69,7 +69,7 @@
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-reply);
-					margin-left: ms(-3);
+					margin-left: var(--space-around);
 				}
 
 				&.comment-edit-link {
@@ -106,7 +106,7 @@
 
 			@include sf-fa-icon;
 			content: fa-content($fa-var-thumbtack);
-			margin-right: ms(-3);
+			margin-right: var(--space-around);
 
 		}
 	}
@@ -175,7 +175,7 @@ input[type="submit"],
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-long-arrow-alt-left);
-					margin-right: ms(-3);
+					margin-right: var(--space-around);
 				}
 			}
 		}
@@ -188,7 +188,7 @@ input[type="submit"],
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-long-arrow-alt-right);
-					margin-left: ms(-3);
+					margin-left: var(--space-around);
 				}
 			}
 		}
@@ -212,7 +212,7 @@ input[type="submit"],
 
 		input[type="text"],
 		input[type="search"] {
-			padding-left: ms(5);
+			padding-left: var(--space-separation);
 		}
 	}
 }
@@ -283,7 +283,7 @@ input[type="submit"],
 
 			&::after {
 				content: fa-content($fa-var-angle-left);
-				padding-right: ms(2);
+				padding-right: var(--space-around);
 			}
 		}
 
@@ -291,7 +291,7 @@ input[type="submit"],
 
 			&::after {
 				content: fa-content($fa-var-angle-right);
-				padding-left: ms(2);
+				padding-left: var(--space-around);
 			}
 		}
 	}
@@ -333,7 +333,7 @@ input[type="submit"],
 	&::before {
 
 		@include sf-fa-icon;
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 
 	&.in-stock {
@@ -357,7 +357,7 @@ a.reset_variations {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-sync);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -371,7 +371,7 @@ a.reset_variations {
 
 				@include sf-fa-icon;
 				content: fa-content($fa-var-home);
-				margin-right: ms(-3);
+				margin-right: var(--space-around);
 			}
 		}
 	}
@@ -392,16 +392,16 @@ a.reset_variations {
 		margin: 0;
 
 		li {
-			padding-left: ms(3);
+			padding-left: var(--space-separation);
 
 			&::before {
 
 				@include sf-fa-icon;
-				margin-right: ms(-3);
+				margin-right: var(--space-around);
 				display: block;
 				float: left;
 				opacity: 0.35;
-				margin-left: - ms(3);
+				margin-left: - var(--space-around);
 				width: 1em;
 			}
 		}
@@ -589,7 +589,7 @@ a.remove {
 
 				@include sf-fa-icon;
 				content: fa-content($fa-var-truck);
-				margin-right: ms(-5);
+				margin-right: var(--space-around);
 			}
 		}
 	}
@@ -659,7 +659,7 @@ a.remove {
 		text-indent: -9999px;
 		position: relative;
 		display: inline-block;
-		padding: 0 ms(9);
+		padding: 0 var(--space-around);
 
 		&::after {
 
@@ -694,7 +694,7 @@ a.remove {
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-circle);
-					margin-right: ms(-3);
+					margin-right: var(--space-around);
 					transition: color, ease, 0.2s;
 				}
 			}
@@ -724,7 +724,7 @@ a.remove {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-frown);
-		margin-left: ms(-3);
+		margin-left: var(--space-around);
 	}
 
 	&.strong {
@@ -762,7 +762,7 @@ a.remove {
 					@include sf-fa-icon;
 					content: fa-content($fa-var-file-alt);
 					line-height: 1.618;
-					margin-left: ms(-3);
+					margin-left: var(--space-around);
 					width: ms(2);
 					text-align: right;
 					float: right;
@@ -820,7 +820,7 @@ a.remove {
 
 			@include sf-fa-icon;
 			content: fa-content($fa-var-eye);
-			margin-left: ms(-3);
+			margin-left: var(--space-around);
 		}
 	}
 }
@@ -833,7 +833,7 @@ p.order-again {
 
 			@include sf-fa-icon;
 			content: fa-content($fa-var-sync);
-			margin-left: ms(-3);
+			margin-left: var(--space-around);
 		}
 	}
 }
@@ -846,7 +846,7 @@ p.order-again {
 
 			@include sf-fa-icon;
 			content: fa-content($fa-var-cloud-download-alt);
-			margin-left: ms(-3);
+			margin-left: var(--space-around);
 		}
 	}
 }
@@ -857,7 +857,7 @@ p.order-again {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-info-circle);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -898,7 +898,7 @@ p.order-again {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-long-arrow-alt-right);
-		margin-left: ms(-3);
+		margin-left: var(--space-around);
 	}
 }
 
@@ -908,7 +908,7 @@ p.order-again {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-long-arrow-alt-left);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -958,7 +958,7 @@ p.order-again {
 
 			@include sf-fa-icon;
 			content: fa-content($fa-var-sync);
-			margin-right: ms(-3);
+			margin-right: var(--space-around);
 		}
 	}
 }
@@ -979,7 +979,7 @@ p.order-again {
 				content: fa-content($fa-var-level-up-alt);
 
 				@include fa-icon-rotate(90deg,1);
-				margin-right: ms(-4);
+				margin-right: var(--space-around);
 				opacity: 0.25;
 			}
 		}
@@ -995,7 +995,7 @@ p.order-again {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-eye);
-		margin-right: ms(-2);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -1015,7 +1015,7 @@ p.order-again {
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-gift);
-					margin-left: ms(-3);
+					margin-left: var(--space-around);
 				}
 			}
 		}
@@ -1026,7 +1026,7 @@ p.order-again {
 
 				@include sf-fa-icon;
 				content: fa-content($fa-var-edit);
-				margin-right: ms(-3);
+				margin-right: var(--space-around);
 			}
 		}
 	}
@@ -1073,7 +1073,7 @@ a#variations_clear {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-sync);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -1086,7 +1086,7 @@ a#variations_clear {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-heart);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -1096,7 +1096,7 @@ a#variations_clear {
 
 		@include sf-fa-icon;
 		content: fa-content($fa-var-plus);
-		margin-right: ms(-3);
+		margin-right: var(--space-around);
 	}
 }
 
@@ -1164,7 +1164,7 @@ a#variations_clear {
 
 					@include sf-fa-icon;
 					content: fa-content($fa-var-times-circle);
-					margin-right: ms(-5);
+					margin-right: var(--space-around);
 				}
 			}
 		}
@@ -1195,8 +1195,8 @@ a#variations_clear {
 				height: 1em;
 				text-indent: -9999px;
 				position: relative;
-				padding: ms(-1);
-				margin-top: ms(-2);
+				padding: var(--space-around);
+				margin-top: var(--space-around);
 
 				&::before {
 
