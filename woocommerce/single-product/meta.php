@@ -15,7 +15,6 @@
  * @version     9.7.0
  */
 
-// phpcs:ignoreFile
 use Automattic\WooCommerce\Enums\ProductType;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,14 +29,14 @@ global $product;
 
 	<?php if ( get_theme_mod( 'vfront_show_meta', true ) ) { ?>
 		<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( ProductType::VARIABLE ) ) ) : ?>
-
-			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
+			<?php // phpcs:disable Squiz.PHP.DisallowMultipleAssignments ?>
+			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'storefront' ); ?> <span class="sku"><?php echo $sku = $product->get_sku() ? esc_html( $sku ) : esc_html__( 'N/A', 'storefront' ); ?></span></span>
 
 		<?php endif; ?>
 
-		<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+		<?php echo esc_html( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
 
-		<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+		<?php echo esc_html( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
 
 	<?php } ?>
 
