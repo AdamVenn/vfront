@@ -118,9 +118,6 @@
 	}
 }
 
-@include susy-media($desktop) {
-
-	table.my_account_bookings {
-		font-size: var(--font-size-small);
-	}
+table.my_account_bookings {
+	font-size: var(--font-size-small);
 }
