@@ -370,8 +370,8 @@
 			font-weight: 300;
 			line-height: 1.618;
 			padding: var(--space-around);
-			width: calc(100vw - #{ms(1)});
-			max-width: calc(100vw - #{ms(1)});
+			width: calc(100vw - 1.618em);
+			max-width: calc(100vw - 1.618em);
 			color: #fff;
 			z-index: 1;
 			text-align: center;
@@ -393,8 +393,8 @@
 		// > 5.2 styling
 		.wp-block-cover__inner-container {
 			padding: var(--space-around);
-			width: calc(100vw - #{ms(1)});
-			max-width: calc(100vw - #{ms(1)});
+			width: calc(100vw - 1.618em);
+			max-width: calc(100vw - 1.618em);
 
 			*:nth-last-child(-n+1) {
 				margin-bottom: 0;

@@ -137,7 +137,7 @@
 			}
 
 			> a {
-				height: ms(7);
+				height: 18em;
 				display: block;
 				position: relative;
 				text-indent: -9999px;
@@ -189,7 +189,7 @@
 					box-sizing: content-box;
 					font-size: 0.75em;
 					position: absolute;
-					top: ms(-1);
+					top: 0.6em;
 					left: 50%;
 					border-radius: 100%;
 					border: 1px solid;
@@ -452,8 +452,8 @@ ul.products,
 
 			.woocommerce-product-gallery__trigger {
 				position: absolute;
-				top: ms(-1);
-				right: ms(-1);
+				top: 0.6em;
+				right: 0.6em;
 				display: block;
 				height: 2em;
 				width: 2em;
@@ -893,7 +893,7 @@ a.reset_variations {
 		@include clearfix;
 
 		img {
-			max-width: ms(5);
+			max-width: 11em;
 			float: right;
 		}
 
@@ -1135,7 +1135,7 @@ table.cart {
 
 		img {
 			margin: 0 auto;
-			max-width: ms(6);
+			max-width: 18em;
 			height: auto;
 		}
 
@@ -1153,14 +1153,14 @@ table.cart {
 
 	td.product-remove {
 		padding: 0;
-		border-top: ms(3) solid;
+		border-top: 6em solid;
 		position: relative;
 
 		a.remove {
 			position: absolute;
 			font-size: var(--font-size-subtitle);
-			top: - ms(-2);
-			right: - ms(-2);
+			top: - 0.4em;
+			right: - 0.4em;
 		}
 	}
 
@@ -1168,7 +1168,7 @@ table.cart {
 
 		.qty {
 			padding: 0.326em;
-			width: ms(6);
+			width: 18em;
 		}
 	}
 
@@ -1330,7 +1330,7 @@ form.checkout {
 				float: right;
 				border: 0;
 				padding: 0;
-				max-height: ms(3);
+				max-height: 6em;
 			}
 
 			&:last-child:not(.woocommerce-notice) {
@@ -1399,7 +1399,7 @@ form.checkout {
 
 				.wc-credit-card-form-card-number {
 					background-repeat: no-repeat;
-					background-position: right ms(-2) center;
+					background-position: right 0.4em center;
 					background-size: 31px 20px;
 					background-image: url(../../../assets/images/credit-cards/unknown.svg);
 
@@ -1889,7 +1889,7 @@ p.stars {
 .quantity {
 
 	.qty {
-		width: ms(7);
+		width: 18em;
 		text-align: center;
 	}
 }
@@ -1955,7 +1955,7 @@ p.no-comments {
 	border-radius: 2px;
 	color: #fff;
 	clear: both;
-	border-left: ms(-2) solid rgba(0, 0, 0, 0.15);
+	border-left: 0.4em solid rgba(0, 0, 0, 0.15);
 	padding: 1em 2em 1em 3.5em;
 	position: relative;
 	list-style: none outside;
@@ -3299,7 +3299,7 @@ dl.variation {
 		}
 
 		img {
-			max-width: ms(6);
+			max-width: 18em;
 			margin: 0 var(--space-around) 0 0;
 			padding: 3px;
 			border: 1px solid rgba(#000, 0.1);

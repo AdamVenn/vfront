@@ -68,7 +68,7 @@
 		.brand-thumbnail {
 			margin: 0 0 var(--space-around);
 			width: auto;
-			max-height: ms(4);
+			max-height: 7em;
 			align-self: center;
 			order: 1;
 		}
@@ -101,7 +101,7 @@ div#brands_a_z {
 				display: block;
 				border: 0;
 				padding: var(--space-around);
-				min-width: ms(3);
+				min-width: 6em;
 				text-align: center;
 				background-color: #eee;
 				color: $color_body;
@@ -145,7 +145,7 @@ div#brands_a_z {
 	margin: 0 0 var(--space-around);
 
 	img {
-		max-height: ms(4);
+		max-height: 7em;
 	}
 }
 

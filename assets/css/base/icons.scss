@@ -555,8 +555,8 @@ a.reset_variations {
 
 a.remove {
 	display: block;
-	width: ms(3);
-	height: ms(3);
+	width: 6em;
+	height: 6em;
 	line-height: 1.618;
 	font-weight: 400;
 	text-indent: -9999px;
@@ -763,7 +763,7 @@ a.remove {
 					content: fa-content($fa-var-file-alt);
 					line-height: 1.618;
 					margin-left: var(--space-around);
-					width: ms(2);
+					width: 3em;
 					text-align: right;
 					float: right;
 					opacity: 0.25;
@@ -922,8 +922,8 @@ p.order-again {
 
 				.verified {
 					display: inline-block;
-					height: ms(2);
-					width: ms(2);
+					height: 3em;
+					width: 3em;
 					position: relative;
 					text-indent: -9999px;
 
@@ -935,11 +935,11 @@ p.order-again {
 						position: absolute;
 						top: 0;
 						left: 0;
-						width: ms(2);
-						height: ms(2);
+						width: 3em;
+						height: 3em;
 						text-indent: 0;
 						text-align: center;
-						line-height: ms(3);
+						line-height: 6em;
 					}
 				}
 			}
