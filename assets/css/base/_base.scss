@@ -43,9 +43,33 @@ textarea {
 }
 
 select {
-	color: initial;
+	appearance: base-select;
 	font-family: $base-font;
 	max-width: 100%;
+	font-weight: 500;
+	padding: var(--padding-small) var(--padding-large);
+	background-color: var(--button_background_color);
+	color: var(--button_text_color);
+	border: var(--border-thin) solid var(--border_color);
+	border-radius: var(--rounded-corner-small);
+
+	&:hover {
+		filter: brightness(var(--brightness-on-hover));
+	}
+
+	&::picker(select) {
+		appearance: none;
+		padding: var(--padding-small) var(--padding-large);
+	}
+
+	&:open::picker-icon {
+		rotate: 180deg;
+		transition: 200ms rotate;
+	}
+
+	&::picker-icon {
+		transition: 200ms rotate;
+	}
 }
 
 // Fix outdated summary style from _normalize.scss which prevents the arrow from appearing
