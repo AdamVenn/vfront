@@ -250,31 +250,37 @@
 
 			h1 {
 				font-size: var(--font-size-title);
+				font-weight: bold;
 				margin-bottom: var(--space-around);
 			}
 
 			h2 {
 				font-size: var(--font-size-title);
+				font-weight: normal;
 				margin-bottom: var(--space-around);
 			}
 
 			h3 {
-				font-size: var(--font-size-title);
+				font-size: var(--font-size-subtitle);
+				font-weight: bold;
 				margin-bottom: var(--space-around);
 			}
 
 			h4 {
 				font-size: var(--font-size-subtitle);
+				font-weight: normal;
 				margin-bottom: var(--space-around);
 			}
 
 			h5 {
-				font-size: var(--font-size-subtitle);
+				font-size: var(--font-size-base);
+				font-weight: bold;
 				margin-bottom: var(--space-around);
 			}
 
 			h6 {
-				font-size: var(--font-size-subtitle);
+				font-size: var(--font-size-small);
+				font-weight: bold;
 				margin-bottom: var(--space-around);
 			}
 
