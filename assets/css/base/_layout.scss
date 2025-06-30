@@ -77,7 +77,10 @@ table.shop_table_responsive {
 
 .site-content {
 
-	@include clearfix;
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+	
 }
 
 .storefront-full-width-content {
