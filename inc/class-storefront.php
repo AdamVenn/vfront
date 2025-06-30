@@ -120,20 +120,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			);
 
 			/**
-			 * Setup the WordPress core custom background feature.
-			 */
-			add_theme_support(
-				'custom-background',
-				apply_filters(
-					'storefront_custom_background_args',
-					array(
-						'default-color' => apply_filters( 'storefront_default_background_color', 'ffffff' ),
-						'default-image' => '',
-					)
-				)
-			);
-
-			/**
 			 * Setup the WordPress core custom header feature.
 			 */
 			add_theme_support(
@@ -436,7 +422,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $storefront_version );
 			$accent_color     = get_theme_mod( 'v_accent_color' );
-			$background_color = storefront_get_content_background_color();
+			$background_color = get_theme_mod( 'v_background_color' );
 			?>
 			<style type="text/css">
 				.wp-embed {
