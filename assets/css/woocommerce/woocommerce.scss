@@ -48,13 +48,7 @@
 .site-header-cart {
 	list-style-type: none;
 	margin-left: 0;
-	padding: 0;
 	margin-bottom: 0;
-
-	.cart-contents {
-		display: none;
-	}
-
 }
 
 .site-search {
@@ -1949,7 +1943,7 @@ table.shop_table_responsive {
 	position: relative;
 
 	.cart-contents {
-		padding: var(--space-around) 0;
+		padding: var(--space-around);
 		display: block;
 		position: relative;
 		background-color: transparent;
