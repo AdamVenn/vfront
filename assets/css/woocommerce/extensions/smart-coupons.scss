@@ -18,7 +18,7 @@
 
 		&.medium {
 			line-height: inherit;
-			padding: ms(-2);
+			padding: var(--space-around);
 		}
 	}
 
@@ -29,7 +29,7 @@
 	.coupon-content {
 
 		&.small {
-			padding: ms(-2) ms(2);
+			padding: var(--space-around) var(--space-around);
 		}
 
 		.coupon-expire,
@@ -39,7 +39,7 @@
 	}
 
 	#coupons_list {
-		margin-bottom: ms(3);
+		margin-bottom: var(--space-around);
 	}
 }
 

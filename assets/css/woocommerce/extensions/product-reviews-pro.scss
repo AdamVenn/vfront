@@ -33,7 +33,7 @@
 				table {
 
 					td {
-						padding: 0.202em ms(-3);
+						padding: 0.202em var(--space-around);
 
 						&.rating-graph {
 
@@ -73,7 +73,7 @@
 
 					.star-label {
 						float: none;
-						margin-left: ms(-2);
+						margin-left: var(--space-around);
 					}
 				}
 			}
@@ -110,7 +110,7 @@
 
 						img,
 						iframe {
-							margin-bottom: ms(3);
+							margin-bottom: var(--space-around);
 						}
 					}
 
@@ -133,7 +133,7 @@
 					ul.children {
 
 						li {
-							margin-bottom: ms(3);
+							margin-bottom: var(--space-around);
 						}
 					}
 				}
@@ -142,8 +142,8 @@
 			.form-contribution_comment {
 
 				@include span(last 5 of 6);
-				margin-bottom: ms(6);
-				padding-top: ms(3);
+				margin-bottom: var(--space-separation);
+				padding-top: var(--space-separation);
 			}
 
 			ul.children + .form-contribution_comment {
@@ -154,8 +154,8 @@
 
 		.contribution-flag-form {
 			background-color: rgba(0, 0, 0, 0.1);
-			padding: ms(3);
-			margin-bottom: ms(3);
+			padding: var(--space-separation);
+			margin-bottom: var(--space-around);
 		}
 	}
 
@@ -173,7 +173,7 @@
 		> a {
 			display: inline-block;
 			margin-right: 1em;
-			padding: ms(-3) 0;
+			padding: var(--space-around) 0;
 			border-bottom: 0.202em solid rgba(0, 0, 0, 0.05);
 
 			&.active {
@@ -216,7 +216,7 @@
 #tiptip_content,
 .chart-tooltip {
 	font-size: var(--font-size-small);
-	padding: ms(-2) 1em;
+	padding: var(--space-around) 1em;
 	background-color: rgba(0, 0, 0, 0.8);
 }
 

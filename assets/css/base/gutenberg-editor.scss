@@ -20,7 +20,7 @@ body {
 // Post title
 .editor-post-title__block {
 	position: relative;
-	margin-bottom: ms(1);
+	margin-bottom: var(--space-around);
 
 	&::after {
 		content: none;
@@ -33,7 +33,7 @@ body {
 	}
 
 	@media ( min-width: $desktop ) {
-		margin-bottom: ms(5);
+		margin-bottom: var(--space-separation);
 	}
 }
 
@@ -61,7 +61,7 @@ h6,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
 	clear: both;
 	font-weight: 300;
-	margin: 0 0 ms(-3);
+	margin: 0 0 var(--space-around);
 }
 
 h1,
@@ -78,7 +78,7 @@ h2,
 
 	& + h3 {
 		border-top: 1px solid $color_border;
-		padding-top: ms(-3);
+		padding-top: var(--space-around);
 	}
 }
 
@@ -103,7 +103,7 @@ form {
 	& + header h2,
 	& + h3,
 	& + h4 {
-		margin-top: ms(4);
+		margin-top: var(--space-around);
 	}
 }
 
@@ -111,16 +111,16 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 p {
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 ul,
 ol {
-	margin: 0 0 ms(2) 3em;
+	margin: 0 0 var(--space-around) 3em;
 	padding: 0;
 }
 
@@ -135,7 +135,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: ms(1);
+	margin-left: var(--space-around);
 }
 
 dt {
@@ -143,7 +143,7 @@ dt {
 }
 
 dd {
-	margin: 0 0 ms(3);
+	margin: 0 0 var(--space-around);
 }
 
 b,
@@ -161,21 +161,21 @@ i {
 blockquote,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	margin: 1em 40px;
-	padding: 0 ms(1);
+	padding: 0 var(--space-around);
 	border-left: 3px solid rgba(0, 0, 0, 0.05);
 	font-style: italic;
 	box-shadow: none;
 }
 
 address {
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 }
 
 pre {
 	background: rgba(#000, 0.1);
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	margin-bottom: ms(3);
-	padding: ms(3);
+	margin-bottom: var(--space-around);
+	padding: var(--space-separation);
 	overflow: auto;
 	max-width: 100%;
 }
@@ -186,7 +186,7 @@ tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	background-color: rgba(0, 0, 0, 0.05);
-	padding: 0.202em ms(-3);
+	padding: 0.202em var(--space-around);
 }
 
 abbr,
@@ -245,7 +245,7 @@ table {
 	border-spacing: 0;
 	width: 100%;
 	border-collapse: separate;
-	margin: 0 0 ms(2);
+	margin: 0 0 var(--space-around);
 
 	caption {
 		padding: 1em 0;
@@ -254,7 +254,7 @@ table {
 
 	td,
 	th {
-		padding: 1em ms(2);
+		padding: 1em var(--space-around);
 		text-align: left;
 		vertical-align: top;
 		border: 0;
@@ -271,7 +271,7 @@ table {
 	thead {
 
 		th {
-			padding: ms(2);
+			padding: var(--space-around);
 			vertical-align: middle;
 		}
 	}
@@ -329,8 +329,8 @@ ul.wp-block-latest-posts {
 
 // Separator
 .wp-block-separator {
-	margin-top: ms(2);
-	margin-bottom: ms(2);
+	margin-top: var(--space-around);
+	margin-bottom: var(--space-around);
 
 	&.is-style-dots {
 
@@ -363,7 +363,7 @@ ul.wp-block-latest-posts {
 			border: 1px solid;
 			border-color: $color_body;
 			color: $color_body;
-			padding: 0.202em ms(-2);
+			padding: 0.202em var(--space-around);
 			font-size: var(--font-size-small);
 			text-transform: uppercase;
 			font-weight: 600;

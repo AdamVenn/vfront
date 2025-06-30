@@ -17,7 +17,7 @@
 	.wc-deposits-option {
 
 		li {
-			padding: ms(-2) 1em;
+			padding: var(--space-around) 1em;
 			border: none;
 			background: rgba(#000, 0.0125);
 			box-shadow: none;
@@ -28,7 +28,7 @@
 			}
 
 			input {
-				margin-right: ms(-2);
+				margin-right: var(--space-around);
 			}
 		}
 	}
@@ -45,7 +45,7 @@
 
 		li.wc-deposits-payment-plan {
 			border: 1em solid rgba(#000, 0.0125);
-			padding: ms(3);
+			padding: var(--space-separation);
 			margin-bottom: 1em;
 
 			input {
@@ -76,7 +76,7 @@
 	&.wc-deposits-optional {
 
 		.wc-deposits-payment-plans {
-			margin-bottom: ms(3);
+			margin-bottom: var(--space-around);
 
 			&::after {
 				display: none;

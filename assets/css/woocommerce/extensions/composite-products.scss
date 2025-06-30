@@ -45,7 +45,7 @@
 		.component_summary {
 
 			.content {
-				margin-bottom: ms(3);
+				margin-bottom: var(--space-around);
 			}
 
 			.composited_product_details_wrapper {
@@ -258,15 +258,15 @@ table.shop_table_responsive tr.component_table_item {
 	max-width: 1064px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0 ms(5);
+	padding: 0 var(--space-around);
 	box-sizing: content-box;
 }
 
 @include susy-media (max-width $container-width) {
 
 	.widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-		margin-left: ms(5);
-		margin-right: ms(5);
+		margin-left: var(--space-separation);
+		margin-right: var(--space-separation);
 		padding: 0;
 	}
 }
@@ -274,8 +274,8 @@ table.shop_table_responsive tr.component_table_item {
 @include susy-media (max-width $handheld) {
 
 	.widget.widget_composite_summary.widget_position_fixed .widget_composite_summary_content {
-		margin-left: ms(2);
-		margin-right: ms(2);
+		margin-left: var(--space-around);
+		margin-right: var(--space-around);
 		padding: 0;
 	}
 }

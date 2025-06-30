@@ -14,7 +14,7 @@
 	.product-name,
 	.product-quantity,
 	.container-quantity {
-		padding: ms(-2) ms(-1) !important;
+		padding: var(--space-around) var(--space-around) !important;
 	}
 
 	.mnm_item {

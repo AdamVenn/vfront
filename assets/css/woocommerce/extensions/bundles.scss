@@ -20,8 +20,8 @@
 
 	div.bundled_product_summary {
 
-		padding-bottom: ms(3) !important;
-		margin-bottom: ms(3);
+		padding-bottom: var(--space-around) !important;
+		margin-bottom: var(--space-around);
 		border-bottom: 1px solid $color_border;
 
 		padding-left: 0;
