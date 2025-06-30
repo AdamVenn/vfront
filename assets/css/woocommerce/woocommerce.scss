@@ -44,12 +44,6 @@
 /**
  * Header Elements
  */
-.woocommerce-active {
-
-	.site-branding {
-		float: left;
-	}
-}
 
 .site-header-cart {
 	list-style-type: none;
@@ -2185,10 +2179,11 @@ table.shop_table_responsive {
 		text-indent: 0;
 
 		.amount {
-			margin-right: 0.327em;
+			margin-right: var(--space-between-inner);
 		}
 
 		.count {
+			margin-right: var(--space-between-inner);
 			font-weight: 400;
 			opacity: 0.5;
 			font-size: var(--font-size-small);
