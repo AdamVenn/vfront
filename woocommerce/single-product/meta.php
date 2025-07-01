@@ -31,12 +31,12 @@ global $product;
 		<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( ProductType::VARIABLE ) ) ) : ?>
 			<?php // phpcs:disable Squiz.PHP.DisallowMultipleAssignments ?>
 			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'storefront' ); ?> <span class="sku"><?php echo $sku = $product->get_sku() ? esc_html( $sku ) : esc_html__( 'N/A', 'storefront' ); ?></span></span>
-
+			<?php // phpcs:enable ?>
 		<?php endif; ?>
 
-		<?php echo esc_html( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
+		<?php echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
 
-		<?php echo esc_html( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
+		<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'storefront' ) . ' ', '</span>' ) ); ?>
 
 	<?php } ?>
 
