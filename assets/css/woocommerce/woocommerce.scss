@@ -212,7 +212,7 @@ ul.products,
 	.wc-block-grid__product {
 		@include flex-col;
 		justify-content: space-evenly;
-		align-items: flex-start;
+		align-items: center;
 
 		flex: 1 1 ($product-image-width * 2);
 		list-style: none;
