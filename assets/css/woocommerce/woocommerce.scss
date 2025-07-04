@@ -334,6 +334,18 @@ ul.products,
 		background-color: transparent;
 	}
 
+	.woocommerce-product-details__short-description {
+		max-width: var(--content-width-narrow);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.v-price-container {
+		max-width: calc(var(--min-button-width) * 2 + var(--space-around));
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	div.product {
 
 		position: relative;

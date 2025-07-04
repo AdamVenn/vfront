@@ -899,6 +899,28 @@ if ( ! function_exists( 'storefront_woocommerce_brands_single' ) ) {
 	}
 }
 
+if ( ! function_exists( 'vfront_price_wc_wrapper_open' ) ) {
+	/**
+	 * Open containing div for everything except the excerpt.
+	 *
+	 * @return void
+	 */
+	function vfront_price_wc_wrapper_open() {
+		echo '<div class="v-price-container">';
+	}
+}
+
+if ( ! function_exists( 'vfront_price_wc_wrapper_close' ) ) {
+	/**
+	 * Close containing div for everything except the excerpt.
+	 *
+	 * @return void
+	 */
+	function vfront_price_wc_wrapper_close() {
+		echo '</div>';
+	}
+}
+
 if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 	/**
 	 * Callback for vfront gallery tab on single product page.
@@ -908,14 +930,14 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 	function vfront_woocommerce_gallery_tab_content() {
 		global $product;
 		$attachment_ids = $product->get_gallery_image_ids();
-		$num_ids = count( $attachment_ids );
+		$num_ids        = count( $attachment_ids );
 		?>
 		<div class="v-gal-thumbnails" id="v-gallery">
 		<?php
 
 		foreach ( $attachment_ids as $id ) {
 			$thumbnail_url = wp_get_attachment_image_src( $id, 'thumbnail' )[0];
-			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
+			$alt_text      = get_post_meta( $id, '_wp_attachment_image_alt', true );
 			?>
 			<a class="v-gal-thumbnail" href="#<?php echo esc_attr( $id ); ?>">
 				<img src="<?php echo esc_url( $thumbnail_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>">
@@ -931,11 +953,11 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 		// Hidden overlays.
 		$index = 0;
 		foreach ( $attachment_ids as $id ) {
-			$url = wp_get_attachment_url( $id );
-			$caption = get_post_field( 'post_excerpt', $id );
+			$url      = wp_get_attachment_url( $id );
+			$caption  = get_post_field( 'post_excerpt', $id );
 			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
-			$prev = ( $index - 1 + $num_ids ) % $num_ids;
-			$next = ( $index + 1 ) % $num_ids;
+			$prev     = ( $index - 1 + $num_ids ) % $num_ids;
+			$next     = ( $index + 1 ) % $num_ids;
 			?>
 			<div class="v-gal-overlay" id="<?php echo esc_attr( $id ); ?>">
 				<div class="v-gal-overlay-content">
@@ -968,14 +990,14 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 	function vfront_woocommerce_gallery_tab_content() {
 		global $product;
 		$attachment_ids = $product->get_gallery_image_ids();
-		$num_ids = count( $attachment_ids );
+		$num_ids        = count( $attachment_ids );
 		?>
 		<div class="v-gal-thumbnails" id="v-gallery">
 		<?php
 
 		foreach ( $attachment_ids as $id ) {
 			$thumbnail_url = wp_get_attachment_image_src( $id, 'thumbnail' )[0];
-			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
+			$alt_text      = get_post_meta( $id, '_wp_attachment_image_alt', true );
 			?>
 			<a class="v-gal-thumbnail" href="#<?php echo esc_attr( $id ); ?>">
 				<img src="<?php echo esc_url( $thumbnail_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>">
@@ -991,11 +1013,11 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 		// Hidden overlays.
 		$index = 0;
 		foreach ( $attachment_ids as $id ) {
-			$url = wp_get_attachment_url( $id );
-			$caption = get_post_field( 'post_excerpt', $id );
+			$url      = wp_get_attachment_url( $id );
+			$caption  = get_post_field( 'post_excerpt', $id );
 			$alt_text = get_post_meta( $id, '_wp_attachment_image_alt', true );
-			$prev = ( $index - 1 + $num_ids ) % $num_ids;
-			$next = ( $index + 1 ) % $num_ids;
+			$prev     = ( $index - 1 + $num_ids ) % $num_ids;
+			$next     = ( $index + 1 ) % $num_ids;
 			?>
 			<div class="v-gal-overlay" id="<?php echo esc_attr( $id ); ?>">
 				<div class="v-gal-overlay-content">
