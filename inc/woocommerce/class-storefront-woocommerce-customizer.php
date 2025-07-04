@@ -37,6 +37,7 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 		 */
 		public function setting_default_values( $defaults = array() ) {
 			$defaults['vfront_show_breadcrumbs']       = true;
+			$defaults['vfront_show_categories']        = false;
 			$defaults['storefront_sticky_add_to_cart'] = true;
 			$defaults['storefront_product_pagination'] = true;
 			$defaults['vfront_use_original_gallery']   = false;
@@ -73,6 +74,14 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 				)
 			);
 
+			$wp_customize->add_setting(
+				'vfront_show_categories',
+				array(
+					'default'           => apply_filters( 'vfront_show_categories', false ),
+					'sanitize_callback' => 'wp_validate_boolean',
+				)
+			);
+
 			$wp_customize->add_control(
 				'vfront_show_breadcrumbs',
 				array(
@@ -81,6 +90,17 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 					'label'       => __( 'Show breadcrumbs', 'storefront' ),
 					'description' => __( 'Show breadcrumbs', 'storefront' ),
 					'priority'    => 40,
+				)
+			);
+
+			$wp_customize->add_control(
+				'vfront_show_categories',
+				array(
+					'type'        => 'checkbox',
+					'section'     => 'storefront_wc_general',
+					'label'       => __( 'Show product categories', 'storefront' ),
+					'description' => __( 'Show product categories on 404 page', 'storefront' ),
+					'priority'    => 35,
 				)
 			);
 

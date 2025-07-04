@@ -21,40 +21,36 @@ get_header(); ?>
 
 					<p><?php esc_html_e( 'Nothing was found at this location. Try searching, or check out the links below.', 'storefront' ); ?></p>
 
-					<?php
-					echo '<section aria-label="' . esc_html__( 'Search', 'storefront' ) . '">';
+					<section aria-label="<?php echo esc_html__( 'Search', 'storefront' ); ?>">
+						<?php get_search_form(); ?>
+					</section>
 
-					get_search_form();
-
-					echo '</section>';
-
-					if ( storefront_is_woocommerce_activated() ) {
-
-						echo '<div class="storefront-fourohfour">';
-
-							echo '<section class="col-1" aria-label="' . esc_html__( 'Promoted Products', 'storefront' ) . '">';
-
-								storefront_promoted_products();
-
-							echo '</section>';
-
-							echo '<nav class="col-2" aria-label="' . esc_html__( 'Product Categories', 'storefront' ) . '">';
-
+					<?php if ( storefront_is_woocommerce_activated() ) { ?>
+						<div class="storefront-fourohfour">
+							
+							<section class="col-1" aria-label="<?php echo esc_html__( 'Promoted Products', 'storefront' ); ?>">
+								<?php storefront_promoted_products(); ?>
+							</section>
+							<?php add_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 ); ?>
+							<?php if ( get_theme_mod( 'vfront_show_categories', true ) ) { ?>
+							<nav class="col-2" aria-label="<?php echo esc_html__( 'Product Categories', 'storefront' ); ?>">
+								<?php
 								the_widget(
 									'WC_Widget_Product_Categories',
 									array(
 										'count' => 1,
 									)
 								);
+								?>
+							</nav>
+							<?php } ?>
 
-							echo '</nav>';
+						</div><!-- storefront-fourohfour -->
 
-						echo '</div>';
+						<section aria-label="<?php echo esc_html__( 'Popular Products', 'storefront' ); ?>">
 
-						echo '<section aria-label="' . esc_html__( 'Popular Products', 'storefront' ) . '">';
-
-							echo '<h2>' . esc_html__( 'Popular Products', 'storefront' ) . '</h2>';
-
+							<h2><?php echo esc_html__( 'Popular Products', 'storefront' ); ?></h2>
+							<?php
 							$shortcode_content = storefront_do_shortcode(
 								'best_selling_products',
 								array(
@@ -64,10 +60,10 @@ get_header(); ?>
 							);
 
 							echo $shortcode_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							?>
 
-						echo '</section>';
-					}
-					?>
+						</section><!-- Popular Products -->
+					<?php } //storefront_is_woocommerce_activated ?>
 
 				</div><!-- .page-content -->
 			</div><!-- .error-404 -->
