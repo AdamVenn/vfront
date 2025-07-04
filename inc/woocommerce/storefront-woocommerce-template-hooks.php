@@ -79,7 +79,13 @@ add_action( 'woocommerce_before_single_product_summary', 'vfront_show_product_vi
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
 
+// Add container in summary to narrow content.
+add_action( 'woocommerce_single_product_summary', 'vfront_price_wc_wrapper_open', 8 );
+
 add_action( 'woocommerce_single_product_summary', 'storefront_edit_post_link', 60 );
+
+// Add container in summary to narrow content.
+add_action( 'woocommerce_single_product_summary', 'vfront_price_wc_wrapper_close', 1000 );
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'storefront_upsell_display', 15 );
