@@ -3,6 +3,5 @@
  */
 ( function () {
 	// Wait for DOM to be ready.
-	document.addEventListener( 'DOMContentLoaded', function () {
-	} );
+	document.addEventListener( 'DOMContentLoaded', function () {} );
 } )();
