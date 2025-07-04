@@ -569,6 +569,7 @@ ul.products,
     flex-direction: column;
     gap: var(--space-between-outer);
     width: 100%;
+	margin-bottom: var(--space-separation);
 }
 
 .v-tab {
