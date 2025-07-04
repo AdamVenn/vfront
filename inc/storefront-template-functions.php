@@ -280,6 +280,9 @@ if ( ! function_exists( 'storefront_page_header' ) ) {
 	 * @since 1.0.0
 	 */
 	function storefront_page_header() {
+		if ( is_front_page() ) {
+			return;
+		}
 		?>
 		<header class="entry-header">
 			<?php
