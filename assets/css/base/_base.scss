@@ -350,12 +350,24 @@ body {
  * Header
  */
 .site-header {
-	background-color: var(--header_background_color);
-	color: var(--header_text_color);
-	background-position: center center;
-	position: relative;
-	z-index: 800;
-	box-shadow: var(--drop-shadow);
+	background: 
+		radial-gradient(
+			circle at center, 
+			var(--header_background_color) 0%, 
+			var(--header_background_color_dark) 100%
+		)
+	;
+
+	.site-header-inner {
+		@include flex-row-header-footer;
+		align-items: center;
+		margin: auto;
+		width: 100%;
+
+		backdrop-filter:
+			blur(var(--backdrop_blur))
+			brightness(var(--backdrop_brightness));
+	}
 
 	.site-logo-anchor,
 	.site-logo-link,
@@ -404,6 +416,7 @@ body {
 	margin-bottom: 0;
 
 	.site-title {
+		text-align: center;
 		font-size: 2em;
 		letter-spacing: -1px;
 		margin: 0;
@@ -414,6 +427,8 @@ body {
 	}
 
 	.site-description {
+		text-align: center;
+		color: var(--header_text_color);
 		font-size: var(--font-size-small);
 	}
 

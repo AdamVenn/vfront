@@ -204,6 +204,30 @@ function storefront_sanitize_checkbox( $checked ) {
  * @param int $gradient_factor value to be sanitized.
  * @return int Clamped value
  */
-function sanitize_gradient_factor( $gradient_factor ) {
+function vfront_sanitize_gradient_factor( $gradient_factor ) {
 	return max( -64, min( 64, intval( $gradient_factor ) ) );
+}
+
+/**
+ * Backdrop-filter blur sanitization callback.
+ *
+ * Allows values between 0 and 30 (pixels)
+ *
+ * @param int $blur_radius value to be sanitized.
+ * @return int Clamped value
+ */
+function vfront_sanitize_blur_radius( $blur_radius ) {
+	return max( 0, min( 30, intval( $blur_radius ) ) );
+}
+
+/**
+ * Backdrop-filter brightness sanitization callback.
+ *
+ * Allows values between 0 and 300 (percent)
+ *
+ * @param int $brightness value to be sanitized.
+ * @return int Clamped value
+ */
+function vfront_sanitize_brightness( $brightness ) {
+	return max( 0, min( 300, intval( $brightness ) ) );
 }

@@ -29,7 +29,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			add_action( 'customize_controls_print_styles', array( $this, 'customizer_custom_control_css' ) );
 			add_action( 'customize_register', array( $this, 'edit_default_customizer_settings' ), 99 );
 			add_action( 'init', array( $this, 'default_theme_mod_values' ), 10 );
-			add_action( 'customize_controls_print_footer_scripts', array( $this, 'add_gradient_factor_label' ) );
+			add_action( 'customize_controls_print_footer_scripts', array( $this, 'vfront_add_slider_labels' ) );
 		}
 
 		/**
@@ -63,6 +63,8 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_button_text_color'       => '#333333',
 					'v_background_color'        => '#ffffff',
 					'v_gradient_factor'         => 0,
+					'v_backdrop_blur'           => 0,
+					'v_backdrop_brightness'     => 0,
 					'v_links_nav_to_content'       => false,
 				)
 			);
@@ -672,7 +674,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			);
 
 			/**
-			 * Gradients
+			 * Color effects
 			 */
 			$wp_customize->add_setting(
 				'v_gradient_factor',
@@ -683,7 +685,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					 * @param int -255 to 255 gradient factor value.
 					 */
 					'default'           => apply_filters( 'storefront_default_gradient_factor', 0 ),
-					'sanitize_callback' => 'sanitize_gradient_factor',
+					'sanitize_callback' => 'vfront_sanitize_gradient_factor',
 				)
 			);
 
@@ -703,7 +705,75 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 							'step'  => 1,
 							'value' => 0,
 						),
-						'custom_class' => 'gradient-lightness-control',
+						'custom_class' => 'customizer-slider',
+					)
+				)
+			);
+
+			$wp_customize->add_setting(
+				'v_backdrop_blur',
+				array(
+					/**
+					 * Filters for modifying the amount of blur in backdrop-filter effects.
+					 *
+					 * @param int 0 to 30 in pixels.
+					 */
+					'default'           => apply_filters( 'v_backdrop_blur', 5 ),
+					'sanitize_callback' => 'vfront_sanitize_blur_radius',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'v_backdrop_blur',
+					array(
+						'label'    => __( 'Backdrop-filter blur', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_backdrop_blur',
+						'priority' => 5,
+						'type'     => 'range',
+						'input_attrs' => array(
+							'min'   => 0,
+							'max'   => 30,
+							'step'  => 1,
+							'value' => 5,
+						),
+						'custom_class' => 'customizer-slider',
+					)
+				)
+			);
+
+			$wp_customize->add_setting(
+				'v_backdrop_brightness',
+				array(
+					/**
+					 * Filters for modifying the amount of brightness in backdrop-filter effects.
+					 *
+					 * @param int 0 to 300 in percent.
+					 */
+					'default'           => apply_filters( 'v_backdrop_brightness', 150 ),
+					'sanitize_callback' => 'vfront_sanitize_brightness',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'v_backdrop_brightness',
+					array(
+						'label'    => __( 'Backdrop-filter brightness', 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => 'v_backdrop_brightness',
+						'priority' => 10,
+						'type'     => 'range',
+						'input_attrs' => array(
+							'min'   => 0,
+							'max'   => 300,
+							'step'  => 1,
+							'value' => 150,
+						),
+						'custom_class' => 'customizer-slider',
 					)
 				)
 			);
@@ -731,6 +801,8 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				'button_background_color'     => get_theme_mod( 'v_button_background_color' ),
 				'button_text_color'           => get_theme_mod( 'v_button_text_color' ),
 				'gradient_factor'             => get_theme_mod( 'v_gradient_factor' ),
+				'backdrop_blur'               => get_theme_mod( 'v_backdrop_blur' ),
+				'backdrop_brightness'         => get_theme_mod( 'v_backdrop_brightness' ),
 				'links_nav_to_main'           => get_theme_mod( 'v_links_nav_to_content' ),
 			);
 
@@ -752,7 +824,11 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function get_css() {
 			$mods = $this->get_storefront_theme_mods();
+
 			$gradient_factor = $mods['gradient_factor'];
+			$backdrop_blur_radius = $mods['backdrop_blur'];
+			$backdrop_brightness = $mods['backdrop_brightness'];
+
 			$mods = array_filter(
 				$mods,
 				function( $value, $key ) {
@@ -772,6 +848,9 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				$dark = storefront_adjust_color_brightness( $value, $gradient_factor );
 				$css .= "    --{$key}_dark: {$dark};\n";
 			}
+
+			$css .= "--backdrop_blur: {$backdrop_blur_radius}px;\n";
+			$css .= "--backdrop_brightness: {$backdrop_brightness}%;\n";
 
 			$css .= "}\n";
 
@@ -808,15 +887,21 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		}
 
 		/**
-		 * Add JS to label the gradient factor slider
+		 * Add JS to label the color effects sliders
 		 *
 		 * @return void
 		 */
-		public function add_gradient_factor_label() {
+		public function vfront_add_slider_labels() {
 			?>
 			<script>
 			wp.customize.control('v_gradient_factor', function(control) {
 				control.container.append('<span class="range-value">' + control.setting() + '</span>');
+			});
+			wp.customize.control('v_backdrop_blur', function(control) {
+				control.container.append('<span class="range-value v-customizer-px">' + control.setting() + 'px</span>');
+			});
+			wp.customize.control('v_backdrop_brightness', function(control) {
+				control.container.append('<span class="range-value v-customizer-percentage">' + control.setting() + '%</span>');
 			});
 			</script>
 			<?php
