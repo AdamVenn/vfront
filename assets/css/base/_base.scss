@@ -331,6 +331,9 @@ body {
 }
 
 .site {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 	overflow-x: hidden;
 }
 
@@ -445,6 +448,9 @@ body {
 }
 
 .site-content {
+	width: 100%;
+	flex-grow: 1;
+	
 	outline: none;
 
 	&:focus-visible {
