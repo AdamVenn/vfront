@@ -3,8 +3,6 @@
  */
 
 .site-header {
-	@include flex-row-header-footer;
-
 	padding-top: var(--space-separation);
 	padding-bottom: var(--space-separation);
 	margin-bottom: var(--space-separation);
@@ -49,6 +47,7 @@
 	@include flex-row-header-footer;
 	align-items: center;
 
+	padding: 0 var(--space-around);
 	flex: 0 1 auto;
 }
 
