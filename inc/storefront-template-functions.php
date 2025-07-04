@@ -664,3 +664,27 @@ if ( get_theme_mod( 'v_links_nav_to_content', false ) ) {
 	);
 }
 
+add_filter(
+	'pre_set_site_transient_update_themes',
+	function ( $transient ) {
+		if ( empty( $transient->checked ) ) {
+			return $transient;
+		}
+
+		$theme      = wp_get_theme();
+		$theme_slug = $theme->get_stylesheet();
+
+		$url_zip  = 'https://github.com/AdamVenn/vfront/releases/download/latest/vfront.zip';
+		$url_info = 'https://github.com/AdamVenn/vfront/tree/vfront-release';
+
+		$transient->response[ $theme_slug ] = array(
+			'theme'       => $theme_slug,
+			'new_version' => '999.0.0', // Always higher than current version.
+			'url'         => $url_info, // Optional theme details URL.
+			'package'     => $url_zip,
+		);
+
+		return $transient;
+	}
+);
+
