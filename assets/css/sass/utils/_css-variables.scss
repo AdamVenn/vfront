@@ -6,7 +6,7 @@
     --space-separation: 30px;
     --content-width: 990px;
     --content-width-narrow: 400px;
-    --content-space-around: 15px 100px;
+    --content-space-around: 15px clamp(20px, 8vw, 100px);
 
 	/* Font sizes */
     --font-size-small: 0.8rem;
@@ -30,6 +30,9 @@
     --brightness-on-hover: 1.2;
     --glow-color: #ffffff70;
     --glow: 0px 0px 10px var(--glow-color);
+
+    /* Products */
+    --product-grid-width: 800px;
 }
 
 /***
