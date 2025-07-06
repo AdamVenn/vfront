@@ -4,8 +4,9 @@
     --space-between-outer: 15px;
     --space-around: 10px;
     --space-separation: 30px;
-    --content-width: 768px;
+    --content-width: 990px;
     --content-width-narrow: 400px;
+    --content-space-around: 15px clamp(20px, 8vw, 100px);
 
 	/* Font sizes */
     --font-size-small: 0.8rem;
