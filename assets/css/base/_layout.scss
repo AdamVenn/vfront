@@ -67,16 +67,17 @@
 	
 }
 
-.content-area,
-.widget-area {
-	padding: var(--space-around);
+.content-area {
+	padding: var(--content-space-around);
 	margin-bottom: var(--space-separation);
 }
 
 .widget-area {
 	max-width: var(--content-width-narrow);
+	padding: var(--space-around);
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: var(--space-separation);
 }
 
 /**

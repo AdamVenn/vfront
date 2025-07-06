@@ -366,6 +366,7 @@ body {
 		align-items: center;
 		margin: auto;
 		width: 100%;
+		max-width: 1350px;
 
 		backdrop-filter:
 			blur(var(--backdrop_blur))
