@@ -463,6 +463,34 @@ ul.products,
 			.quantity {
 				margin-right: var(--space-around);
 			}
+			
+			// Mobile responsive styles for cart form centering
+			@media (max-width: 900px), screen and (max-device-width: 900px) {
+				justify-content: center;
+				flex-basis: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				
+				// Remove any conflicting margins on mobile
+				.quantity {
+					margin-right: 0;
+					margin-left: 0;
+					margin: 0;
+				}
+				
+				// Force perfect centering
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				gap: var(--space-around);
+				text-align: center;
+				
+				// Center the button specifically
+				.single_add_to_cart_button {
+					margin: 0;
+				}
+			}
 
 			table.woocommerce-grouped-product-list {
 
@@ -503,12 +531,15 @@ ul.products,
 			}
 			
 			// Mobile responsive styles - trigger when elements would wrap
-			@media (max-width: 900px) {
+			// Cache bust: 2025-01-07 09:45
+			@media (max-width: 900px), screen and (max-device-width: 900px) {
 				border-left: none;
 				padding-left: 0;
 				justify-content: center;
 				flex-basis: 100%;
 				margin-top: var(--space-around);
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+				padding-top: var(--space-around);
 			}
 		}
 
