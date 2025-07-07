@@ -329,6 +329,10 @@ ul.products,
  * Single Product
  */
 .single-product {
+	h1.product_title.entry-title {
+		font-weight: 600;
+		letter-spacing: 1;
+	}
 
 	.pswp__button {
 		background-color: transparent;
