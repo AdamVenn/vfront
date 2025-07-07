@@ -591,6 +591,16 @@ ul.products,
 			}
 
 		}
+
+		.v-product-video {
+			width: 100%;
+			margin-bottom: var(--space-around);
+
+			iframe {
+				width: 100%;
+				aspect-ratio: 16 / 9;
+			}
+		}
 	}
 }
 
