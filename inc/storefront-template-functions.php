@@ -171,18 +171,21 @@ if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
 	 * @return string
 	 */
 	function storefront_site_title_or_logo( $echo = true ) {
-		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-			$logo = get_custom_logo();
-			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
-		} else {
-			$tag = is_home() ? 'h1' : 'div';
+		// Custom logic to display the site logo next to the site title and description.
+		$logo_url = '/wp-content/uploads/2016/03/venn-circles-only.png';
+		$logo_html = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home" class="custom-logo-link"><img src="' . esc_url( $logo_url ) . '" class="custom-logo" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '"/></a>';
 
-			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
+		$tag = is_home() ? 'h1' : 'div';
 
-			if ( '' !== get_bloginfo( 'description' ) ) {
-				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
-			}
+		$title_html = '<div class="site-title-and-description">';
+		$title_html .= '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
+
+		if ( '' !== get_bloginfo( 'description' ) ) {
+			$title_html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
 		}
+		$title_html .= '</div>';
+
+		$html = $logo_html . $title_html;
 
 		if ( ! $echo ) {
 			return $html;

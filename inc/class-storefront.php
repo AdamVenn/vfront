@@ -297,12 +297,14 @@ if ( ! class_exists( 'Storefront' ) ) :
 			global $storefront_version;
 
 			/**
-			 * Styles
+			 * Main Stylesheet
 			 */
-			wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
+			// Use get_stylesheet_uri() to ensure the child theme's (vfront) stylesheet is used, not the parent's (storefront).
+			wp_enqueue_style( 'storefront-style', get_stylesheet_uri(), array(), $storefront_version );
 			wp_style_add_data( 'storefront-style', 'rtl', 'replace' );
 
-			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $storefront_version );
+			// Enqueue storefront icons, using an explicit empty array for dependencies as a best practice.
+			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/css/base/icons.css', array(), $storefront_version );
 			wp_style_add_data( 'storefront-icons', 'rtl', 'replace' );
 
 			/**
