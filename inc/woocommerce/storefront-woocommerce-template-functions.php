@@ -1106,7 +1106,7 @@ if ( ! function_exists( 'vfront_show_product_video' ) ) {
 		if ( isset( $vid_url ) && '' != $vid_url ) {
 			?>
 			<div class="v-product-video">
-				<iframe src="<?php echo esc_url( $vid_url ); ?>" width="768" height="432" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+				<iframe src="<?php echo esc_url( $vid_url ); ?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 			</div>
 			<?php
 		}
