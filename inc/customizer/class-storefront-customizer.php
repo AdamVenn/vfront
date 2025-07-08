@@ -65,7 +65,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					'v_gradient_factor'         => 0,
 					'v_backdrop_blur'           => 0,
 					'v_backdrop_brightness'     => 0,
-					'v_links_nav_to_content'       => false,
+					'v_links_nav_to_content'    => false,
 				)
 			);
 		}
@@ -694,12 +694,12 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					$wp_customize,
 					'v_gradient_factor',
 					array(
-						'label'    => __( 'Gradient Factor', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_gradient_factor',
-						'priority' => 2,
-						'type'     => 'range',
-						'input_attrs' => array(
+						'label'        => __( 'Gradient Factor', 'storefront' ),
+						'section'      => 'v_color_scheme',
+						'settings'     => 'v_gradient_factor',
+						'priority'     => 2,
+						'type'         => 'range',
+						'input_attrs'  => array(
 							'min'   => -64,
 							'max'   => 64,
 							'step'  => 1,
@@ -728,12 +728,12 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					$wp_customize,
 					'v_backdrop_blur',
 					array(
-						'label'    => __( 'Backdrop-filter blur', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_backdrop_blur',
-						'priority' => 5,
-						'type'     => 'range',
-						'input_attrs' => array(
+						'label'        => __( 'Backdrop-filter blur', 'storefront' ),
+						'section'      => 'v_color_scheme',
+						'settings'     => 'v_backdrop_blur',
+						'priority'     => 5,
+						'type'         => 'range',
+						'input_attrs'  => array(
 							'min'   => 0,
 							'max'   => 30,
 							'step'  => 1,
@@ -762,12 +762,12 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 					$wp_customize,
 					'v_backdrop_brightness',
 					array(
-						'label'    => __( 'Backdrop-filter brightness', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_backdrop_brightness',
-						'priority' => 10,
-						'type'     => 'range',
-						'input_attrs' => array(
+						'label'        => __( 'Backdrop-filter brightness', 'storefront' ),
+						'section'      => 'v_color_scheme',
+						'settings'     => 'v_backdrop_brightness',
+						'priority'     => 10,
+						'type'         => 'range',
+						'input_attrs'  => array(
 							'min'   => 0,
 							'max'   => 300,
 							'step'  => 1,
@@ -786,24 +786,24 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function get_storefront_theme_mods() {
 			$storefront_theme_mods = array(
-				'background_color'            => get_theme_mod( 'v_background_color' ),
-				'accent_color'                => get_theme_mod( 'v_accent_color' ),
-				'link_color'                  => get_theme_mod( 'v_link_color' ),
-				'header_background_color'     => get_theme_mod( 'v_header_background_color' ),
-				'header_text_color'           => get_theme_mod( 'v_header_text_color' ),
-				'footer_background_color'     => get_theme_mod( 'v_footer_background_color' ),
-				'footer_text_color'           => get_theme_mod( 'v_footer_text_color' ),
-				'text_color'                  => get_theme_mod( 'v_text_color' ),
-				'heading_color'               => get_theme_mod( 'v_heading_color' ),
-				'border_color'                => get_theme_mod( 'v_border_color' ),
-				'container_color'             => get_theme_mod( 'v_container_color' ),
-				'box_color'                   => get_theme_mod( 'v_box_color' ),
-				'button_background_color'     => get_theme_mod( 'v_button_background_color' ),
-				'button_text_color'           => get_theme_mod( 'v_button_text_color' ),
-				'gradient_factor'             => get_theme_mod( 'v_gradient_factor' ),
-				'backdrop_blur'               => get_theme_mod( 'v_backdrop_blur' ),
-				'backdrop_brightness'         => get_theme_mod( 'v_backdrop_brightness' ),
-				'links_nav_to_main'           => get_theme_mod( 'v_links_nav_to_content' ),
+				'background_color'        => get_theme_mod( 'v_background_color' ),
+				'accent_color'            => get_theme_mod( 'v_accent_color' ),
+				'link_color'              => get_theme_mod( 'v_link_color' ),
+				'header_background_color' => get_theme_mod( 'v_header_background_color' ),
+				'header_text_color'       => get_theme_mod( 'v_header_text_color' ),
+				'footer_background_color' => get_theme_mod( 'v_footer_background_color' ),
+				'footer_text_color'       => get_theme_mod( 'v_footer_text_color' ),
+				'text_color'              => get_theme_mod( 'v_text_color' ),
+				'heading_color'           => get_theme_mod( 'v_heading_color' ),
+				'border_color'            => get_theme_mod( 'v_border_color' ),
+				'container_color'         => get_theme_mod( 'v_container_color' ),
+				'box_color'               => get_theme_mod( 'v_box_color' ),
+				'button_background_color' => get_theme_mod( 'v_button_background_color' ),
+				'button_text_color'       => get_theme_mod( 'v_button_text_color' ),
+				'gradient_factor'         => get_theme_mod( 'v_gradient_factor' ),
+				'backdrop_blur'           => get_theme_mod( 'v_backdrop_blur' ),
+				'backdrop_brightness'     => get_theme_mod( 'v_backdrop_brightness' ),
+				'links_nav_to_main'       => get_theme_mod( 'v_links_nav_to_content' ),
 			);
 
 			/**
@@ -825,9 +825,9 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		public function get_css() {
 			$mods = $this->get_storefront_theme_mods();
 
-			$gradient_factor = $mods['gradient_factor'];
+			$gradient_factor      = $mods['gradient_factor'];
 			$backdrop_blur_radius = $mods['backdrop_blur'];
-			$backdrop_brightness = $mods['backdrop_brightness'];
+			$backdrop_brightness  = $mods['backdrop_brightness'];
 
 			$mods = array_filter(
 				$mods,
@@ -839,7 +839,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				},
 				ARRAY_FILTER_USE_BOTH
 			);
-			$css = ':root {
+			$css  = ':root {
 	/* Color scheme from customizer */
 ';
 			foreach ( $mods as $key => $value ) {
