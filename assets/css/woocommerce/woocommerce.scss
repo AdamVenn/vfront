@@ -335,15 +335,6 @@ ul.products,
 	}
 
 	.woocommerce-product-details__short-description {
-		max-width: var(--content-width-narrow);
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.v-price-container {
-		max-width: calc(var(--min-button-width) * 2 + var(--space-around));
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	div.product {
@@ -449,34 +440,61 @@ ul.products,
 				}
 			}
 		}
+		.v-cart-form-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+			gap: 0; // Must be 0 gap for center alignment
+			margin-bottom: var(--space-around);
 
-		form.cart {
-			@include flex-row;
-			justify-content: center;
+			form.cart {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+				align-items: center;
+				gap: var(--space-between-inner);
 
-			.quantity {
-				margin-right: var(--space-around);
-			}
-
-			table.woocommerce-grouped-product-list {
-
-				.woocommerce-grouped-product-list-item__label {
-
-					@include wrap-break-word();
+				// If the payment gateway container is empty, align the form center
+				&:not(&:has(+ .v-payment-gateway-container > *)) {
+					justify-content: center;
 				}
 
-				.woocommerce-grouped-product-list-item__quantity {
-					float: none;
-					margin-right: 0;
+				table.woocommerce-grouped-product-list {
 
-					.quantity {
-						margin-right: 0;
+					.woocommerce-grouped-product-list-item__label {
+
+						@include wrap-break-word();
 					}
+
+					.woocommerce-grouped-product-list-item__quantity {
+						float: none;
+						margin-right: 0;
+
+						.quantity {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+
+			.v-payment-gateway-container {
+				@include flex-col;
+				justify-content: flex-start;
+
+				max-width: calc(var(--min-button-width) * 2 + var(--space-between-inner));
+				
+				padding-left: var(--space-around);
+				border-left: var(--border-thin) solid var(--drop-shadow-color);
+				margin-left: var(--space-around);
+
+				&:empty {
+					display: none;
 				}
 			}
 		}
 
 		p.price {
+			display: block;
 			font-size: var(--font-size-subtitle);
 			text-align: center;
 		}

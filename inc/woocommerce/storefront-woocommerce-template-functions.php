@@ -908,24 +908,46 @@ if ( ! function_exists( 'storefront_woocommerce_brands_single' ) ) {
 	}
 }
 
-if ( ! function_exists( 'vfront_price_wc_wrapper_open' ) ) {
+if ( ! function_exists( 'vfront_cart_form_wrapper_open' ) ) {
 	/**
-	 * Open containing div for everything except the excerpt.
+	 * Open containing div for add to cart and payment gateway buttons.
 	 *
 	 * @return void
 	 */
-	function vfront_price_wc_wrapper_open() {
-		echo '<div class="v-price-container">';
+	function vfront_cart_form_wrapper_open() {
+		echo '<div class="v-cart-form-container">';
 	}
 }
 
-if ( ! function_exists( 'vfront_price_wc_wrapper_close' ) ) {
+if ( ! function_exists( 'vfront_payment_gateways_wrapper_open' ) ) {
 	/**
-	 * Close containing div for everything except the excerpt.
+	 * Open containing div for payment gateway buttons.
 	 *
 	 * @return void
 	 */
-	function vfront_price_wc_wrapper_close() {
+	function vfront_payment_gateways_wrapper_open() {
+		echo '<div class="v-payment-gateway-container">';
+	}
+}
+
+if ( ! function_exists( 'vfront_payment_gateways_wrapper_close' ) ) {
+	/**
+	 * Close containing div for payment gateway buttons.
+	 *
+	 * @return void
+	 */
+	function vfront_payment_gateways_wrapper_close() {
+		echo '</div>';
+	}
+}
+
+if ( ! function_exists( 'vfront_cart_form_wrapper_close' ) ) {
+	/**
+	 * Close containing div for add to cart and payment gateway buttons.
+	 *
+	 * @return void
+	 */
+	function vfront_cart_form_wrapper_close() {
 		echo '</div>';
 	}
 }
