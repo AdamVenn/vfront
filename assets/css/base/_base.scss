@@ -381,7 +381,7 @@ body {
 
 		img {
 			width: 100%;
-			max-width: 210px;
+			max-width: 55px;
 		}
 	}
 
@@ -417,27 +417,39 @@ body {
 }
 
 .site-branding {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-between-outer);
+	
 	margin-bottom: 0;
 
-	.site-title {
-		text-align: center;
-		font-size: 2em;
-		letter-spacing: -1px;
-		margin: 0;
-
-		a {
-			font-weight: 700;
-		}
-	}
-
-	.site-description {
-		text-align: center;
-		color: var(--header_text_color);
-		font-size: var(--font-size-small);
-	}
-
 	.logo {
+		flex: 0 0 auto;
 		margin: 0;
+	}
+
+	.site-title-and-description {
+		.site-title {
+			text-align: center;
+			font-size: 2em;
+			letter-spacing: -1px;
+			margin: 0;
+			font-weight: 700;
+
+			& p {
+				margin: 0;
+			}
+		}
+
+		.site-description {
+			margin: 0;
+			text-align: center;
+			color: var(--header_text_color);
+			font-size: var(--font-size-small);
+		}
 	}
 }
 
