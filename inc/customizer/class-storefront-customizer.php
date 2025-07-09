@@ -16,6 +16,27 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 	 * The Storefront Customizer class
 	 */
 	class Storefront_Customizer {
+		/**
+		 * Default color scheme
+		 *
+		 * @var array Default color scheme
+		 */
+		private $colour_scheme_defaults = array(
+			'v_heading_color'           => '#cacfd3',
+			'v_text_color'              => '#cacfd3',
+			'v_accent_color'            => '#d8cb65',
+			'v_link_color'              => '#8ecbd9',
+			'v_background_color'        => '#6c7680',
+			'v_container_color'         => '#2f363e',
+			'v_box_color'               => '#212b35',
+			'v_button_text_color'       => '#1c1c1c',
+			'v_button_background_color' => '#eeeeee',
+			'v_border_color'            => '#090e0f',
+			'v_header_text_color'       => '#cacfd3',
+			'v_header_background_color' => '#101316',
+			'v_footer_text_color'       => '#cacfd3',
+			'v_footer_background_color' => '#101316',
+		);
 
 		/**
 		 * Setup class.
@@ -47,25 +68,14 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			 */
 			return apply_filters(
 				'storefront_setting_default_values',
-				$args = array(
-					'v_text_color'              => '#6d6d6d',
-					'v_heading_color'           => '#404040',
-					'v_border_color'            => '#404040',
-					'v_accent_color'            => '#7f54b3',
-					'v_link_color'              => '#7f54b3',
-					'v_container_color'         => '#f0f0f0',
-					'v_box_color'               => '#9b9b9b',
-					'v_header_background_color' => '#ffffff',
-					'v_header_text_color'       => '#404040',
-					'v_footer_background_color' => '#f0f0f0',
-					'v_footer_text_color'       => '#6d6d6d',
-					'v_button_background_color' => '#eeeeee',
-					'v_button_text_color'       => '#333333',
-					'v_background_color'        => '#ffffff',
-					'v_gradient_factor'         => 0,
-					'v_backdrop_blur'           => 0,
-					'v_backdrop_brightness'     => 0,
-					'v_links_nav_to_content'    => false,
+				$args = array_merge(
+					$this->colour_scheme_defaults,
+					array(
+						'v_gradient_factor'      => 0,
+						'v_backdrop_blur'        => 0,
+						'v_backdrop_brightness'  => 100,
+						'v_links_nav_to_content' => false,
+					)
 				)
 			);
 		}
@@ -189,7 +199,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			);
 
 			/**
-			 * Add the color scheme section
+			 * Color scheme
 			 */
 			$wp_customize->add_section(
 				'v_color_scheme',
@@ -199,479 +209,10 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 				)
 			);
 
-			/**
-			 * Text Color
-			 */
-			$wp_customize->add_setting(
-				'v_text_color',
-				array(
-					/**
-					 * Filters for modifying the default text color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_text_color', '#6d6d6d' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_text_color',
-					array(
-						'label'    => __( 'Text color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_text_color',
-						'priority' => 15,
-					)
-				)
-			);
-
-			/**
-			 * Background Color
-			 */
-			$wp_customize->add_setting(
-				'v_background_color',
-				array(
-					/**
-					 * Filters for modifying the default background color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_background_color', '#ffffff' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_background_color',
-					array(
-						'label'    => __( 'Background color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_background_color',
-						'priority' => 20,
-					)
-				)
-			);
-
-			/**
-			 * Container Color
-			 */
-			$wp_customize->add_setting(
-				'v_container_color',
-				array(
-					/**
-					 * Filters for modifying the default container color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_container_color', '#f0f0f0' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_container_color',
-					array(
-						'label'    => __( 'Container color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_container_color',
-						'priority' => 23,
-					)
-				)
-			);
-
-			/**
-			 * Box Color
-			 */
-			$wp_customize->add_setting(
-				'v_box_color',
-				array(
-					/**
-					 * Filters for modifying the default box color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_box_color', '#9b9b9b' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_box_color',
-					array(
-						'label'    => __( 'Box color (forms fields, etc.)', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_box_color',
-						'priority' => 24,
-					)
-				)
-			);
-
-			/**
-			 * Accent Color
-			 */
-			$wp_customize->add_setting(
-				'v_accent_color',
-				array(
-					/**
-					 * Filters for modifying the default accent color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_accent_color', '#7f54b3' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_accent_color',
-					array(
-						'label'    => __( 'Accent color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_accent_color',
-						'priority' => 31,
-					)
-				)
-			);
-
-			/**
-			 * Link Color
-			 */
-			$wp_customize->add_setting(
-				'v_link_color',
-				array(
-					/**
-					 * Filters for modifying the default accent color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_link_color', '#7f54b3' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_link_color',
-					array(
-						'label'    => __( 'Link color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_link_color',
-						'priority' => 31,
-					)
-				)
-			);
-
-			/**
-			 * Header Image
-			 */
-			$wp_customize->add_control(
-				new Arbitrary_Storefront_Control(
-					$wp_customize,
-					'storefront_header_image_heading',
-					array(
-						'section'  => 'header_image',
-						'type'     => 'heading',
-						'label'    => __( 'Header background image', 'storefront' ),
-						'priority' => 6,
-					)
-				)
-			);
-
-			/**
-			 * Border Color
-			 */
-			$wp_customize->add_setting(
-				'v_border_color',
-				array(
-					/**
-					 * Filters for modifying the default border color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_border_color', '#404040' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_border_color',
-					array(
-						'label'    => __( 'Border color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_border_color',
-						'priority' => 24,
-					)
-				)
-			);
-
-			/**
-			 * Header Color
-			 */
-			$wp_customize->add_setting(
-				'v_heading_color',
-				array(
-					/**
-					 * Filters for modifying the default heading color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_heading_color', '#404040' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_heading_color',
-					array(
-						'label'    => __( 'Heading color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_heading_color',
-						'priority' => 18,
-					)
-				)
-			);
-
-			/**
-			 * Header Background
-			 */
-			$wp_customize->add_setting(
-				'v_header_background_color',
-				array(
-					/**
-					 * Filters for modifying the default header background color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_header_background_color', '#ffffff' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_header_background_color',
-					array(
-						'label'    => __( 'Header background color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_header_background_color',
-						'priority' => 51,
-					)
-				)
-			);
-
-			/**
-			 * Header text color
-			 */
-			$wp_customize->add_setting(
-				'v_header_text_color',
-				array(
-					/**
-					 * Filters for modifying the default header text color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_header_text_color', '#404040' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_header_text_color',
-					array(
-						'label'    => __( 'Header text color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_header_text_color',
-						'priority' => 52,
-					)
-				)
-			);
-
-			/**
-			 * Footer section
-			 */
-			$wp_customize->add_section(
-				'storefront_footer',
-				array(
-					'title'       => __( 'Footer', 'storefront' ),
-					'priority'    => 28,
-					'description' => __( 'Customize the look & feel of your website footer.', 'storefront' ),
-				)
-			);
-
-			/**
-			 * Footer Background
-			 */
-			$wp_customize->add_setting(
-				'v_footer_background_color',
-				array(
-					/**
-					 * Filters for modifying the default footer background color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_footer_background_color', '#f0f0f0' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_footer_background_color',
-					array(
-						'label'    => __( 'Footer background color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_footer_background_color',
-						'priority' => 61,
-					)
-				)
-			);
-
-			/**
-			 * Footer text color
-			 */
-			$wp_customize->add_setting(
-				'v_footer_text_color',
-				array(
-					/**
-					 * Filters for modifying the default footer text color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_footer_text_color', '#6d6d6d' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_footer_text_color',
-					array(
-						'label'    => __( 'Footer text color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_footer_text_color',
-						'priority' => 63,
-					)
-				)
-			);
-
-			/**
-			 * Buttons section
-			 */
-			$wp_customize->add_section(
-				'storefront_buttons',
-				array(
-					'title'       => __( 'Buttons', 'storefront' ),
-					'priority'    => 45,
-					'description' => __( 'Customize the look & feel of your website buttons.', 'storefront' ),
-				)
-			);
-
-			/**
-			 * Button background color
-			 */
-			$wp_customize->add_setting(
-				'v_button_background_color',
-				array(
-					/**
-					 * Filters for modifying the default button background color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_button_background_color', '#eeeeee' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_button_background_color',
-					array(
-						'label'    => __( 'Button background color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_button_background_color',
-						'priority' => 21,
-					)
-				)
-			);
-
-			/**
-			 * Button text color
-			 */
-			$wp_customize->add_setting(
-				'v_button_text_color',
-				array(
-					/**
-					 * Filters for modifying the default button text color.
-					 *
-					 * @param string Hex color value.
-					 * @package  storefront
-					 * @since    2.0.0
-					 */
-					'default'           => apply_filters( 'storefront_default_button_text_color', '#333333' ),
-					'sanitize_callback' => 'sanitize_hex_color',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Color_Control(
-					$wp_customize,
-					'v_button_text_color',
-					array(
-						'label'    => __( 'Button text color', 'storefront' ),
-						'section'  => 'v_color_scheme',
-						'settings' => 'v_button_text_color',
-						'priority' => 22,
-					)
-				)
-			);
+			$priority = 20;
+			foreach ( $this->colour_scheme_defaults as $name => $hex ) {
+				$this->add_color( $wp_customize, $name, $hex, $priority );
+			}
 
 			/**
 			 * Color effects
@@ -679,12 +220,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'v_gradient_factor',
 				array(
-					/**
-					 * Filters for modifying the amount of gradient in the color schemes.
-					 *
-					 * @param int -255 to 255 gradient factor value.
-					 */
-					'default'           => apply_filters( 'storefront_default_gradient_factor', 0 ),
+					'default'           => 0,
 					'sanitize_callback' => 'vfront_sanitize_gradient_factor',
 				)
 			);
@@ -713,12 +249,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'v_backdrop_blur',
 				array(
-					/**
-					 * Filters for modifying the amount of blur in backdrop-filter effects.
-					 *
-					 * @param int 0 to 30 in pixels.
-					 */
-					'default'           => apply_filters( 'v_backdrop_blur', 5 ),
+					'default'           => 5,
 					'sanitize_callback' => 'vfront_sanitize_blur_radius',
 				)
 			);
@@ -747,12 +278,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'v_backdrop_brightness',
 				array(
-					/**
-					 * Filters for modifying the amount of brightness in backdrop-filter effects.
-					 *
-					 * @param int 0 to 300 in percent.
-					 */
-					'default'           => apply_filters( 'v_backdrop_brightness', 150 ),
+					'default'           => 150,
 					'sanitize_callback' => 'vfront_sanitize_brightness',
 				)
 			);
@@ -771,12 +297,67 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 							'min'   => 0,
 							'max'   => 300,
 							'step'  => 1,
-							'value' => 150,
+							'value' => 100,
 						),
 						'custom_class' => 'customizer-slider',
 					)
 				)
 			);
+
+			/**
+			 * Header
+			 */
+			$wp_customize->add_control(
+				new Arbitrary_Storefront_Control(
+					$wp_customize,
+					'storefront_header_image_heading',
+					array(
+						'section'  => 'header_image',
+						'type'     => 'heading',
+						'label'    => __( 'Header background image', 'storefront' ),
+						'priority' => 6,
+					)
+				)
+			);
+		}
+
+		/**
+		 * Add a color to the color scheme.
+		 *
+		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+		 * @param string               $color_name Color name.
+		 * @param string               $color_hex Default value.
+		 * @param integer              $priority Reference to priority (order displayed). Will be incremented in function.
+		 */
+		private function add_color( $wp_customize, $color_name, $color_hex, &$priority ) {
+			$description = preg_replace( '/^v_/', '', $color_name );
+			$description = str_replace( '_', ' ', $description );
+			$description = ucfirst( $description );
+
+			$wp_customize->add_setting(
+				$color_name,
+				array(
+					'default'           => $color_hex,
+					'sanitize_callback' => 'sanitize_hex_color',
+				)
+			);
+
+			// This is not correct for creating the translation pot file.
+			// If the site is translated, you must trace the variable names manually.
+			// phpcs:disable WordPress.WP.I18n
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					$color_name,
+					array(
+						'label'    => __( $description, 'storefront' ),
+						'section'  => 'v_color_scheme',
+						'settings' => $color_name,
+						'priority' => $priority++,
+					)
+				)
+			);
+			// phpcs:enable
 		}
 
 		/**
@@ -786,25 +367,15 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 		 */
 		public function get_storefront_theme_mods() {
 			$storefront_theme_mods = array(
-				'background_color'        => get_theme_mod( 'v_background_color' ),
-				'accent_color'            => get_theme_mod( 'v_accent_color' ),
-				'link_color'              => get_theme_mod( 'v_link_color' ),
-				'header_background_color' => get_theme_mod( 'v_header_background_color' ),
-				'header_text_color'       => get_theme_mod( 'v_header_text_color' ),
-				'footer_background_color' => get_theme_mod( 'v_footer_background_color' ),
-				'footer_text_color'       => get_theme_mod( 'v_footer_text_color' ),
-				'text_color'              => get_theme_mod( 'v_text_color' ),
-				'heading_color'           => get_theme_mod( 'v_heading_color' ),
-				'border_color'            => get_theme_mod( 'v_border_color' ),
-				'container_color'         => get_theme_mod( 'v_container_color' ),
-				'box_color'               => get_theme_mod( 'v_box_color' ),
-				'button_background_color' => get_theme_mod( 'v_button_background_color' ),
-				'button_text_color'       => get_theme_mod( 'v_button_text_color' ),
-				'gradient_factor'         => get_theme_mod( 'v_gradient_factor' ),
-				'backdrop_blur'           => get_theme_mod( 'v_backdrop_blur' ),
-				'backdrop_brightness'     => get_theme_mod( 'v_backdrop_brightness' ),
-				'links_nav_to_main'       => get_theme_mod( 'v_links_nav_to_content' ),
+				'gradient_factor'     => get_theme_mod( 'v_gradient_factor' ),
+				'backdrop_blur'       => get_theme_mod( 'v_backdrop_blur' ),
+				'backdrop_brightness' => get_theme_mod( 'v_backdrop_brightness' ),
+				'links_nav_to_main'   => get_theme_mod( 'v_links_nav_to_content' ),
 			);
+			foreach ( $this->colour_scheme_defaults as $color_name => $hex ) {
+				$mod_name                           = preg_replace( '/^v_/', '', $color_name );
+				$storefront_theme_mods[ $mod_name ] = get_theme_mod( $color_name );
+			}
 
 			/**
 			 * Filters for Storefront Theme Mods.
