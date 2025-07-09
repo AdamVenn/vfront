@@ -12,15 +12,6 @@
 		margin-left: 0;
 		margin-right: 0;
 	}
-
-	.site-branding {
-
-		img {
-			height: auto;
-			max-width: 230px;
-			max-height: none;
-		}
-	}
 }
 
 // If a secondary menu is present, put the branding above the main nav menu
@@ -35,11 +26,6 @@
 }
 
 .site-branding {
-
-	.site-description {
-		margin-bottom: 0;
-		display: block;
-	}
 }
 
 // WooCommerce widget container

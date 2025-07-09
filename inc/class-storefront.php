@@ -77,10 +77,11 @@ if ( ! class_exists( 'Storefront' ) ) :
 				apply_filters(
 					'storefront_custom_logo_args',
 					array(
-						'height'      => 110,
-						'width'       => 470,
-						'flex-width'  => true,
-						'flex-height' => true,
+						'height'               => 110,
+						'width'                => 470,
+						'flex-width'           => true,
+						'flex-height'          => true,
+						'unlink-homepage-logo' => true,
 					)
 				)
 			);

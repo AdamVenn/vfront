@@ -171,18 +171,27 @@ if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
 	 * @return string
 	 */
 	function storefront_site_title_or_logo( $echo = true ) {
+		$html = '';
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-			$logo = get_custom_logo();
-			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
-		} else {
-			$tag = is_home() ? 'h1' : 'div';
-
-			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
-
-			if ( '' !== get_bloginfo( 'description' ) ) {
-				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
-			}
+			$html .= '<div class="logo">' . get_custom_logo() . '</div>';
 		}
+
+		$html .= '<div class="site-title-and-description">';
+		$html .= '<div class="beta site-title">';
+
+		if ( is_front_page() || is_home() ) {
+			// Don't add link to home page if already on home page.
+			$html .= '<p>' . esc_html( get_bloginfo( 'name' ) ) . '</p>';
+		} else {
+			$html .= '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
+		}
+
+		$html .= '</div>'; // site-title.
+
+		if ( '' !== get_bloginfo( 'description' ) ) {
+			$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
+		}
+		$html .= '</div>'; // site-title-and-description.
 
 		if ( ! $echo ) {
 			return $html;
