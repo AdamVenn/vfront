@@ -886,10 +886,10 @@ table {
 
 .cat-links,
 .tags-links {
-	font-size: 0.875em;
+	font-size: var(--font-size-small);
 
 	a {
-		color: #727272;
+		color: var(--link_color);
 		font-weight: 600;
 		text-decoration: underline;
 	}
