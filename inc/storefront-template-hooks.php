@@ -70,6 +70,19 @@ add_action( 'storefront_post_header_before', 'storefront_post_meta', 10 );
 add_action( 'storefront_post_content_before', 'storefront_post_thumbnail', 10 );
 
 /**
+ * Do not display author on posts.
+ *
+ * @link https://developer.wordpress.org/reference/functions/remove_post_type_support/
+ */
+add_action(
+	'init',
+	function () {
+		remove_post_type_support( 'post', 'author' );
+		remove_post_type_support( 'post', 'comments' );
+	}
+);
+
+/**
  * Pages
  *
  * @see  storefront_page_header()
