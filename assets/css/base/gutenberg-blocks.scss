@@ -42,7 +42,7 @@
 		}
 
 		&.aligncenter {
-			margin: 0 auto var(--space-around);
+			margin: 0 auto;
 			max-width: span(6);
 		}
 	}
@@ -79,7 +79,7 @@
 	.wp-block-archives,
 	.wp-block-categories,
 	.wp-block-latest-posts {
-		margin: 0 0 var(--space-around);
+		margin: 0 0;
 		list-style: none;
 	}
 
@@ -132,7 +132,7 @@
 
 	// Pullquote
 	.wp-block-pullquote {
-		margin: 0 0 var(--space-around);
+		margin: 0 0;
 
 		blockquote {
 			border: 0;
@@ -153,7 +153,7 @@
 
 		&.is-large,
 		&.is-style-large {
-			margin: 0 0 var(--space-around);
+			margin: 0 0;
 			padding: 0;
 			border: 0;
 
@@ -209,7 +209,6 @@
 	}
 
 	figure.wp-block-image {
-		margin: 0 0 var(--space-around);
 	}
 
 	// Cover
@@ -301,7 +300,6 @@
 
 	// Galleries
 	.wp-block-gallery {
-		margin: 0 0 var(--space-around);
 
 		.blocks-gallery-image,
 		.blocks-gallery-item {
@@ -326,7 +324,7 @@
 	// Separator
 	.wp-block-separator {
 		border: 0;
-		margin: 0 auto var(--space-around);
+		margin: 0 auto;
 		overflow: hidden;
 
 		&:not(.is-style-wide):not(.is-style-dots) {
@@ -392,7 +390,7 @@
 
 	// Latest Comments
 	.wp-block-latest-comments {
-		margin: 0 0 var(--space-around);
+		margin: 0 0;
 
 		&__comment-avatar {
 			margin-top: var(--space-around);
@@ -400,7 +398,7 @@
 
 		&__comment {
 			font-size: var(--font-size-base);
-			margin: 0 0 var(--space-around);
+			margin: 0 0;
 		}
 
 		&__comment-date {
@@ -447,6 +445,6 @@
 
 	img {
 		display: block;
-		margin: 0 auto var(--space-around);
+		margin: 0 auto;
 	}
 }
