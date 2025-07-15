@@ -12,8 +12,8 @@ if ( ! function_exists( 'storefront_display_comments' ) ) {
 	 * @since  1.0.0
 	 */
 	function storefront_display_comments() {
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || 0 !== intval( get_comments_number() ) ) :
+		// If comment support is on and comments are open or we have at least one comment, load up the comment template.
+		if ( post_type_supports( 'post', 'comments' ) && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) :
 			comments_template();
 		endif;
 	}
@@ -432,24 +432,27 @@ if ( ! function_exists( 'storefront_post_meta' ) ) {
 			'</span>';
 
 		// Author.
-		$author = sprintf(
-			'<span class="post-author">%1$s <a href="%2$s" class="url fn" rel="author">%3$s</a></span>',
-			__( 'by', 'storefront' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		);
+		if ( post_type_supports( 'post', 'author' ) ) {
+			$author = sprintf(
+				'<span class="post-author">%1$s <a href="%2$s" class="url fn" rel="author">%3$s</a></span>',
+				__( 'by', 'storefront' ),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			);
+		}
 
 		// Comments.
 		$comments = '';
+		if ( post_type_supports( 'post', 'comments' ) ) {
+			if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
+				$comments_number = get_comments_number_text( __( 'Leave a comment', 'storefront' ), __( '1 Comment', 'storefront' ), __( '% Comments', 'storefront' ) );
 
-		if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
-			$comments_number = get_comments_number_text( __( 'Leave a comment', 'storefront' ), __( '1 Comment', 'storefront' ), __( '% Comments', 'storefront' ) );
-
-			$comments = sprintf(
-				'<span class="post-comments">&mdash; <a href="%1$s">%2$s</a></span>',
-				esc_url( get_comments_link() ),
-				$comments_number
-			);
+				$comments = sprintf(
+					'<span class="post-comments">&mdash; <a href="%1$s">%2$s</a></span>',
+					esc_url( get_comments_link() ),
+					$comments_number
+				);
+			}
 		}
 
 		echo wp_kses(
