@@ -81,6 +81,13 @@
 
 }
 
+@mixin code {
+	display: inline-block;
+	padding: 0 var(--space-around);
+	background-color: rgba(0, 0, 0, 0.05);
+	text-align: left;
+}
+
 @mixin wrap-break-word {
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/word-break

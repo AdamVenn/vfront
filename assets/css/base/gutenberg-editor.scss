@@ -199,9 +199,8 @@ code,
 kbd,
 tt,
 var {
+	@include code;
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	background-color: var(--container_color);
-	padding: 0.202em var(--space-around);
 }
 
 abbr,

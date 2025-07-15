@@ -370,14 +370,15 @@
 	// Code
 	.wp-block-code,
 	.wp-block-preformatted pre {
+		@include code;
 		font-family: "Courier 10 Pitch", Courier, monospace;
 		font-size: var(--font-size-base);
 	}
 
 	.wp-block-code {
+		@include code;
 		border: none;
 		border-radius: 0;
-		padding: var(--space-separation);
 	}
 
 	// Columns
