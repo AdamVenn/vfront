@@ -56,11 +56,9 @@
 		}
 	}
 
-	// Button
+	// Button container
 	.wp-block-button {
 		margin-bottom: var(--space-around);
-
-		@include button;
 
 		.wp-block-button__link {
 			@include button;
