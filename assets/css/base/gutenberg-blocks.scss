@@ -114,6 +114,11 @@
 
 	}
 
+	// Posts query loop
+	.wp-block-post-template {
+		margin: 0;
+	}
+
 	// Paragraphs
 	p {
 
@@ -437,6 +442,28 @@
 		}
 	}
 }
+
+/**
+ * Editor-specific styles
+ */
+
+.editor-styles-wrapper {
+	.wp-block-archives,
+	.wp-block-categories,
+	.wp-block-latest-posts {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.wp-block-latest-comments {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.wp-block-pullquote {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 
 // Top rated products
 .wc-block-grid {
