@@ -2266,7 +2266,12 @@ table.cart {
 		}
 	}
 
-	.wp-block-woocommerce-checkout-order-summary-block {
+	.wc-block-checkout__terms.wc-block-checkout__terms--with-separator {
+		border-top: 1px dotted var(--border_color) !important;
+	}
+
+	.wp-block-woocommerce-checkout-order-summary-block,
+	.wc-block-components-address-card {
 		border: dotted 1px var(--border_color) !important;
 	}
 
