@@ -78,7 +78,7 @@
 	.wp-block-categories,
 	.wp-block-latest-posts {
 		margin: 0 0;
-		list-style: none;
+		list-style: inside;
 	}
 
 	.wp-block-latest-posts {
@@ -464,6 +464,17 @@
 	}
 }
 
+/**
+ * Widget blocks
+ */
+
+.widget {
+	ul.wp-block-latest-posts,
+	ul.wp-block-archives,
+	ul.wp-block-categories {
+		list-style: inside;
+	}
+}
 
 // Top rated products
 .wc-block-grid {
