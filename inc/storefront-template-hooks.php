@@ -31,6 +31,8 @@ add_action( 'storefront_header', 'storefront_primary_navigation_wrapper', 42 );
 add_action( 'storefront_header', 'storefront_primary_navigation', 50 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 60 );
 
+add_filter( 'wp_nav_menu_objects', 'vfront_myaccount_to_login', 10, 2 );
+
 /**
  * Footer
  *

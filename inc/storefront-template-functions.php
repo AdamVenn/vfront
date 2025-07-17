@@ -249,6 +249,32 @@ if ( ! function_exists( 'storefront_secondary_navigation' ) ) {
 	}
 }
 
+if ( ! function_exists( 'vfront_myaccount_to_login' ) ) {
+	/**
+	 * Replaces 'my account' with 'log in' if the user is not logged in.
+	 *
+	 * @see wp_nav_menu_objects filter
+	 * @param array    $sorted_menu_items Array of WP_Post objects to be displayed in the header.
+	 * @param stdClass $args An object containing wp_nav_menu() arguments.
+	 */
+	function vfront_myaccount_to_login( $sorted_menu_items, $args ) {
+		if ( is_user_logged_in() ) {
+			return $sorted_menu_items;
+		}
+
+		$my_account_string = _x( 'My account', 'used for comparison only', 'storefront' );
+		$login_string      = __( 'Log In', 'storefront' );
+
+		foreach ( $sorted_menu_items as $menu_item ) {
+			if ( $menu_item->title && $menu_item->title === $my_account_string ) {
+				$menu_item->title = $login_string;
+			}
+		}
+
+		return $sorted_menu_items;
+	}
+}
+
 if ( ! function_exists( 'storefront_skip_links' ) ) {
 	/**
 	 * Skip links
