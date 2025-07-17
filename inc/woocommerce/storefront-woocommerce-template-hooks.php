@@ -79,12 +79,7 @@ add_action( 'woocommerce_before_single_product_summary', 'vfront_show_product_vi
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
 
-/**
- * WooCommerce payment methods buttons.
- */
-
-// Stripe gateway uses:
-// add_action( 'woocommerce_after_add_to_cart_form', [ $this, 'display_express_checkout_button_html' ], 1 );.
+add_action( 'woocommerce_single_product_summary', 'storefront_edit_post_link', 60 );
 
 // Add container for cart form.
 add_action( 'woocommerce_before_add_to_cart_form', 'vfront_cart_form_wrapper_open', 100 );
@@ -120,6 +115,12 @@ add_action(
 	30
 );
 
+// Move Stripe buttons into container.
+if ( class_exists( 'WC_Stripe_Express_Checkout_Element' ) ) {
+	remove_action( 'woocommerce_after_add_to_cart_form', array( WC_Stripe_Express_Checkout_Element::instance(), 'display_express_checkout_button_html' ), 1 );
+	add_action( 'woocommerce_after_add_to_cart_form', array( WC_Stripe_Express_Checkout_Element::instance(), 'display_express_checkout_button_html' ), 10 );
+}
+
 // Move all Paypal payments hooks into the container.
 add_filter(
 	'woocommerce_paypal_payments_single_product_renderer_hook',
@@ -127,14 +128,12 @@ add_filter(
 		return 'woocommerce_after_add_to_cart_form';
 	}
 );
-
 add_filter(
 	'woocommerce_paypal_payments_googlepay_single_product_button_render_hook',
 	function() {
 		return 'woocommerce_after_add_to_cart_form';
 	}
 );
-
 add_filter(
 	'woocommerce_paypal_payments_applepay_single_product_button_render_hook',
 	function() {
@@ -145,16 +144,13 @@ add_filter(
 add_action( 'woocommerce_after_add_to_cart_form', 'vfront_payment_gateways_wrapper_close', 100 );
 add_action( 'woocommerce_after_add_to_cart_form', 'vfront_cart_form_wrapper_close', 110 );
 
-add_action( 'woocommerce_single_product_summary', 'storefront_edit_post_link', 60 );
-
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'storefront_upsell_display', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'storefront_single_product_pagination', 30 );
 
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
 
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
-
-add_action( 'woocommerce_after_single_product_summary', 'storefront_single_product_pagination', 30 );
 
 add_action( 'storefront_after_footer', 'storefront_sticky_single_add_to_cart', 999 );
 
@@ -242,10 +238,10 @@ add_filter(
 			<?php
 			woocommerce_wp_text_input(
 				array(
-					'label' => __( 'Video URL', 'storefront' ), // Text in the label in the editor.
-					'style' => 'width: 100%;',
-					'value' => get_post_meta( $post->ID, 'vid_url', true ),
-					'id' => 'vid_url', // required, will be used as meta_key.
+					'label'    => __( 'Video URL', 'storefront' ), // Text in the label in the editor.
+					'style'    => 'width: 100%;',
+					'value'    => get_post_meta( $post->ID, 'vid_url', true ),
+					'id'       => 'vid_url', // required, will be used as meta_key.
 					'desc_tip' => 'false',
 				)
 			);
