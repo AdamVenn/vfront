@@ -290,3 +290,12 @@ if ( get_theme_mod( 'v_links_nav_to_content', false ) ) {
 		}
 	);
 }
+
+// Remove dashboard button in my-account navigation.
+add_filter(
+	'woocommerce_account_menu_items',
+	function ( $items ) {
+		unset( $items['dashboard'] );
+		return $items;
+	}
+);
