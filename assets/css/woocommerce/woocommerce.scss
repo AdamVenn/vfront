@@ -445,22 +445,47 @@ ul.products,
 			}
 		}
 		.v-cart-form-container {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-			gap: 0; // Must be 0 gap for center alignment
+			$payment-button-width: 240px;
+			// Use static widths for children to know when the flexbox will wrap
+			// and to achieve center alignment
+			$child-width: 280px;
+			$flexbox-unwrapped-point: #{$child-width * 2};
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			// Column-gap is done with padding to put a line in between the children
+			row-gap: var(--space-around);
+
 			margin-bottom: var(--space-around);
+
+			// Register this container as named container for query below
+			container-name: cart-form-container;
+			container-type: inline-size;
 
 			form.cart {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
-				justify-content: flex-end;
 				align-items: center;
-				gap: var(--space-between-inner);
+				gap: var(--space-between-outer);
 
-				// If the payment gateway container is empty, align the form center
-				&:not(&:has(+ .v-payment-gateway-container > *)) {
+				width: $child-width;
+
+				// Flexbox wrapped
+				justify-content: center;
+				
+				// Flexbox unwrapped
+				@container cart-form-container (width > #{$flexbox-unwrapped-point}) {
+					// If the payment gateway container has no content, align the form center
 					justify-content: center;
+					// If the payment gateway container has content, align the form right and add a line
+					&:has(+ .v-payment-gateway-container > *) {
+						padding-right: var(--space-around);
+						border-right: var(--border-thin) solid var(--drop-shadow-color);
+						justify-content: flex-end;
+					}
 				}
 
 				table.woocommerce-grouped-product-list {
@@ -483,16 +508,27 @@ ul.products,
 
 			.v-payment-gateway-container {
 				@include flex-col;
-				justify-content: flex-start;
+				justify-content: center;
 
-				max-width: calc(var(--min-button-width) * 2 + var(--space-between-inner));
-				
-				padding-left: var(--space-around);
-				border-left: var(--border-thin) solid var(--drop-shadow-color);
-				margin-left: var(--space-around);
+				width: $child-width;
 
 				&:empty {
 					display: none;
+				}
+
+				& > * {
+					width: 100%;
+				}
+				
+				& #wc-stripe-express-checkout-element {
+					min-width: $payment-button-width;  // It is programmed to disappear if it goes smaller than 240px.
+					margin: 0 !important;  // Override JS inlined style
+				}
+
+				// Flexbox unwrapped
+				@container cart-form-container (width > #{$flexbox-unwrapped-point}) {
+					padding-left: var(--space-around);
+					justify-content: flex-start;
 				}
 			}
 		}
