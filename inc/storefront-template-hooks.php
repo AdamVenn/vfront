@@ -102,3 +102,8 @@ add_action( 'storefront_page_after', 'storefront_display_comments', 10 );
  */
 add_action( 'storefront_homepage', 'storefront_homepage_header', 10 );
 add_action( 'storefront_homepage', 'storefront_page_content', 20 );
+
+/**
+ * Authentication
+ */
+add_filter( 'authenticate', 'vfront_restrict_admin_login_endpoint', 30, 3 );

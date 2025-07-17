@@ -703,3 +703,39 @@ add_filter(
 	}
 );
 
+if ( ! function_exists( 'vfront_restrict_admin_login_endpoint' ) ) {
+	/**
+	 * Only allow admin login from main WordPress login page,
+	 * i.e. not from WooCommerce my-account.
+	 *
+	 * @see authenticate filter
+	 *
+	 * @param WP_User $user The user object for the user logging in.
+	 * @param string  $username User name.
+	 * @param string  $password Password.
+	 */
+	function vfront_restrict_admin_login_endpoint( $user, $username, $password ) {
+		if ( ! $user instanceof WP_User ) {
+			return $user;
+		}
+
+		if ( ! array_intersect( (array) $user->roles, array( 'administrator' ) ) ) {
+			return $user;
+		}
+
+		if ( ! isset( $_SERVER['REQUEST_URI'] ) ) {
+			return $user;
+		}
+
+		$endpoint_in_use  = basename( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) );
+		$allowed_endpoint = basename( wp_login_url() );
+
+		if ( $endpoint_in_use === $allowed_endpoint ) {
+			return $user;
+		}
+
+		return new WP_Error( 'admin-error', 'Admins cannot login from here.' );
+
+	}
+}
+
