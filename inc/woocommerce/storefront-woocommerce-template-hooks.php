@@ -216,10 +216,10 @@ add_filter(
 	'woocommerce_product_data_tabs',
 	function( $tabs ) {
 		$tabs['Video'] = array(
-			'label'     => __( 'Video', 'storefront' ),
-			'target'    => 'video_data_tab_options',
-			'class'     => array( 'show_if_simple', 'show_if_variable' ),
-			'priority'  => 15,
+			'label'    => __( 'Video', 'storefront' ),
+			'target'   => 'video_data_tab_options',
+			'class'    => array( 'show_if_simple', 'show_if_variable' ),
+			'priority' => 15,
 		);
 		return $tabs;
 	}
