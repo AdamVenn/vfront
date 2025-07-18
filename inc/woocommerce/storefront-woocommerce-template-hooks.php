@@ -189,6 +189,30 @@ add_action( 'storefront_header', 'storefront_primary_navigation_wc_wrapper_close
 add_filter( 'woocommerce_add_to_cart_fragments', 'storefront_cart_link_fragment' );
 
 /**
+ * Users
+ */
+
+// Make state/province/county optional.
+add_filter(
+	'woocommerce_billing_fields',
+	function( $woo_billing_fields ) {
+		$woo_billing_fields['billing_state']['required'] = false;
+		return $woo_billing_fields;
+	},
+	10,
+	2
+);
+add_filter(
+	'woocommerce_default_address_fields',
+	function( $woo_adddress_fields ) {
+		$woo_adddress_fields['state']['required'] = false;
+		return $woo_adddress_fields;
+	},
+	10,
+	2
+);
+
+/**
  * Integrations
  *
  * @see storefront_woocommerce_brands_archive()
