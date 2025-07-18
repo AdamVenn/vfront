@@ -116,10 +116,19 @@ add_action(
 );
 
 // Move Stripe buttons into container.
-if ( class_exists( 'WC_Stripe_Express_Checkout_Element' ) ) {
-	remove_action( 'woocommerce_after_add_to_cart_form', array( WC_Stripe_Express_Checkout_Element::instance(), 'display_express_checkout_button_html' ), 1 );
-	add_action( 'woocommerce_after_add_to_cart_form', array( WC_Stripe_Express_Checkout_Element::instance(), 'display_express_checkout_button_html' ), 10 );
-}
+add_action(
+	'init',
+	function() {
+		if ( class_exists( 'WC_Stripe_Express_Checkout_Element' ) ) {
+			$instance = WC_Stripe_Express_Checkout_Element::instance();
+			if ( $instance ){
+				remove_action( 'woocommerce_after_add_to_cart_form', array( $instance, 'display_express_checkout_button_html' ), 1 );
+				add_action( 'woocommerce_after_add_to_cart_form', array( $instance, 'display_express_checkout_button_html' ), 10 );
+			}
+		}
+	},
+	50  // Must be later than WC_Stripe::init_express_checkout
+);
 
 // Move all Paypal payments hooks into the container.
 add_filter(
