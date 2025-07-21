@@ -454,7 +454,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			global $storefront_version;
 
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-			wp_enqueue_script( 'customizer-js', get_template_directory_uri() . '/assets/js/admin/customizer' . $suffix . '.js', array( 'jquery', 'customize-preview' ), $storefront_version, true );
+			wp_enqueue_script( 'customizer-js', get_template_directory_uri() . '/assets/js/admin/customizer' . $suffix . '.js', array( 'jquery', 'customize-controls' ), $storefront_version, true );
 		}
 
 		/**
