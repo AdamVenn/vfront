@@ -1827,6 +1827,7 @@ p.no-comments {
 	margin: var(--space-around) var(--space-separation);
 	border-radius: 2px;
 	color: var(--text_color);
+	background: linear-gradient(var(--container_color), var(--container_color));
 	padding: 1em 2em 1em 3.5em;
 	position: relative;
 	list-style: none outside;
