@@ -1006,8 +1006,9 @@ textarea,
 .input-text,
 .select2 {
 	padding: var(--padding-small) var(--padding-large);
+	max-width: 100%;
+
 	background: linear-gradient(var(--box_color), var(--box_color_dark));
-	
 	color: var(--text_color);
 	border: 0;
 	-webkit-appearance: none;
