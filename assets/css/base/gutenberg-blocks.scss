@@ -78,7 +78,8 @@
 	.wp-block-categories,
 	.wp-block-latest-posts {
 		margin: 0 0;
-		list-style: inside;
+		list-style: outside;
+		max-width: var(--content-width-narrow);
 	}
 
 	.wp-block-latest-posts {
