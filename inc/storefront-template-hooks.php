@@ -109,3 +109,14 @@ add_action( 'storefront_homepage', 'storefront_page_content', 20 );
  * Authentication
  */
 add_filter( 'authenticate', 'vfront_restrict_admin_login_endpoint', 30, 3 );
+
+/**
+ * Uploads
+ */
+add_filter(
+	'upload_mimes',
+	function ( $existing_mimes = array() ) {
+		$existing_mimes['dmg'] = 'dmg';
+		return $existing_mimes;
+	}
+);
