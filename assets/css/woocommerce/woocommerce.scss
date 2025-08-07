@@ -299,7 +299,10 @@ ul.products,
 	}
 
 	ul {
-		@include flex-row;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--space-between-inner);
 		justify-content: space-evenly;
 		align-items: flex-start;
 		overflow: auto;
