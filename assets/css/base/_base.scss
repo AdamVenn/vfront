@@ -1261,6 +1261,11 @@ video {
 	max-width: 100%;
 }
 
+.vfront-vid-embed {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+}
+
 /**
  * Pagination
  */
