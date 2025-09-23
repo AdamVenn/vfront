@@ -13,19 +13,19 @@
 .editor-styles-wrapper {
 	// Typography
 	.has-small-font-size {
-		font-size: var(--font-size-small);
+		font-size: var(--font-size-small) !important;
 	}
 
 	.has-medium-font-size {
-		font-size: var(--font-size-subtitle);
+		font-size: var(--font-size-subtitle) !important;
 	}
 
 	.has-large-font-size {
-		font-size: var(--font-size-subtitle);
+		font-size: var(--font-size-subtitle) !important;
 	}
 
 	.has-huge-font-size {
-		font-size: var(--font-size-title);
+		font-size: var(--font-size-title) !important;
 	}
 
 	// Audio
@@ -73,6 +73,24 @@
 		}
 	}
 
+	.wp-element-button {
+		&.has-small-font-size {
+			font-size: var(--font-size-small) !important;
+		}
+
+		&.has-medium-font-size {
+			padding: var(--padding-small) calc(var(--padding-large) * 2);
+		}
+
+		&.has-large-font-size {
+			padding: var(--padding-small) calc(var(--padding-large) * 3);
+		}
+
+		&.has-huge-font-size {
+			padding: var(--padding-small) calc(var(--padding-large) * 4);
+		}
+	}
+	
 	// Latest posts, categories, archives
 	.wp-block-archives,
 	.wp-block-categories,
