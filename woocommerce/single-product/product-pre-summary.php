@@ -22,8 +22,21 @@ if ( $custom_content ) {
 	?>
 	<div class="product-pre-summary">
 	<?php
-	echo wp_kses_post( $custom_content );
-	?>
+		// Allow limited SVGs in pre-summary.
+		$allowed_tags         = wp_kses_allowed_html( 'post' );
+		$allowed_tags['svg']  = array(
+			'xmlns'   => true,
+			'width'   => true,
+			'height'  => true,
+			'viewbox' => true,
+			'class'   => true,
+		);
+		$allowed_tags['path'] = array(
+			'd'    => true,
+			'fill' => true,
+		);
+		echo wp_kses( $custom_content, $allowed_tags );
+		?>
 	</div>
 	<?php
 }
