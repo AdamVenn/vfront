@@ -1144,7 +1144,21 @@ if ( ! function_exists( 'vfront_save_product_pre_summary_content' ) ) {
 		if ( isset( $_POST[ $nonce_name ] ) ) {
 			if ( wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ $nonce_name ] ) ), $nonce_name ) ) {
 				if ( isset( $_POST['product_pre_summary'] ) ) {
-					$content = wp_kses_post( wp_unslash( $_POST['product_pre_summary'] ) );
+					// Allow limited SVGs in pre-summary.
+					$allowed_tags         = wp_kses_allowed_html( 'post' );
+					$allowed_tags['svg']  = array(
+						'xmlns'   => true,
+						'width'   => true,
+						'height'  => true,
+						'viewbox' => true,
+						'class'   => true,
+					);
+					$allowed_tags['path'] = array(
+						'd'    => true,
+						'fill' => true,
+					);
+
+					$content = wp_kses( wp_unslash( $_POST['product_pre_summary'] ), $allowed_tags );
 					update_post_meta( $post_id, 'product_pre_summary_content', $content );
 				}
 			}
