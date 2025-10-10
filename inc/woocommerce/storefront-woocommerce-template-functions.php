@@ -1103,7 +1103,7 @@ if ( ! function_exists( 'vfront_show_product_video' ) ) {
 	function vfront_show_product_video() {
 		global $post;
 		$vid_url = get_post_meta( $post->ID, 'vid_url', true );
-		if ( isset( $vid_url ) && '' != $vid_url ) {
+		if ( isset( $vid_url ) && '' !== $vid_url ) {
 			?>
 			<div class="v-product-video">
 				<iframe src="<?php echo esc_url( $vid_url ); ?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
