@@ -655,6 +655,15 @@ ul.products,
 	margin-bottom: var(--space-separation);
 }
 
+.product-pre-summary {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+    gap: var(--space-between-outer);
+    width: 100%;
+	margin-bottom: var(--space-separation);
+}
+
 .v-tab {
     display: flex;
     flex-direction: column;
