@@ -19,6 +19,32 @@ function storefront_is_product_archive() {
 }
 
 /**
+ * Get the categories of the current product
+ *
+ * @return array of strings
+ */
+function vfront_get_product_category_names() {
+	$ret = array();
+	global $post;
+	if ( $post ) {
+		$terms = get_the_terms( $post->ID, 'product_cat' );
+		if ( is_wp_error( $terms ) ) {
+			return $ret;
+		}
+
+		if ( empty( $terms ) ) {
+			return $ret;
+		}
+		$ret = array();
+		foreach ( $terms as $term ) {
+			array_push( $ret, $term->name );
+		}
+	}
+
+	return $ret;
+}
+
+/**
  * Retrieves the previous product.
  *
  * @since 2.4.3
