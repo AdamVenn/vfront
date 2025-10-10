@@ -73,6 +73,7 @@ if ( ! get_theme_mod( 'vfront_use_original_gallery', false ) ) {
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5 );
 
+add_action( 'woocommerce_before_single_product_summary', 'vfront_product_pre_summary', 10 );
 add_action( 'woocommerce_before_single_product_summary', 'vfront_show_product_video', 20 );
 
 // Move short description.
@@ -239,6 +240,10 @@ if ( class_exists( 'WC_Brands' ) ) {
  *
  * @see vfront_save_video_url_field()
  */
+
+// Add an extra content box to be rendered before the video.
+add_action( 'add_meta_boxes', 'vfront_product_pre_summary_meta_box' );
+add_action( 'save_post_product', 'vfront_save_product_pre_summary_content' );
 
 // Allow adding a product video.
 add_filter(

@@ -1073,6 +1073,85 @@ if ( ! function_exists( 'vfront_woocommerce_gallery_tab_content' ) ) {
 }
 
 
+if ( ! function_exists( 'vfront_product_pre_summary' ) ) {
+	/**
+	 * Add a template part for deprecated products
+	 * Hooked into add_meta_boxes
+	 *
+	 * @see add_meta_boxes
+	 */
+	function vfront_product_pre_summary() {
+		get_template_part( 'woocommerce/single-product/product-pre-summary' );
+	}
+}
+
+if ( ! function_exists( 'vfront_product_pre_summary_meta_box' ) ) {
+	/**
+	 * Add a meta box to allow the user to insert content above the video
+	 * Hooked into save_post_product
+	 *
+	 * @see save_post_product
+	 * @return void
+	 */
+	function vfront_product_pre_summary_meta_box() {
+		add_meta_box(
+			'product_pre_summary', // Unique ID.
+			__( 'Pre-Summary (Shown at the top of the page)', 'storefront' ), // Box title.
+			'vfront_product_pre_summary_meta_box_content', // Callback to insert the current content.
+			'product', // Post type.
+			'normal', // Context.
+			'high' // Priority.
+		);
+	}
+}
+
+if ( ! function_exists( 'vfront_product_pre_summary_meta_box_content' ) ) {
+	/**
+	 * Output the current content for the pre-summary into the 'edit product' page
+	 *
+	 * @param WP_Post $post The post.
+	 * @return void
+	 */
+	function vfront_product_pre_summary_meta_box_content( $post ) {
+		$content = get_post_meta( $post->ID, 'product_pre_summary_content', true );
+
+		wp_editor(
+			$content,
+			'product_pre_summary_content',
+			array(
+				'textarea_name' => 'product_pre_summary', // Unique ID to match the one in vfront_product_pre_summary_meta_box.
+				'editor_class'  => 'product-pre-summary-editor',
+				'media_buttons' => true,
+				'teeny'         => false,
+				'tinymce'       => true,
+				'quicktags'     => true,
+			)
+		);
+		wp_nonce_field( 'pre-summary-' . get_the_ID(), 'pre-summary-' . get_the_ID() );
+	}
+}
+
+if ( ! function_exists( 'vfront_save_product_pre_summary_content' ) ) {
+	/**
+	 * Save the pre-summary content into the database
+	 *
+	 * @param integer $post_id The post ID.
+	 * @return void
+	 */
+	function vfront_save_product_pre_summary_content( $post_id ) {
+		$nonce_name = 'pre-summary-' . $post_id;
+
+		if ( isset( $_POST[ $nonce_name ] ) ) {
+			if ( wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ $nonce_name ] ) ), $nonce_name ) ) {
+				if ( isset( $_POST['product_pre_summary'] ) ) {
+					$content = wp_kses_post( wp_unslash( $_POST['product_pre_summary'] ) );
+					update_post_meta( $post_id, 'product_pre_summary_content', $content );
+				}
+			}
+		}
+	}
+}
+
 if ( ! function_exists( 'vfront_save_video_url_field' ) ) {
 	/**
 	 * Save the video URL into the database
