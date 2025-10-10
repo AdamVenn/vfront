@@ -291,6 +291,10 @@ add_filter(
 	}
 );
 
+// Enable hiding single product title.
+add_action( 'woocommerce_product_options_general_product_data', 'vfront_hide_product_title_option' );
+add_action( 'woocommerce_process_product_meta', 'vfront_save_hide_product_title_option' );
+
 // Remove unwanted tabs.
 add_filter(
 	'woocommerce_product_data_tabs',

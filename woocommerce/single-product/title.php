@@ -18,5 +18,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+$show_title = true;
+global $post;
+if ( $post ) {
+	$hide_product_title = get_post_meta( $post->ID, 'vfront_hide_product_title_option', true );
+	if ( isset( $hide_product_title ) && 'yes' === $hide_product_title ) {
+		$show_title = false;
+	}
+}
+if ( $show_title ) {
+	the_title( '<h1 class="product_title entry-title">', '</h1>' );
+}
 
-the_title( '<h1 class="product_title entry-title">', '</h1>' );

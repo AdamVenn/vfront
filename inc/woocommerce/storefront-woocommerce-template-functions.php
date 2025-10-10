@@ -1191,3 +1191,44 @@ if ( ! function_exists( 'vfront_show_product_video' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'vfront_hide_product_title_option' ) ) {
+	/**
+	 * Add option to 'edit product' page to hide product title.
+	 */
+	function vfront_hide_product_title_option() {
+		?>
+		<div><!-- vfront_hide_product_title_option -->
+			<?php
+			woocommerce_wp_checkbox(
+				array(
+					'id'       => 'vfront_hide_product_title_option',
+					'desc'     => __( 'Hide product title', 'storefront' ),
+					'label'    => __( 'Hide product title', 'storefront' ),
+					'desc_tip' => 'true',
+				)
+			);
+			wp_nonce_field( 'vfront_hide_product_title_option_' . get_the_ID(), 'vfront_hide_product_title_option_' . get_the_ID() );
+			?>
+		</div><!-- vfront_hide_product_title_option -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'vfront_save_hide_product_title_option' ) ) {
+	/**
+	 * Save 'hide product title' option to database.
+	 *
+	 * @param integer $post_id The post ID.
+	 */
+	function vfront_save_hide_product_title_option( $post_id ) {
+		$nonce_name = 'vfront_hide_product_title_option_' . $post_id;
+
+		if ( isset( $_POST[ $nonce_name ] ) ) {
+			if ( wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ $nonce_name ] ) ), $nonce_name ) ) {
+				$hide_product_title = isset( $_POST['vfront_hide_product_title_option'] ) ? 'yes' : 'no';
+				update_post_meta( $post_id, 'vfront_hide_product_title_option', $hide_product_title );
+			}
+		}
+	}
+}
