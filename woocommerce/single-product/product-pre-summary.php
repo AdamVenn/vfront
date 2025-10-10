@@ -13,25 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-?>
-<div class="product_pre_summary">
 
-	<?php
-	do_action( 'vfront_product_pre_summary_start' );
+do_action( 'vfront_product_pre_summary_start' );
 
-	$custom_content = get_post_meta( $product->get_id(), 'product_pre_summary_content', true );
+$custom_content = get_post_meta( $product->get_id(), 'product_pre_summary_content', true );
 
-	if ( $custom_content ) {
-		?>
-		<div class="product-pre-summary">
-		<?php
-		echo wp_kses_post( $custom_content );
-		?>
-		</div>
-		<?php
-	}
-
-	do_action( 'vfront_product_pre_summary_end' );
+if ( $custom_content ) {
 	?>
+	<div class="product-pre-summary">
+	<?php
+	echo wp_kses_post( $custom_content );
+	?>
+	</div>
+	<?php
+}
 
-</div>
+do_action( 'vfront_product_pre_summary_end' );
+?>
