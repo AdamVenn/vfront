@@ -5,7 +5,7 @@
 .v-gal-thumbnails {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin: auto;
 	max-width: 100%;
 	padding: var(--space-around);
