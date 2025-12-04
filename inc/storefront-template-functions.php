@@ -465,6 +465,8 @@ if ( ! function_exists( 'storefront_post_meta' ) ) {
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			);
+		} else {
+			$author = '';
 		}
 
 		// Comments.
