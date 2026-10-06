@@ -117,6 +117,7 @@ add_filter(
 	'upload_mimes',
 	function ( $existing_mimes = array() ) {
 		$existing_mimes['dmg'] = 'dmg';
+		$existing_mimes['exe'] = 'exe';
 		return $existing_mimes;
 	}
 );
