@@ -1246,3 +1246,49 @@ if ( ! function_exists( 'vfront_save_hide_product_title_option' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'vfront_orders_table_add_item_column' ) ) {
+	/**
+	 * Add 'Item' after order number in My account orders
+	 *
+	 * @param array $columns Orders table columns.
+	 * @return array
+	 */
+	function vfront_orders_table_add_item_column( $columns ) {
+		$result = array();
+		foreach ( $columns as $id => $label ) {
+			$result[ $id ] = $label;
+			if ( 'order-number' === $id ) {
+				$result['order-item'] = __( 'Item', 'storefront' );
+			}
+		}
+		if ( ! isset( $result['order-item'] ) ) {
+			$result['order-item'] = __( 'Item', 'storefront' );
+		}
+		return $result;
+	}
+}
+
+if ( ! function_exists( 'vfront_orders_table_item_column' ) ) {
+	/**
+	 * Output the name of the first item of an order in My account orders
+	 *
+	 * @param WC_Order $order The order.
+	 */
+	function vfront_orders_table_item_column( $order ) {
+		$items = $order->get_items();
+		$first = reset( $items );
+		if ( ! $first ) {
+			echo '&ndash;';
+			return;
+		}
+
+		echo esc_html( $first->get_name() );
+
+		$more = count( $items ) - 1;
+		if ( $more > 0 ) {
+			/* translators: %d: number of additional items in the order. */
+			echo ' <small>' . esc_html( sprintf( _n( '+ %d more item', '+ %d more items', $more, 'storefront' ), $more ) ) . '</small>';
+		}
+	}
+}

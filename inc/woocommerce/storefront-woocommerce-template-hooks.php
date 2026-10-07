@@ -341,3 +341,7 @@ add_filter(
 		return $items;
 	}
 );
+
+// Show the first item of each order in my-account orders.
+add_filter( 'woocommerce_account_orders_columns', 'vfront_orders_table_add_item_column' );
+add_action( 'woocommerce_my_account_my_orders_column_order-item', 'vfront_orders_table_item_column' );
