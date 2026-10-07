@@ -208,7 +208,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			 * @link https://wordpress.org/documentation/wordpress-version/version-6-5/#add-appearance-tools-to-classic-themes
 			 */
 			add_theme_support( 'appearance-tools' );
-
 		}
 
 		/**

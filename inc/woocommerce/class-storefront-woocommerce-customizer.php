@@ -192,7 +192,6 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 				)
 			);
 		}
-
 	}
 
 endif;

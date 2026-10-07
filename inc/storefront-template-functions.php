@@ -763,7 +763,6 @@ if ( ! function_exists( 'vfront_restrict_admin_login_endpoint' ) ) {
 		}
 
 		return new WP_Error( 'admin-error', 'Admins cannot login from here.' );
-
 	}
 }
 

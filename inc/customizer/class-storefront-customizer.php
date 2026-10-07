@@ -413,7 +413,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 
 			$mods = array_filter(
 				$mods,
-				function( $value, $key ) {
+				function ( $value, $key ) {
 					if ( ! is_string( $key ) ) {
 						return false;
 					}

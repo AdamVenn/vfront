@@ -777,7 +777,7 @@ if ( ! function_exists( 'storefront_sticky_single_add_to_cart' ) ) {
 					<div class="storefront-sticky-add-to-cart__content">
 						<?php
 						// Temporarily add filter in order to remove inline height and width.
-						$vfront_remove_width_height = function( $image ) {
+						$vfront_remove_width_height = function ( $image ) {
 							unset( $image[1] );
 							unset( $image[2] );
 							return $image;

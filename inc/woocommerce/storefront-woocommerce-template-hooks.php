@@ -91,7 +91,7 @@ add_action( 'woocommerce_after_add_to_cart_form', 'vfront_payment_gateways_wrapp
 // Mock elements to help with styling. Enable when testing.
 add_action(
 	'woocommerce_after_add_to_cart_form',
-	function() {
+	function () {
 		return;
 		?>
 		<div class="ppc-button-wrapper">
@@ -119,7 +119,7 @@ add_action(
 // Move Stripe buttons into container.
 add_action(
 	'init',
-	function() {
+	function () {
 		if ( class_exists( 'WC_Stripe_Express_Checkout_Element' ) ) {
 			$instance = WC_Stripe_Express_Checkout_Element::instance();
 			if ( $instance ) {
@@ -134,19 +134,19 @@ add_action(
 // Move all Paypal payments hooks into the container.
 add_filter(
 	'woocommerce_paypal_payments_single_product_renderer_hook',
-	function() {
+	function () {
 		return 'woocommerce_after_add_to_cart_form';
 	}
 );
 add_filter(
 	'woocommerce_paypal_payments_googlepay_single_product_button_render_hook',
-	function() {
+	function () {
 		return 'woocommerce_after_add_to_cart_form';
 	}
 );
 add_filter(
 	'woocommerce_paypal_payments_applepay_single_product_button_render_hook',
-	function() {
+	function () {
 		return 'woocommerce_after_add_to_cart_form';
 	}
 );
@@ -205,7 +205,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'storefront_cart_link_fragment'
 // Make state/province/county optional.
 add_filter(
 	'woocommerce_billing_fields',
-	function( $woo_billing_fields ) {
+	function ( $woo_billing_fields ) {
 		$woo_billing_fields['billing_state']['required'] = false;
 		return $woo_billing_fields;
 	},
@@ -214,7 +214,7 @@ add_filter(
 );
 add_filter(
 	'woocommerce_default_address_fields',
-	function( $woo_adddress_fields ) {
+	function ( $woo_adddress_fields ) {
 		$woo_adddress_fields['state']['required'] = false;
 		return $woo_adddress_fields;
 	},
@@ -248,7 +248,7 @@ add_action( 'save_post_product', 'vfront_save_product_pre_summary_content' );
 // Allow adding a product video.
 add_filter(
 	'woocommerce_product_data_tabs',
-	function( $tabs ) {
+	function ( $tabs ) {
 		$tabs['Video'] = array(
 			'label'    => __( 'Video', 'storefront' ),
 			'target'   => 'video_data_tab_options',
@@ -265,7 +265,7 @@ add_action( 'woocommerce_process_product_meta', 'vfront_save_video_url_field' );
 // Content for the video tab in product admin page.
 add_filter(
 	'woocommerce_product_data_panels',
-	function() {
+	function () {
 
 		global $post;
 
@@ -298,7 +298,7 @@ add_action( 'woocommerce_process_product_meta', 'vfront_save_hide_product_title_
 // Remove unwanted tabs.
 add_filter(
 	'woocommerce_product_data_tabs',
-	function( $tabs ) {
+	function ( $tabs ) {
 		unset( $tabs['marketplace-suggestions'] );
 
 		global $post;
@@ -324,7 +324,7 @@ if ( get_theme_mod( 'v_links_nav_to_content', false ) ) {
 	// Jump straight to main to save the user scrolling past the header.
 	add_filter(
 		'woocommerce_get_endpoint_url',
-		function( $url ) {
+		function ( $url ) {
 			if ( ! strstr( $url, '#' ) && ! empty( $url ) ) {
 				$url = $url . '#content';
 			}
