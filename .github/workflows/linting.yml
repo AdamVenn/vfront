@@ -2,7 +2,7 @@ name: JavaScript and CSS Linting
 on:
     pull_request:
     push:
-        branches: [trunk]
+        branches: [vfront]
 jobs:
     Setup:
         name: Setup for Jobs

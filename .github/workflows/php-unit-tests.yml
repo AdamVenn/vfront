@@ -3,7 +3,7 @@ name: PHP Unit Tests
 on:
     push:
         branches:
-            - trunk
+            - vfront
     pull_request:
     schedule:
         - cron: '0 6 * * 1'
