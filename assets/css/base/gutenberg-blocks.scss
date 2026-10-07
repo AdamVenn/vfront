@@ -37,10 +37,6 @@
 			width: 100%;
 		}
 
-		&.alignleft audio,
-		&.alignright audio {
-		}
-
 		&.aligncenter {
 			margin: 0 auto;
 			max-width: span(6);
@@ -90,7 +86,7 @@
 			padding: var(--padding-small) calc(var(--padding-large) * 4);
 		}
 	}
-	
+
 	// Latest posts, categories, archives
 	.wp-block-archives,
 	.wp-block-categories,
@@ -228,9 +224,6 @@
 			font-size: var(--font-size-small);
 			font-style: italic;
 		}
-	}
-
-	figure.wp-block-image {
 	}
 
 	// Cover
@@ -399,15 +392,6 @@
 		@include code;
 		border: none;
 		border-radius: 0;
-	}
-
-	// Columns
-	.wp-block-columns {
-
-		.wp-block-column {
-
-		}
-
 	}
 
 	// Latest Comments

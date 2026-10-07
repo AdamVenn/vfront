@@ -80,8 +80,8 @@ summary {
 // Remove focus styles for non-keyboard focus
 :focus:not(:focus-visible),
 :focus-visible {
-  	outline: 0;
-  	box-shadow: none;
+	outline: 0;
+	box-shadow: none;
 }
 
 // Add back focus for tab navigation
@@ -350,13 +350,7 @@ body {
  * Header
  */
 .site-header {
-	background: 
-		radial-gradient(
-			circle at center, 
-			var(--header_background_color) 0%, 
-			var(--header_background_color_dark) 100%
-		)
-	;
+	background: radial-gradient(circle at center, var(--header_background_color) 0%, var(--header_background_color_dark) 100%);
 
 	.site-header-inner {
 		@include flex-row-header-footer;
@@ -420,7 +414,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: var(--space-between-outer);
-	
+
 	margin-bottom: 0;
 
 	.logo {
@@ -460,7 +454,7 @@ body {
 .site-content {
 	width: 100%;
 	flex-grow: 1;
-	
+
 	outline: none;
 
 	&:focus-visible {
@@ -1040,7 +1034,7 @@ textarea,
 			padding: 0; // The container, .select2, has this.
 
 			color: var(--text_color);
-			
+
 			span {
 				color: var(--text_color);
 				padding: 0;
@@ -1055,7 +1049,7 @@ textarea,
 
 // The select2 dropdown menu which appears on click
 .select2-container {
-	
+
 	.select2-selection {
 		display: unset;
 	}
@@ -1079,7 +1073,7 @@ textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
-	resize: vertical
+	resize: vertical;
 }
 
 label {
@@ -1088,7 +1082,7 @@ label {
 }
 
 label.inline {
-	
+
 	display: inline !important;
 	margin-left: var(--space-around);
 
@@ -1360,7 +1354,7 @@ video {
 }
 
 .widget {
-	
+
 	select {
 		max-width: 100%;
 	}

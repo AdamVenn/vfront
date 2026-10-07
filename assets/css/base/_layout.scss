@@ -6,7 +6,7 @@
 	padding-top: var(--space-separation);
 	padding-bottom: var(--space-separation);
 	margin-bottom: var(--space-separation);
-	
+
 	& > .col-full {
 		@include flex-row;
 		margin-left: 0;
@@ -23,9 +23,6 @@
 			justify-content: space-between;
 		}
 	}
-}
-
-.site-branding {
 }
 
 // WooCommerce widget container
@@ -50,7 +47,7 @@
 	max-width: var(--content-width);
 	margin-left: auto;
 	margin-right: auto;
-	
+
 }
 
 .content-area {
@@ -103,7 +100,8 @@
 	.comment-content,
 	#respond {
 
-		width: calc(7 / 9 * 100%); float: right;
+		width: calc(7 / 9 * 100%);
+		float: right;
 	}
 
 	#respond {
@@ -133,7 +131,8 @@
 
 	ol.children {
 
-		width: calc(8 / 9 * 100%); float: right;
+		width: calc(8 / 9 * 100%);
+		float: right;
 		list-style: none;
 
 		.comment-meta {
@@ -144,12 +143,14 @@
 		.comment-content,
 		#respond {
 
-			width: calc(6 / 8 * 100%); float: right;
+			width: calc(6 / 8 * 100%);
+			float: right;
 		}
 
 		ol.children {
 
-			width: calc(7 / 8 * 100%); float: right;
+			width: calc(7 / 8 * 100%);
+			float: right;
 
 			.comment-meta {
 
@@ -159,12 +160,14 @@
 			.comment-content,
 			#respond {
 
-				width: calc(5 / 7 * 100%); float: right;
+				width: calc(5 / 7 * 100%);
+				float: right;
 			}
 
 			ol.children {
 
-				width: calc(6 / 7 * 100%); float: right;
+				width: calc(6 / 7 * 100%);
+				float: right;
 
 				.comment-meta {
 
@@ -174,12 +177,14 @@
 				.comment-content,
 				#respond {
 
-					width: calc(4 / 6 * 100%); float: right;
+					width: calc(4 / 6 * 100%);
+					float: right;
 				}
 
 				ol.children {
 
-					width: calc(5 / 6 * 100%); float: right;
+					width: calc(5 / 6 * 100%);
+					float: right;
 
 					.comment-meta {
 
@@ -189,7 +194,8 @@
 					.comment-content,
 					#respond {
 
-						width: calc(3 / 5 * 100%); float: right;
+						width: calc(3 / 5 * 100%);
+						float: right;
 					}
 				}
 			}
@@ -227,7 +233,7 @@
 
 	overflow: auto;
 	flex: 1 1 auto;
-	
+
 	// first level
 	ul {
 		@include flex-row;
@@ -247,7 +253,7 @@
 				text-wrap: nowrap;
 			}
 		}
-		
+
 		// Show submenu on hover
 		li.menu-item-has-children:hover {
 			ul {

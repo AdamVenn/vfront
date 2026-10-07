@@ -130,7 +130,8 @@
 
 			.composited_product_details_wrapper > .details {
 
-				width: calc(8 / 10 * 100%); float: right;
+				width: calc(8 / 10 * 100%);
+				float: right;
 			}
 		}
 	}
@@ -190,7 +191,8 @@ table.shop_table_responsive tr.component_table_item {
 
 	.widget_composite_summary_ui_wrapper {
 
-		float: right; width: 25%;
+		float: right;
+		width: 25%;
 	}
 }
 

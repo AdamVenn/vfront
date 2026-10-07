@@ -10,7 +10,8 @@ body {
 }
 
 // List alignment and spacing
-ol, ul {
+ol,
+ul {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-between-inner);

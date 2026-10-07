@@ -16,6 +16,8 @@
 		"font-family-no-missing-generic-family-keyword": null,
 		"selector-id-pattern": null,
 		"scss/selector-no-redundant-nesting-selector": null,
-		"scss/no-global-function-names": null
+		"scss/no-global-function-names": null,
+		"selector-pseudo-element-no-unknown": [true, {"ignorePseudoElements": ["picker", "picker-icon"]}],
+		"selector-pseudo-class-no-unknown": [true, {"ignorePseudoClasses": ["open"]}]
 	}
 }

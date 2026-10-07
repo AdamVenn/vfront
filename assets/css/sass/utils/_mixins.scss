@@ -124,39 +124,39 @@
 
 // Standardize scrollbar appearance
 @mixin scrollbar-on-hover-x {
-    overflow-x: auto;
+	overflow-x: auto;
 
-    &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-    &::-webkit-scrollbar-thumb {
-        width: 0;
-        height: 0;
-    }
-    &::-webkit-scrollbar-track {
-        width: 0;
-        height: 0;
-    }
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+	&::-webkit-scrollbar-thumb {
+		width: 0;
+		height: 0;
+	}
+	&::-webkit-scrollbar-track {
+		width: 0;
+		height: 0;
+	}
 
-    &::-webkit-scrollbar:hover {
-        width: unset;
-        height: unset;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        width: unset;
-        height: unset;
-    }
-    &::-webkit-scrollbar-track:hover {
-        width: unset;
-        height: unset;
-    }
+	&::-webkit-scrollbar:hover {
+		width: unset;
+		height: unset;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		width: unset;
+		height: unset;
+	}
+	&::-webkit-scrollbar-track:hover {
+		width: unset;
+		height: unset;
+	}
 
-    scrollbar-width: none;
+	scrollbar-width: none;
 
-    &:hover {
+	&:hover {
 		scrollbar-width: thin;
-    }
+	}
 }
 
 // Add semitransparent background to floating element

@@ -52,7 +52,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.0);
+		background: rgba(0, 0, 0, 0);
 	}
 }
 
@@ -74,7 +74,7 @@
 	max-width: 96%;
 	z-index: 910;
 	pointer-events: none;
-	
+
 	& img {
 		height: 100%;
 		width: 100%;
@@ -84,7 +84,8 @@
 		pointer-events: auto;
 	}
 
-	& .v-gal-prev.button, .v-gal-next.button {
+	& .v-gal-prev.button,
+	.v-gal-next.button {
 		display: flex;
 		justify-content: center;
 		align-items: center;
